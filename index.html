@@ -9,66 +9,101 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/icofont/1.0.1/css/icofont.min.css"
+    />
     <link rel="stylesheet" href="icofont-web/icofont.min.css" />
     <link rel="stylesheet" href="icofont-school/icofont.min.css" />
     <link rel="stylesheet" href="icofont-user/icofont.min.css" />
     <link rel="stylesheet" href="icofont-duotone/icofont.min.css" />
     <link rel="stylesheet" href="icofont-business/icofont.min.css" />
+    <link rel="stylesheet" href="icofont-social/icofont.min.css" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
         <!-- Sidebar -->
-        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
-          <div class="position-sticky">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#home"
-                  ><i class="icofont-home"></i> <span>Accueil</span></a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="#about" class="nav-link scrollto active"
-                  ><i class="icofont-user"></i> <span>Profil</span></a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#parcours">
-                  <i class="icofont-graduate"> </i><span>Parcours</span></a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#stages"
-                  ><i class="icofont-briefcase"></i> Stages</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#diplomes-certifications"
-                  ><i class="icofont-computer"> </i>Compétences</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#projets"
-                  ><i class="icofont-code"> </i>Projets</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#bts"
-                  ><i class="icofont-university"> </i>BTS SIO</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#epreuves">Épreuves</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#contact"
-                  ><i class="icofont-envelope"> </i>Contact</a
-                >
-              </li>
-            </ul>
+        <nav
+          id="sidebar"
+          class="col-md-3 col-lg-2 d-md-block bg-dark sidebar text-center"
+        >
+          <!-- Profile Section -->
+          <div class="profile text-white mb-4">
+            <h4>Jérémy Rouillard</h4>
+
+            <!-- Social Icons -->
+            <div class="social-icons d-flex justify-content-center mb-3">
+              <a href="#" class="icon-circle mx-2"
+                ><i class="bx--bxl-gmail"></i
+              ></a>
+              <a href="https://github.com/JRMi27" class="icon-circle mx-2"
+                ><i class="bx--bxl-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-rouillard-5734892a6/"
+                class="icon-circle mx-2"
+                ><i class="bx--bxl-linkedin"></i
+              ></a>
+            </div>
           </div>
+
+          <!-- Navigation Links -->
+          <ul class="nav flex-column text-white">
+            <li class="nav-item">
+              <a class="nav-link" href="#home"
+                ><i class="icofont-home"></i> <span>Accueil</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about"
+                ><i class="icofont-user"></i> <span>Profil</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#parcours"
+                ><i class="icofont-graduate"></i> <span>Parcours</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#stages"
+                ><i class="icofont-briefcase"></i> <span>Stages</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#diplomes-certifications"
+                ><i class="icofont-computer"></i> <span>Compétences</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projets"
+                ><i class="icofont-code"></i> <span>Projets</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bts"
+                ><i class="icofont-university"></i> <span>BTS SIO</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#epreuves"
+                ><i class="icofont-book"></i> <span>Épreuves</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact"
+                ><i class="icofont-envelope"></i> <span>Contact</span></a
+              >
+            </li>
+          </ul>
+
+          <!-- Footer -->
+          <footer class="text-white mt-4">
+            <p>© Copyright 2024</p>
+            <p>Designed by Jérémy Rouillard</p>
+            <p>Tous droits réservés</p>
+          </footer>
         </nav>
 
         <!-- Main content -->
@@ -268,7 +303,9 @@
                       >
                     </li>
                   </ul>
-                  <a href="#" class="btn btn-outline-primary"
+                  <a
+                    href="https://docs.google.com/document/d/1duxU8ta0X64RjQ9eo_aU2EwI4Kn1p7kW--vNfpFMobk/edit?usp=sharing"
+                    class="btn btn-outline-primary"
                     >Plus d'informations à propos du stage</a
                   >
                 </div>
@@ -719,6 +756,7 @@
       </div>
     </div>
 
+    <script src="script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
