@@ -197,6 +197,7 @@ form button {
   outline: none;
   box-shadow: none;
 }
+
 /* Container for section */
 #parcours {
   background-color: #f7f7f7;
@@ -508,6 +509,96 @@ h4 i:hover {
 }
 
 .filter-btn.btn-dark {
+  background-color: #007bff;
+  color: white;
+}
+/* Timeline Section */
+#stages {
+  background-color: #f7f7f7;
+  padding: 60px 0;
+  border-radius: 10px;
+}
+
+#stages h2 {
+  font-weight: bold;
+  color: #003b79;
+  margin-bottom: 20px;
+}
+
+#stages p.lead {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  margin-top: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 40px;
+  border-left: 2px solid #b22a2a;
+}
+
+.timeline-item:before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #b22a2a;
+}
+
+/* Box for each timeline item */
+.timeline-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Timeline Dates */
+.timeline-date {
+  font-weight: bold;
+  color: #b22a2a;
+}
+
+/* Links and Hover Effects */
+.timeline-item ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.timeline-item ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.timeline-item ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Button Styles */
+.btn-outline-primary {
+  border: 1px solid #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
   background-color: #007bff;
   color: white;
 }
