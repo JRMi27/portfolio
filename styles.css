@@ -1,0 +1,406 @@
+/* Ajustement global */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f7f7f7;
+  line-height: 1.6;
+}
+main {
+  height: 102.5vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Relative position to make overlay work */
+  background-image: url("images/code.jpg"); /* Remplace par l'URL ou le chemin de ton image */
+  background-size: cover; /* L'image couvre toute la section */
+  background-position: center; /* L'image est centrée */
+  background-repeat: no-repeat; /* Pas de répétition de l'image */
+  left: 0;
+}
+
+/* Sidebar - Bootstrap */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* La sidebar couvre toute la hauteur de l'écran */
+  width: 17%; /* Largeur de la sidebar */
+  background-color: #333; /* Couleur de fond sombre */
+  padding-top: 20px; /* Un petit padding en haut */
+  z-index: 1000; /* Toujours au-dessus du contenu */
+}
+#sidebar .nav-link {
+  font-size: 18px;
+  padding: 15px 20px; /* Plus d'espace pour rendre les liens cliquables */
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+#sidebar .nav-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Contenu principal */
+main {
+  margin-left: 18%; /* Ajuste en fonction de la largeur de la sidebar */
+  padding: 20px;
+}
+
+/* Sections */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+/* Section d'accueil */
+#home {
+  left: 0;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+/* Style pour le curseur clignotant */
+.cursor {
+  display: inline-block;
+  background-color: white; /* Couleur du curseur */
+  width: 2px; /* Largeur du curseur */
+  height: 30px; /* La hauteur doit correspondre à la taille de la police du texte */
+  animation: blink 0.7s steps(1) infinite; /* Animation de clignotement */
+}
+
+/* Animation de clignotement du curseur */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero-content p {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.cta-btn {
+  padding: 10px 20px;
+  background-color: #00aaff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.cta-btn:hover {
+  background-color: #007bff;
+}
+
+/* Formulaire de contact */
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* Section container */
+#about {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Aligner tout le contenu à gauche */
+}
+
+/* Titre principal */
+#about h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003b79;
+  margin-bottom: 20px;
+  text-align: left; /* Aligner le titre principal à gauche */
+}
+
+#about .icon {
+  font-size: 1.5rem;
+}
+
+/* Sous-titres */
+#about h3 {
+  font-size: 1.6rem;
+  color: #003b79;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: left; /* Aligner les sous-titres à gauche */
+}
+
+#about p.lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: left; /* Aligner le paragraphe principal à gauche */
+}
+
+/* Liste des informations */
+#about ul {
+  margin-top: 15px;
+  text-align: left; /* Aligner les listes à gauche */
+}
+
+#about ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Boutons CV */
+#about .btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#about .btn-dark {
+  background-color: #333;
+  color: white;
+  border: none;
+}
+
+#about .btn-dark:hover {
+  background-color: #555;
+  color: white;
+}
+
+#about .btn-dark:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* Container for section */
+#parcours {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#parcours h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003b79;
+  margin-bottom: 20px;
+}
+
+#parcours h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #003b79;
+  margin-bottom: 20px;
+}
+
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 40px;
+  border-left: 2px solid #b22a2a;
+}
+
+.timeline-item:before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #b22a2a;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: #b22a2a;
+}
+
+.timeline-item h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.timeline-item p {
+  margin-bottom: 0;
+}
+
+/* For small screens, we can add responsiveness */
+@media (max-width: 768px) {
+  .timeline-item {
+    padding-left: 20px;
+  }
+
+  .timeline-item:before {
+    left: -5px;
+  }
+}
+/* Section contact container */
+#contact {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003b79;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* Colonne gauche - Informations de contact */
+.contact-info {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #003b79;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Formulaire de contact */
+.contact-form .form-label {
+  font-weight: bold;
+}
+
+.contact-form .form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.contact-form button:hover {
+  background-color: #555;
+}
+
+/* Ajustement pour la carte Google Maps */
+iframe {
+  margin-top: 20px;
+  border: 0;
+  border-radius: 10px;
+}
+/* Container pour les cartes */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  perspective: 1000px; /* Perspective pour l'effet 3D */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 350px; /* Hauteur minimale plus grande */
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; /* Permet la rotation 3D */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); /* Rotation de la carte sur l'axe Y */
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  min-height: 350px; /* Hauteur minimale plus grande */
+  backface-visibility: hidden; /* Cache l'arrière quand la face avant est visible */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front {
+  background: linear-gradient(
+    to bottom right,
+    #95bfe2,
+    #497294
+  ); /* Dégradé de vert (#2ecc71) à blanc */
+  color: black;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-back {
+  background-color: #696fc9; /* Une couleur différente pour le verso */
+
+  transform: rotateY(180deg); /* Le dos est déjà retourné */
+}
+/* Style pour les icônes à côté des options */
+h4 i {
+  font-size: 24px; /* Taille de l'icône */
+  margin-right: 10px; /* Espace entre l'icône et le texte */
+}
+h4 i:hover {
+  transform: scale(1.2); /* Agrandit l'icône au survol */
+  transition: transform 0.3s ease; /* Animation douce */
+}
