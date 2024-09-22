@@ -43,3 +43,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setTimeout(typeText, delayBetweenTexts);
 });
+
+// Récupère tous les boutons de filtre
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+// Récupère toutes les cartes de certificats
+const certCards = document.querySelectorAll(".row .col-md-4");
+
+// Ajoute un événement sur chaque bouton de filtre
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    // Récupère la catégorie à filtrer
+    const filter = button.getAttribute("data-filter");
+
+    // Affiche/masque les cartes en fonction du filtre
+    certCards.forEach((card) => {
+      if (filter === "all") {
+        // Si "TOUS" est sélectionné, on affiche toutes les cartes
+        card.style.display = "block";
+      } else if (card.classList.contains(filter)) {
+        // Sinon, on affiche seulement les cartes qui appartiennent à la catégorie
+        card.style.display = "block";
+      } else {
+        // On masque les cartes qui n'appartiennent pas à la catégorie
+        card.style.display = "none";
+      }
+    });
+
+    // Ajoute une classe "active" au bouton sélectionné
+    filterButtons.forEach((btn) => btn.classList.remove("btn-dark"));
+    button.classList.add("btn-dark");
+  });
+});

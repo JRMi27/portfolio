@@ -404,3 +404,110 @@ h4 i:hover {
   transform: scale(1.2); /* Agrandit l'icône au survol */
   transition: transform 0.3s ease; /* Animation douce */
 }
+
+#competences-developpement {
+  background-color: #f7f7f7;
+  padding: 60px 0;
+  border-radius: 10px;
+}
+
+#competences-developpement h2 {
+  font-weight: bold;
+  color: #f15b2a;
+  margin-bottom: 20px;
+}
+
+#competences-developpement p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.competence-card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: #ffffff;
+  width: 150px; /* Largeur fixe pour toutes les cartes */
+  height: 120px; /* Hauteur fixe pour toutes les cartes */
+  margin: 0 auto; /* Centre la carte */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrer verticalement */
+  align-items: center; /* Centrer horizontalement */
+  text-align: center; /* Centrer le texte */
+}
+
+.competence-card:hover {
+  transform: translateY(-10px); /* Soulève légèrement la carte */
+  background-color: #f15b2a; /* Change la couleur de fond */
+}
+
+.competence-card:hover .card-title,
+.competence-card:hover img {
+  color: white; /* Change la couleur du texte et des icônes au survol */
+}
+
+.competence-card .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.competence-card img {
+  max-width: 50px;
+  height: auto;
+  transition: transform 0.3s ease;
+  margin-bottom: 10px; /* Espace entre l'image et le titre */
+}
+
+.competence-card:hover img {
+  transform: scale(1.1); /* Agrandit légèrement l'icône au survol */
+}
+#diplomes-certifications {
+  background-color: #f7f7f7;
+  padding: 60px 0;
+  border-radius: 10px;
+}
+
+#diplomes-certifications h2 {
+  font-weight: bold;
+  color: #003b79;
+  margin-bottom: 20px;
+}
+
+#diplomes-certifications p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+#diplomes-certifications .btn {
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+#diplomes-certifications .card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#diplomes-certifications .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#diplomes-certifications .card-img-top {
+  border-radius: 10px;
+  height: 250px;
+  object-fit: cover; /* Assure que l'image couvre toute la carte */
+}
+.filter-btn {
+  transition: background-color 0.3s ease;
+}
+
+.filter-btn.btn-dark {
+  background-color: #007bff;
+  color: white;
+}
