@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     },
     {
-      threshold: 0.6, // Seuil pour déclencher l'observation (60% de la section visible)
+      threshold: 0.3, // Seuil pour déclencher l'observation (30% de la section visible)
     }
   );
 
