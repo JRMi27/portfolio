@@ -80,6 +80,11 @@ main {
 .nav-link i {
   font-size: 1.5rem;
   margin-right: 10px;
+  transition: color 0.3s ease;
+}
+/* Couleur des icônes actives (bleu clair) */
+.nav-link.active i {
+  color: #d31c1c; /* Bleu clair pour l'icône active */
 }
 
 .nav-link:hover {
@@ -88,11 +93,6 @@ main {
   border-radius: 5px;
 }
 
-.nav-link.active {
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 5px;
-}
 .nav {
   flex-grow: 1; /* Prend l'espace disponible au centre */
 }

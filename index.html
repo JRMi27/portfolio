@@ -52,54 +52,67 @@
           </div>
 
           <!-- Navigation Links -->
-          <ul class="nav flex-column text-white">
-            <li class="nav-item">
-              <a class="nav-link" href="#home"
-                ><i class="icofont-home"></i> <span>Accueil</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about"
-                ><i class="icofont-user"></i> <span>Profil</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#parcours"
-                ><i class="icofont-graduate"></i> <span>Parcours</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#stages"
-                ><i class="icofont-briefcase"></i> <span>Stages</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#diplomes-certifications"
-                ><i class="icofont-computer"></i> <span>Compétences</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projets"
-                ><i class="icofont-code"></i> <span>Projets</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#bts"
-                ><i class="icofont-university"></i> <span>BTS SIO</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#epreuves"
-                ><i class="icofont-book"></i> <span>Épreuves</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact"
-                ><i class="icofont-envelope"></i> <span>Contact</span></a
-              >
-            </li>
-          </ul>
-
+          <div class="position-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#home" id="nav-home">
+                  <i class="icofont-home"></i> <span>Accueil</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#about" id="nav-about">
+                  <i class="icofont-user"></i> <span>Profil</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#parcours"
+                  id="nav-parcours"
+                >
+                  <i class="icofont-graduate"></i> <span>Parcours</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#stages" id="nav-stages">
+                  <i class="icofont-briefcase"></i> <span>Stages</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#diplomes-certifications"
+                  id="nav-competences"
+                >
+                  <i class="icofont-computer"></i> <span>Compétences</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#projets" id="nav-projets">
+                  <i class="icofont-code"></i> <span>Projets</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#bts" id="nav-bts">
+                  <i class="icofont-university"></i> <span>BTS SIO</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#epreuves"
+                  id="nav-epreuves"
+                >
+                  <i class="icofont-book"></i> <span>Épreuves</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#contact" id="nav-contact">
+                  <i class="icofont-envelope"></i> <span>Contact</span>
+                </a>
+              </li>
+            </ul>
+          </div>
           <!-- Footer -->
           <footer class="text-white mt-4">
             <p>© Copyright 2024</p>
@@ -627,118 +640,115 @@
               </div>
             </div>
           </section>
-
+          <br />
           <!-- Section BTS SIO -->
           <section id="bts" class="section p-5">
-            <section id="bts-sio" class="container py-5">
-              <h2 class="text-primary">
-                Qu'est-ce que le BTS SIO ? <span class="icon">🎓</span>
-              </h2>
-              <p class="lead">
-                Je vous présente à présent la formation que j’ai suivie et dans
-                laquelle j’ai évolué pendant 2 ans.
-              </p>
-              <p>
-                Le Brevet de Technicien Supérieur aux Services Informatiques aux
-                Organisations (BTS SIO), s'adresse à ceux qui souhaitent se
-                former en deux ans aux métiers d'administrateur réseau ou de
-                développeur. Et ainsi par la suite intégrer directement le
-                marché du travail ou continuer des études dans le domaine de
-                l'informatique.
-              </p>
-              <h3>Le BTS SIO propose deux spécialités :</h3>
-              <br /><br /><br />
-              <div class="row">
-                <!-- Carte SISR -->
-                <div class="col-md-6">
-                  <div class="flip-card">
-                    <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <h4><i class="icofont-server"></i> Option SISR</h4>
-                        <img
-                          src="images/server.gif"
-                          alt="Image SISR"
-                          style="width: 75%; height: 300px"
-                        />
-                      </div>
-                      <div class="flip-card-back">
-                        <h4><i class="icofont-server"></i> Option SISR</h4>
-                        <p>
-                          L'acronyme SISR signifie « Solutions d’infrastructure,
-                          systèmes et réseaux ». L’option SISR est destinée aux
-                          étudiants qui s’orientent vers les métiers liés à la
-                          conception et la maintenance d’infrastructures
-                          réseaux. Assurer la sécurité, la maintenance et
-                          l’installation des réseaux et des équipements
-                          informatiques font partie des principales missions des
-                          futurs administrateurs, techniciens ou pilotes
-                          d’exploitation. Des cours plus généraux viendront
-                          compléter la formation et apporter des compétences
-                          plus généralistes, permettant ainsi aux diplômés
-                          d’être opérationnels dans n’importe quelle entreprise.
-                        </p>
-                        <p>- Voici les débouchés avec un BTS SIO SISR :</p>
-                        <ul>
-                          <li>Administrateur systèmes et réseaux</li>
-                          <li>Technicien systèmes et réseaux</li>
-                          <li>Technicien support utilisateur</li>
-                          <li>Technicien d’exploitation</li>
-                          <li>Administrateur de bases de données</li>
-                          <li>Ingénieur réseau junior</li>
-                          <li>Responsable sécurité informatique</li>
-                          <li>Technicien de maintenance informatique</li>
-                          <li>Consultant en infrastructures IT</li>
-                          <li>Chef de projet réseaux</li>
-                        </ul>
-                      </div>
+            <h2 class="text-primary">
+              Qu'est-ce que le BTS SIO ? <span class="icon">🎓</span>
+            </h2>
+            <p class="lead">
+              Je vous présente à présent la formation que j’ai suivie et dans
+              laquelle j’ai évolué pendant 2 ans.
+            </p>
+            <p>
+              Le Brevet de Technicien Supérieur aux Services Informatiques aux
+              Organisations (BTS SIO), s'adresse à ceux qui souhaitent se former
+              en deux ans aux métiers d'administrateur réseau ou de développeur.
+              Et ainsi par la suite intégrer directement le marché du travail ou
+              continuer des études dans le domaine de l'informatique.
+            </p>
+            <h3>Le BTS SIO propose deux spécialités :</h3>
+            <br /><br /><br />
+            <div class="row">
+              <!-- Carte SISR -->
+              <div class="col-md-6">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <h4><i class="icofont-server"></i> Option SISR</h4>
+                      <img
+                        src="images/server.gif"
+                        alt="Image SISR"
+                        style="width: 75%; height: 300px"
+                      />
                     </div>
-                  </div>
-                </div>
-
-                <!-- Carte SLAM -->
-                <div class="col-md-6">
-                  <div class="flip-card">
-                    <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <h4><i class="icofont-code"></i> Option SLAM</h4>
-                        <img src="images/code.gif" alt="Image SLAM" />
-                      </div>
-                      <div class="flip-card-back">
-                        <h4><i class="icofont-code-alt"></i> Option SLAM</h4>
-                        <p>
-                          L'acronyme SLAM signifie « Solutions Logicielles et
-                          Applications Métier ». Voici quelques indications sur
-                          cette seconde option du BTS SIO, ainsi des précisions
-                          sur cette formation et ses débouchés. L’option SLAM
-                          est destinée aux étudiants qui s’orientent vers les
-                          métiers liés à la conception et la maintenance de
-                          programmes applicatifs. Grâce à des cours spécifiques,
-                          les diplômés seront capables de gérer un parc
-                          informatique ou d’administrer un réseau au sein d’une
-                          entreprise. Ils pourront également diriger
-                          l’intégration, la sécurisation et la configuration des
-                          serveurs, mais aussi des postes clients et des
-                          équipements d’interconnexion.
-                        </p>
-                        <p>- Voici les débouchés avec un BTS SIO SLAM :</p>
-                        <ul>
-                          <li>Développeur d’applications mobiles</li>
-                          <li>Développeur web</li>
-                          <li>Développeur logiciel</li>
-                          <li>Analyste-programmeur</li>
-                          <li>Consultant en développement d'applications</li>
-                          <li>Testeur/recetteur</li>
-                          <li>Chef de projet informatique junior</li>
-                          <li>Concepteur d’applications</li>
-                          <li>Technicien d'assistance en informatique</li>
-                          <li>Ingénieur études et développement</li>
-                        </ul>
-                      </div>
+                    <div class="flip-card-back">
+                      <h4><i class="icofont-server"></i> Option SISR</h4>
+                      <p>
+                        L'acronyme SISR signifie « Solutions d’infrastructure,
+                        systèmes et réseaux ». L’option SISR est destinée aux
+                        étudiants qui s’orientent vers les métiers liés à la
+                        conception et la maintenance d’infrastructures réseaux.
+                        Assurer la sécurité, la maintenance et l’installation
+                        des réseaux et des équipements informatiques font partie
+                        des principales missions des futurs administrateurs,
+                        techniciens ou pilotes d’exploitation. Des cours plus
+                        généraux viendront compléter la formation et apporter
+                        des compétences plus généralistes, permettant ainsi aux
+                        diplômés d’être opérationnels dans n’importe quelle
+                        entreprise.
+                      </p>
+                      <p>- Voici les débouchés avec un BTS SIO SISR :</p>
+                      <ul>
+                        <li>Administrateur systèmes et réseaux</li>
+                        <li>Technicien systèmes et réseaux</li>
+                        <li>Technicien support utilisateur</li>
+                        <li>Technicien d’exploitation</li>
+                        <li>Administrateur de bases de données</li>
+                        <li>Ingénieur réseau junior</li>
+                        <li>Responsable sécurité informatique</li>
+                        <li>Technicien de maintenance informatique</li>
+                        <li>Consultant en infrastructures IT</li>
+                        <li>Chef de projet réseaux</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
+
+              <!-- Carte SLAM -->
+              <div class="col-md-6">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <h4><i class="icofont-code"></i> Option SLAM</h4>
+                      <img src="images/code.gif" alt="Image SLAM" />
+                    </div>
+                    <div class="flip-card-back">
+                      <h4><i class="icofont-code-alt"></i> Option SLAM</h4>
+                      <p>
+                        L'acronyme SLAM signifie « Solutions Logicielles et
+                        Applications Métier ». Voici quelques indications sur
+                        cette seconde option du BTS SIO, ainsi des précisions
+                        sur cette formation et ses débouchés. L’option SLAM est
+                        destinée aux étudiants qui s’orientent vers les métiers
+                        liés à la conception et la maintenance de programmes
+                        applicatifs. Grâce à des cours spécifiques, les diplômés
+                        seront capables de gérer un parc informatique ou
+                        d’administrer un réseau au sein d’une entreprise. Ils
+                        pourront également diriger l’intégration, la
+                        sécurisation et la configuration des serveurs, mais
+                        aussi des postes clients et des équipements
+                        d’interconnexion.
+                      </p>
+                      <p>- Voici les débouchés avec un BTS SIO SLAM :</p>
+                      <ul>
+                        <li>Développeur d’applications mobiles</li>
+                        <li>Développeur web</li>
+                        <li>Développeur logiciel</li>
+                        <li>Analyste-programmeur</li>
+                        <li>Consultant en développement d'applications</li>
+                        <li>Testeur/recetteur</li>
+                        <li>Chef de projet informatique junior</li>
+                        <li>Concepteur d’applications</li>
+                        <li>Technicien d'assistance en informatique</li>
+                        <li>Ingénieur études et développement</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
           <br /><br /><br /><br /><br />
           <!-- Section Épreuves -->

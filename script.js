@@ -75,3 +75,39 @@ filterButtons.forEach((button) => {
     button.classList.add("btn-dark");
   });
 });
+// Fonction pour détecter la section active au fur et à mesure du défilement
+document.addEventListener("DOMContentLoaded", function () {
+  // Sélectionner toutes les sections que l'on souhaite observer
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  // Fonction pour ajouter la classe active à l'élément de la nav correspondant à la section visible
+  function activateNavLink(id) {
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${id}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  // Observer l'intersection des sections avec la fenêtre
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute("id");
+          activateNavLink(sectionId);
+        }
+      });
+    },
+    {
+      threshold: 0.6, // Seuil pour déclencher l'observation (60% de la section visible)
+    }
+  );
+
+  // Observer chaque section
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+});
