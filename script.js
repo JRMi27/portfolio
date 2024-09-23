@@ -8,6 +8,7 @@ document.querySelectorAll("nav ul li a").forEach((anchor) => {
     });
   });
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   const textArray = ["Bienvenue sur mon Portfolio"];
   const typingSpeed = 100; // Vitesse de frappe (en millisecondes)
@@ -75,6 +76,7 @@ filterButtons.forEach((button) => {
     button.classList.add("btn-dark");
   });
 });
+
 // Fonction pour détecter la section active au fur et à mesure du défilement
 document.addEventListener("DOMContentLoaded", function () {
   // Sélectionner toutes les sections que l'on souhaite observer
