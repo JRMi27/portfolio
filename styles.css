@@ -522,6 +522,7 @@ h4 i:hover {
   height: auto;
   transition: transform 0.3s ease;
   margin-bottom: 10px; /* Espace entre l'image et le titre */
+  padding-top: 20px;
 }
 
 .competence-card:hover img {
