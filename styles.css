@@ -22,14 +22,41 @@ main {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh; /* La sidebar couvre toute la hauteur de l'écran */
-  width: 17%; /* Largeur de la sidebar */
+  height: 100vh;
+  width: 17%; /* Ajustez la largeur de la barre latérale ici */
   background-color: #1a1a1a;
-  flex-direction: column; /* Organise le contenu en colonne */
-  justify-content: space-between; /* Place le footer en bas */
-  padding: 20px; /* Un petit padding en haut */
-  z-index: 1000; /* Toujours au-dessus du contenu */
+  z-index: 1000;
+  transform: translateX(0); /* Par défaut, la sidebar est cachée */
+  transition: transform 0.3s ease; /* Animation de transition */
 }
+
+#sidebar.active {
+  transform: translateX(0); /* Affiche la sidebar lorsqu'elle est active */
+}
+
+#sidebarToggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  display: none; /* Cacher le bouton sur les grands écrans */
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    width: 80%;
+    transform: translateX(-100%); /* Par défaut cachée sur mobile */
+  }
+
+  #sidebarToggle {
+    display: block; /* Affiche le bouton pour les petits écrans */
+  }
+
+  main {
+    margin-left: 0; /* Enlevez la marge à gauche quand la sidebar est cachée */
+  }
+}
+
 #sidebar .nav-link {
   font-size: 18px;
   padding: 15px 20px; /* Plus d'espace pour rendre les liens cliquables */
