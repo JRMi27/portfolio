@@ -49,21 +49,6 @@ main {
   padding: 0;
 }
 
-@media (max-width: 1200px) {
-  #sidebar {
-    width: 40%;
-    transform: translateX(-100%); /* Par défaut cachée sur mobile */
-  }
-
-  #sidebarToggle {
-    display: flex; /* Affiche le bouton pour les petits écrans */
-  }
-
-  main {
-    margin-left: 0; /* Enlevez la marge à gauche quand la sidebar est cachée */
-  }
-}
-
 #sidebar .nav-link {
   font-size: 18px;
   padding: 15px 20px; /* Plus d'espace pour rendre les liens cliquables */
@@ -355,16 +340,6 @@ form button {
   margin-bottom: 0;
 }
 
-/* For small screens, we can add responsiveness */
-@media (max-width: 768px) {
-  .timeline-item {
-    padding-left: 20px;
-  }
-
-  .timeline-item:before {
-    left: -5px;
-  }
-}
 /* Section contact container */
 #contact {
   background-color: #f7f7f7;
@@ -944,5 +919,29 @@ h4 i:hover {
   video {
     max-width: 100%;
     height: auto;
+  }
+}
+@media (max-width: 1200px) {
+  #sidebar {
+    width: 40%;
+    transform: translateX(-100%); /* Par défaut cachée sur mobile */
+  }
+
+  #sidebarToggle {
+    display: flex; /* Affiche le bouton pour les petits écrans */
+  }
+
+  main {
+    margin-left: 0; /* Enlevez la marge à gauche quand la sidebar est cachée */
+  }
+}
+/* For small screens, we can add responsiveness */
+@media (max-width: 768px) {
+  .timeline-item {
+    padding-left: 20px;
+  }
+
+  .timeline-item:before {
+    left: -5px;
   }
 }
