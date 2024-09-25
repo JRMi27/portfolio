@@ -33,7 +33,7 @@ main {
 #sidebar.active {
   transform: translateX(0); /* Affiche la sidebar lorsqu'elle est active */
 }
-
+/*Petit bouton pour les petits écran*/
 #sidebarToggle {
   position: fixed;
   top: 10px;
