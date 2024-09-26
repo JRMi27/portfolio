@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     "Bienvenue sur mon Portfolio",
     "Welcome on my Portfolio",
     "Wilkommen in meinem Portfolio",
+    "Bienvenido a mi portafolio",
+    "私のポートフォリオへようこそ",
   ];
   const typingSpeed = 100; // Vitesse de frappe (en millisecondes)
   const erasingSpeed = 50; // Vitesse d'effacement (en millisecondes)
