@@ -10,7 +10,11 @@ document.querySelectorAll("nav ul li a").forEach((anchor) => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const textArray = ["Bienvenue sur mon Portfolio"];
+  const textArray = [
+    "Bienvenue sur mon Portfolio",
+    "Welcome on my Portfolio",
+    "Wilkommen in meinem Portfolio",
+  ];
   const typingSpeed = 100; // Vitesse de frappe (en millisecondes)
   const erasingSpeed = 50; // Vitesse d'effacement (en millisecondes)
   const delayBetweenTexts = 2000; // Temps entre les textes (en millisecondes)
