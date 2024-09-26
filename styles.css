@@ -3,6 +3,7 @@ body {
   font-family: "Arial", sans-serif;
   background-color: #f7f7f7;
   line-height: 1.6;
+  overflow-x: hidden; /* Désactive le défilement horizontal */
 }
 main {
   height: 102.5vh;
@@ -16,7 +17,9 @@ main {
   background-repeat: no-repeat; /* Pas de répétition de l'image */
   left: 0;
 }
-
+section h2 {
+  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+}
 /* Sidebar - Bootstrap */
 #sidebar {
   position: fixed;
@@ -728,7 +731,6 @@ h4 i:hover {
 
 #projets h2 {
   font-weight: bold;
-  color: #f15b2a;
   margin-bottom: 20px;
 }
 
@@ -778,7 +780,25 @@ h4 i:hover {
 .project-card .btn:hover {
   background-color: #0056b3;
 }
+#bts {
+  background-color: #f7f7f7;
+  padding: 60px 0;
+  border-radius: 10px;
+}
 
+#bts h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#bts p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+#bts .flip {
+  color: black;
+}
 #epreuves {
   background-color: #f7f7f7;
   padding: 60px 0;
