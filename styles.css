@@ -847,31 +847,6 @@ h4 i:hover {
   color: #007bff;
 }
 /* Styles personnalisés pour la section E4 */
-#epreuve-e4 {
-  background-color: #f9f9f9;
-  padding: 40px;
-  border-radius: 10px;
-}
-
-#epreuve-e4 h3 {
-  color: #003b79;
-}
-
-.list-group-item a {
-  color: #003b79;
-  text-decoration: none;
-}
-
-.list-group-item a:hover {
-  color: #007bff;
-}
-
-.card {
-  background-color: #fff;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 @media (max-width: 768px) {
   html {
@@ -944,4 +919,88 @@ h4 i:hover {
   .timeline-item:before {
     left: -5px;
   }
+}
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Zoom-in animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Slide-in from left */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide-in from right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Fade-in class */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* Zoom-in class */
+.zoom-in {
+  opacity: 0;
+  animation: zoomIn 1s forwards;
+}
+
+/* Slide-in-left class */
+.slide-in-left {
+  opacity: 0;
+  animation: slideInLeft 1s forwards;
+}
+
+/* Slide-in-right class */
+.slide-in-right {
+  opacity: 0;
+  animation: slideInRight 1s forwards;
+}
+
+/* Delay options */
+.delay-1s {
+  animation-delay: 1s;
+}
+
+.delay-2s {
+  animation-delay: 2s;
+}
+
+.delay-3s {
+  animation-delay: 3s;
 }
