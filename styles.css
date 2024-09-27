@@ -1,4 +1,48 @@
 /* Ajustement global */
+.blob {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  top: 9%;
+  transform: translate(-50%, -50%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background-color: rgb(0, 21, 43);
+  background-image: url("images/photo_pp.jpg"),
+    linear-gradient(
+      90deg,
+      rgba(0, 21, 43, 1) 0%,
+      rgba(3, 23, 193, 1) 35%,
+      rgba(111, 86, 255, 1) 100%
+    );
+  background-size: cover, cover; /* Le premier 'cover' pour l'image, le second pour le dégradé */
+  background-repeat: no-repeat, no-repeat; /* Pas de répétition de l'image et du dégradé */
+  background-position: center, center; /* Centrer l'image et le dégradé */
+  -webkit-animation: blob 5s linear 0s infinite;
+  animation: blob 5s linear 0s infinite;
+}
+
+@keyframes blob {
+  0% {
+    border-radius: 35% 65% 75% 25% / 45% 35% 65% 55%;
+  }
+  20% {
+    border-radius: 50% 50% 60% 40% / 40% 60% 50% 50%;
+  }
+  40% {
+    border-radius: 60% 40% 55% 45% / 55% 50% 45% 60%;
+  }
+  60% {
+    border-radius: 65% 35% 50% 50% / 60% 45% 55% 40%;
+  }
+  80% {
+    border-radius: 70% 30% 40% 60% / 50% 55% 45% 65%;
+  }
+  100% {
+    border-radius: 35% 65% 75% 25% / 45% 35% 65% 55%;
+  }
+}
+
 body {
   font-family: "Arial", sans-serif;
   background-color: #f7f7f7;
@@ -122,7 +166,7 @@ footer {
   font-size: 12px;
   text-align: center;
   margin-top: auto; /* Assure que le footer reste en bas */
-  padding-top: 45%;
+  padding-top: 0%;
 }
 
 /* Contenu principal */
