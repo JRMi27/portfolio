@@ -1045,4 +1045,7 @@ h4 i:hover {
     width: 100px;
     height: 100px; /* Réduire la taille de l'image de profil (blob) */
   }
+  .nav-link span {
+    font-size: 0.85rem; /* Réduire la taille des <span> dans la navigation pour les écrans larges */
+  }
 }
