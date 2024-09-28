@@ -1046,24 +1046,3 @@ h4 i:hover {
     height: 100px; /* Réduire la taille de l'image de profil (blob) */
   }
 }
-@media (max-width: 768px) {
-  /* Réduire les marges autour des éléments */
-  .profile {
-    margin-bottom: 100px;
-  }
-
-  /* Ajustement des marges des éléments de navigation */
-  .nav-item {
-    margin-bottom: 5px; /* Moins d'espace entre les éléments du menu */
-  }
-
-  /* Réduire les marges dans la barre latérale */
-  #sidebar {
-    padding: 10px;
-  }
-
-  /* Footer - réduire les espacements */
-  footer {
-    padding: 10px;
-  }
-}
