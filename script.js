@@ -146,6 +146,8 @@ AOS.init({
   startEvent: "DOMContentLoaded",
   easing: "ease-in-out",
   delay: 100,
-  disable: "mobile",
+  disable: function () {
+    return window.innerWidth < 1080;
+  },
 });
 window.addEventListener("load", Aos.refresh);
