@@ -990,3 +990,8 @@ h4 i:hover {
     padding-top: 10%;
   }
 }
+@media (max-width: 768px) {
+  .col-md-6:nth-child(2) {
+    margin-top: 25%; /* Ajuste cette valeur pour l'espacement souhaité */
+  }
+}
