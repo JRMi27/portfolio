@@ -60,7 +60,6 @@ body {
   background-position: center center; /* L'image est centrée */
   background-repeat: no-repeat; /* Pas de répétition de l'image */
   left: 0;
-  object-fit: fill;
 }
 section h2 {
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
