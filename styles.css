@@ -995,6 +995,18 @@ h4 i:hover {
     margin-top: 25%;
   }
 }
+@media (min-width: 728px) {
+  /* Espacement entre les lignes de compétences */
+  .row.text-center {
+    margin-bottom: 60px; /* Augmente l'espace entre les lignes de compétences */
+  }
+
+  /* Espacement supplémentaire entre les cartes */
+  .col-md-4.col-lg-2 {
+    padding-left: 160px; /* Ajoute de l'espace à gauche de chaque carte */
+    padding-right: 180px; /* Ajoute de l'espace à droite de chaque carte */
+  }
+}
 @media (min-width: 1080px) {
   /* Espacement entre les lignes de compétences */
   .row.text-center {
