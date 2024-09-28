@@ -5,7 +5,7 @@ let animationMenu = bodymovin.loadAnimation({
   renderer: "svg",
   loop: false,
   autoplay: false,
-  path: "https://raw.githubusercontent.com/thesvbd/Lottie-examples/master/assets/animations/menu.json",
+  path: "assets/menuV4",
 });
 
 var directionMenu = 1;
@@ -142,6 +142,7 @@ const toggleBtn = document.getElementById("sidebarToggle");
 toggleBtn.addEventListener("click", function () {
   sidebar.classList.toggle("active");
 });
+
 AOS.init({
   startEvent: "DOMContentLoaded",
   easing: "ease-in-out",
@@ -150,4 +151,97 @@ AOS.init({
     return window.innerWidth < 1080;
   },
 });
-window.addEventListener("load", Aos.refresh);
+let iconDownload = document.querySelector(".bodymovinanim1");
+
+let animationDownload = bodymovin.loadAnimation({
+  container: iconDownload,
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+  path: "assets/download.json",
+});
+
+iconDownload.addEventListener("click", function () {
+  animationDownload.playSegments([0, 60], true);
+});
+
+let iconMail = document.querySelector(".bodymovinanim2");
+
+let animationMail = bodymovin.loadAnimation({
+  container: iconMail,
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+  path: "assets/mail.json",
+});
+
+var directionMail = 1;
+iconMail.addEventListener("mouseenter", (e) => {
+  animationMail.setDirection(directionMail);
+  animationMail.play();
+});
+
+iconMail.addEventListener("mouseleave", (e) => {
+  animationMail.setDirection(-directionMail);
+  animationMail.play();
+});
+let iconGit = document.querySelector(".bodymovinanim3");
+
+let animationgit = bodymovin.loadAnimation({
+  container: iconGit,
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+  path: "assets/github.json",
+});
+
+var directionGit = 1;
+iconGit.addEventListener("mouseenter", (e) => {
+  animationgit.setDirection(directionGit);
+  animationgit.play();
+});
+
+iconGit.addEventListener("mouseleave", (e) => {
+  animationgit.setDirection(-directionGit);
+  animationgit.play();
+});
+let iconLink = document.querySelector(".bodymovinanim4");
+
+let animationlink = bodymovin.loadAnimation({
+  container: iconLink,
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+  path: "assets/linkedin.json",
+});
+
+var directionLink = 1;
+iconLink.addEventListener("mouseenter", (e) => {
+  animationlink.setDirection(directionLink);
+  animationlink.play();
+});
+
+iconLink.addEventListener("mouseleave", (e) => {
+  animationlink.setDirection(-directionLink);
+  animationlink.play();
+});
+let iconExplore = document.querySelector(".bodymovinanim5");
+
+let animationExplore = bodymovin.loadAnimation({
+  container: iconExplore,
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+  path: "assets/Explore.json",
+});
+
+var directionExplore = 1;
+iconExplore.addEventListener("mouseenter", (e) => {
+  animationExplore.setDirection(directionExplore);
+  animationExplore.play();
+});
+
+iconExplore.addEventListener("mouseleave", (e) => {
+  animationExplore.setDirection(-directionExplore);
+  animationExplore.play();
+});
