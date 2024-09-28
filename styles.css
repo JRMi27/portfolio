@@ -984,3 +984,9 @@ h4 i:hover {
     left: -5px;
   }
 }
+
+@media (max-width: 768px) {
+  .profile {
+    padding-top: 10%;
+  }
+}
