@@ -992,7 +992,7 @@ h4 i:hover {
 }
 @media (max-width: 768px) {
   .col-md-6:nth-child(2) {
-    margin-top: 25%; /* Ajuste cette valeur pour l'espacement souhaité */
+    margin-top: 25%;
   }
 }
 @media (min-width: 1080px) {
@@ -1001,9 +1001,69 @@ h4 i:hover {
     margin-bottom: 60px; /* Augmente l'espace entre les lignes de compétences */
   }
 
-  /* Espacement supplémentaire entre les cartes si nécessaire */
+  /* Espacement supplémentaire entre les cartes */
   .col-md-4.col-lg-2 {
     padding-left: 80px; /* Ajoute de l'espace à gauche de chaque carte */
     padding-right: 100px; /* Ajoute de l'espace à droite de chaque carte */
+  }
+}
+/* Ajuster le texte et les icônes sur les petits écrans */
+@media (max-width: 768px) {
+  /* Profil */
+  .profile h4 {
+    font-size: 1.2rem; /* Réduire la taille du texte pour le nom */
+  }
+
+  /* Icônes sociales */
+  .social-icons .icon-circle {
+    width: 40px;
+    height: 40px; /* Réduire la taille des icônes sociales */
+  }
+
+  .icon-circle i {
+    font-size: 18px; /* Réduire la taille des icônes à l'intérieur */
+  }
+
+  /* Navigation */
+  .nav-link {
+    padding: 10px 10px; /* Réduire l'espacement entre les liens */
+    font-size: 14px; /* Réduire la taille du texte des liens */
+  }
+
+  .nav-link i {
+    font-size: 1.2rem; /* Réduire la taille des icônes à côté des textes */
+    margin-right: 5px; /* Réduire l'espace entre les icônes et le texte */
+  }
+
+  /* Footer */
+  footer p {
+    font-size: 0.9rem; /* Réduire la taille du texte dans le footer */
+    margin-bottom: 5px; /* Réduire l'espacement */
+  }
+
+  .blob {
+    width: 100px;
+    height: 100px; /* Réduire la taille de l'image de profil (blob) */
+  }
+}
+@media (max-width: 768px) {
+  /* Réduire les marges autour des éléments */
+  .profile {
+    margin-bottom: 20px;
+  }
+
+  /* Ajustement des marges des éléments de navigation */
+  .nav-item {
+    margin-bottom: 5px; /* Moins d'espace entre les éléments du menu */
+  }
+
+  /* Réduire les marges dans la barre latérale */
+  #sidebar {
+    padding: 10px;
+  }
+
+  /* Footer - réduire les espacements */
+  footer {
+    padding: 10px;
   }
 }
