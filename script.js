@@ -125,3 +125,10 @@ const toggleBtn = document.getElementById("sidebarToggle");
 toggleBtn.addEventListener("click", function () {
   sidebar.classList.toggle("active");
 });
+AOS.init({
+  startEvent: "DOMContentLoaded",
+  easing: "ease-in-out",
+  delay: 100,
+  disable: "mobile",
+});
+window.addEventListener("load", Aos.refresh);
