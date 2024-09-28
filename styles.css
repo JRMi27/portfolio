@@ -50,7 +50,7 @@ body {
   overflow-x: hidden; /* Désactive le défilement horizontal */
 }
 #back {
-  height: 100vh;
+  height: 102.5vh;
   width: 100%;
   align-items: center;
   justify-content: center;
