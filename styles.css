@@ -49,17 +49,18 @@ body {
   line-height: 1.6;
   overflow-x: hidden; /* Désactive le défilement horizontal */
 }
-main {
+#back {
   height: 102.5vh;
   width: 100%;
   align-items: center;
   justify-content: center;
   position: relative;
-  background-image: url("images/code.jpg"); /* Remplace par l'URL ou le chemin de ton image */
+  background-image: url("images/code.jpg");
   background-size: cover; /* L'image couvre toute la section */
-  background-position: center; /* L'image est centrée */
+  background-position: center center; /* L'image est centrée */
   background-repeat: no-repeat; /* Pas de répétition de l'image */
   left: 0;
+  object-fit: fill;
 }
 section h2 {
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
@@ -993,5 +994,17 @@ h4 i:hover {
 @media (max-width: 768px) {
   .col-md-6:nth-child(2) {
     margin-top: 25%; /* Ajuste cette valeur pour l'espacement souhaité */
+  }
+}
+@media (min-width: 1080px) {
+  /* Espacement entre les lignes de compétences */
+  .row.text-center {
+    margin-bottom: 60px; /* Augmente l'espace entre les lignes de compétences */
+  }
+
+  /* Espacement supplémentaire entre les cartes si nécessaire */
+  .col-md-4.col-lg-2 {
+    padding-left: 80px; /* Ajoute de l'espace à gauche de chaque carte */
+    padding-right: 100px; /* Ajoute de l'espace à droite de chaque carte */
   }
 }
