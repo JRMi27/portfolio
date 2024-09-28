@@ -1049,7 +1049,7 @@ h4 i:hover {
 @media (max-width: 768px) {
   /* Réduire les marges autour des éléments */
   .profile {
-    margin-bottom: 20px;
+    margin-bottom: 100px;
   }
 
   /* Ajustement des marges des éléments de navigation */
