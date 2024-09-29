@@ -1,20 +1,3 @@
-let iconMenu = document.querySelector(".bodymovinanim");
-
-let animationMenu = bodymovin.loadAnimation({
-  container: iconMenu,
-  renderer: "svg",
-  loop: false,
-  autoplay: false,
-  path: "assets/menuV4",
-});
-
-var directionMenu = 1;
-iconMenu.addEventListener("click", (e) => {
-  animationMenu.setDirection(directionMenu);
-  animationMenu.play();
-  directionMenu = -directionMenu; // Inverse la direction de l'animation à chaque clic
-});
-
 document.querySelectorAll("nav ul li a").forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -151,6 +134,24 @@ AOS.init({
     return window.innerWidth < 1080;
   },
 });
+
+let iconMenu = document.querySelector(".bodymovinanim");
+
+let animationMenu = bodymovin.loadAnimation({
+  container: iconMenu,
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+  path: "assets/menuV4.json",
+});
+
+var directionMenu = 1;
+iconMenu.addEventListener("click", (e) => {
+  animationMenu.setDirection(directionMenu);
+  animationMenu.play();
+  directionMenu = -directionMenu; // Inverse la direction de l'animation à chaque clic
+});
+
 let iconDownload = document.querySelector(".bodymovinanim1");
 
 let animationDownload = bodymovin.loadAnimation({
