@@ -1,7 +1,7 @@
 /* Ajustement global */
 .blob {
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   position: absolute;
   left: 50%;
   top: 9%;
@@ -83,22 +83,22 @@ section h2 {
 /*Petit bouton pour les petits écran*/
 #sidebarToggle {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 0.625rem;
+  right: 0.625rem;
   z-index: 9999;
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   padding: 0;
 }
 
 #sidebar .nav-link {
-  font-size: 18px;
-  padding: 15px 20px; /* Plus d'espace pour rendre les liens cliquables */
+  font-size: 1.125rem;
+  padding: 0.9375rem 1.25rem; /* Plus d'espace pour rendre les liens cliquables */
   display: block;
   color: white;
   text-decoration: none;
@@ -106,14 +106,14 @@ section h2 {
 
 .profile h4 {
   font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 0.625rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Style pour les icônes sociales */
 .icon-circle {
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,11 +122,11 @@ section h2 {
   color: #333; /* Couleur de l'icône */
   text-decoration: none; /* Supprime le soulignement des liens */
   transition: background-color 0.3s, color 0.3s; /* Animation pour le survol */
-  border: 2px solid transparent; /* Bordure invisible au départ */
+  border: 0.125rem solid transparent; /* Bordure invisible au départ */
 }
 
 .icon-circle i {
-  font-size: 24px; /* Taille des icônes */
+  font-size: 1.5rem; /* Taille des icônes */
 }
 
 .icon-circle:hover {
@@ -138,14 +138,14 @@ section h2 {
 .nav-link {
   display: flex;
   align-items: center;
-  padding: 10px 15px;
+  padding: 0.625rem 0.9375rem;
   color: #ddd;
   text-decoration: none;
 }
 
 .nav-link i {
   font-size: 1.5rem;
-  margin-right: 10px;
+  margin-right: 0.625rem;
   transition: color 0.3s ease;
 }
 /* Couleur des icônes actives (bleu clair) */
@@ -156,14 +156,14 @@ section h2 {
 .nav-link:hover {
   background-color: #333;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
 }
 
 .nav {
   flex-grow: 1; /* Prend l'espace disponible au centre */
 }
 footer {
-  font-size: 12px;
+  font-size: 0.75rem;
   text-align: center;
   margin-top: auto; /* Assure que le footer reste en bas */
   padding-top: 0%;
@@ -172,18 +172,18 @@ footer {
 /* Contenu principal */
 main {
   margin-left: 18%; /* Ajuste en fonction de la largeur de la sidebar */
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 /* Sections */
 .section {
-  padding: 80px 20px;
+  padding: 5rem 1.25rem;
   text-align: center;
 }
 
 .section h2 {
-  margin-bottom: 20px;
-  font-size: 36px;
+  margin-bottom: 1.25rem;
+  font-size: 2.25rem;
 }
 
 /* Section d'accueil */
@@ -200,8 +200,8 @@ main {
 .cursor {
   display: inline-block;
   background-color: white; /* Couleur du curseur */
-  width: 2px; /* Largeur du curseur */
-  height: 30px; /* La hauteur doit correspondre à la taille de la police du texte */
+  width: 0.125rem; /* Largeur du curseur */
+  height: 1.875rem; /* La hauteur doit correspondre à la taille de la police du texte */
   animation: blink 0.7s steps(1) infinite; /* Animation de clignotement */
 }
 
@@ -213,23 +213,23 @@ main {
 }
 
 .hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 1.25rem;
   color: white;
 }
 
 .hero-content p {
-  font-size: 24px;
-  margin-bottom: 30px;
+  font-size: 1.5rem;
+  margin-bottom: 1.875rem;
   color: white;
 }
 
 .cta-btn {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   background-color: #00aaff;
   border: none;
   color: white;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   text-decoration: none;
 }
 
@@ -241,26 +241,26 @@ main {
 form input,
 form textarea {
   width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  margin-bottom: 0.9375rem;
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  border: 0.0625rem solid #ccc;
 }
 
 form button {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   cursor: pointer;
 }
 /* Section container */
 #about {
   background-color: #f7f7f7;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   text-align: left; /* Aligner tout le contenu à gauche */
 }
 
@@ -269,7 +269,7 @@ form button {
   font-size: 2rem;
   font-weight: bold;
   color: #003b79;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   text-align: left; /* Aligner le titre principal à gauche */
 }
 
@@ -282,7 +282,7 @@ form button {
   font-size: 1.6rem;
   color: #003b79;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
   text-align: left; /* Aligner les sous-titres à gauche */
 }
 
@@ -294,18 +294,18 @@ form button {
 
 /* Liste des informations */
 #about ul {
-  margin-top: 15px;
+  margin-top: 0.9375rem;
   text-align: left; /* Aligner les listes à gauche */
 }
 
 #about ul li {
   font-size: 1.1rem;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 /* Boutons CV */
 #about .btn {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -329,23 +329,23 @@ form button {
 /* Container for section */
 #parcours {
   background-color: #f7f7f7;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 #parcours h2 {
   font-size: 2rem;
   font-weight: bold;
   color: #003b79;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 #parcours h3 {
   font-size: 1.5rem;
   font-weight: bold;
   color: #003b79;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .timeline {
@@ -357,18 +357,18 @@ form button {
 
 .timeline-item {
   position: relative;
-  margin-bottom: 30px;
-  padding-left: 40px;
-  border-left: 2px solid #b22a2a;
+  margin-bottom: 1.875rem;
+  padding-left: 2.5rem;
+  border-left: 0.125rem solid #b22a2a;
 }
 
 .timeline-item:before {
   content: "";
   position: absolute;
-  left: -10px;
+  left: -0.625rem;
   top: 0;
-  width: 15px;
-  height: 15px;
+  width: 0.9375rem;
+  height: 0.9375rem;
   border-radius: 50%;
   background-color: #b22a2a;
 }
@@ -390,39 +390,39 @@ form button {
 /* Section contact container */
 #contact {
   background-color: #f7f7f7;
-  border-radius: 10px;
-  padding: 40px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
+  padding: 2.5rem 1.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 #contact h2 {
   font-size: 2rem;
   font-weight: bold;
   color: #003b79;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 #contact p {
   font-size: 1.1rem;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 /* Colonne gauche - Informations de contact */
 .contact-info {
   background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .contact-info h3 {
   font-size: 1.2rem;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   color: #003b79;
 }
 
 .contact-info p {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   font-size: 1.1rem;
 }
 
@@ -432,18 +432,18 @@ form button {
 }
 
 .contact-form .form-control {
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 10px;
+  border-radius: 0.3125rem;
+  border: 0.0625rem solid #ccc;
+  padding: 0.625rem;
   font-size: 1rem;
 }
 
 .contact-form button {
   background-color: #333;
   color: white;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -454,27 +454,27 @@ form button {
 
 /* Ajustement pour la carte Google Maps */
 iframe {
-  margin-top: 20px;
+  margin-top: 1.25rem;
   border: 0;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 /* Container pour les cartes */
 .equal-image {
   width: 100%;
-  height: 300px;
+  height: 18.75rem;
   object-fit: cover; /* S'assure que l'image garde ses proportions tout en remplissant l'espace */
 }
 
 .flip-card {
   background-color: transparent;
   width: 100%;
-  perspective: 1000px; /* Perspective pour l'effet 3D */
+  perspective: 62.5rem; /* Perspective pour l'effet 3D */
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
-  min-height: 350px; /* Hauteur minimale plus grande */
+  min-height: 21.875rem; /* Hauteur minimale plus grande */
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d; /* Permet la rotation 3D */
@@ -488,11 +488,11 @@ iframe {
 .flip-card-back {
   position: absolute;
   width: 100%;
-  min-height: 350px; /* Hauteur minimale plus grande */
+  min-height: 21.875rem; /* Hauteur minimale plus grande */
   backface-visibility: hidden; /* Cache l'arrière quand la face avant est visible */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -506,13 +506,13 @@ iframe {
     #497294
   ); /* Dégradé de vert (#2ecc71) à blanc */
   color: black;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 0.625rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .flip-card-back {
@@ -522,8 +522,8 @@ iframe {
 }
 /* Style pour les icônes à côté des options */
 h4 i {
-  font-size: 24px; /* Taille de l'icône */
-  margin-right: 10px; /* Espace entre l'icône et le texte */
+  font-size: 1.5rem; /* Taille de l'icône */
+  margin-right: 0.625rem; /* Espace entre l'icône et le texte */
 }
 h4 i:hover {
   transform: scale(1.2); /* Agrandit l'icône au survol */
@@ -532,29 +532,29 @@ h4 i:hover {
 
 #competences-developpement {
   background-color: #f7f7f7;
-  padding: 60px 0;
-  border-radius: 10px;
+  padding: 3.75rem 0;
+  border-radius: 0.625rem;
 }
 
 #competences-developpement h2 {
   font-weight: bold;
   color: #f15b2a;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 #competences-developpement p {
   font-size: 1.1rem;
   color: #555;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .competence-card {
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   transition: transform 0.3s ease, background-color 0.3s ease;
   background-color: #ffffff;
-  width: 150px; /* Largeur fixe pour toutes les cartes */
-  height: 120px; /* Hauteur fixe pour toutes les cartes */
+  width: 9.375rem; /* Largeur fixe pour toutes les cartes */
+  height: 7.5rem; /* Hauteur fixe pour toutes les cartes */
   margin: 0 auto; /* Centre la carte */
   display: flex;
   flex-direction: column;
@@ -564,7 +564,7 @@ h4 i:hover {
 }
 
 .competence-card:hover {
-  transform: translateY(-10px); /* Soulève légèrement la carte */
+  transform: translateY(-0.625rem); /* Soulève légèrement la carte */
   background-color: #f15b2a; /* Change la couleur de fond */
 }
 
@@ -574,17 +574,17 @@ h4 i:hover {
 }
 
 .competence-card .card-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   color: #333;
 }
 
 .competence-card img {
-  max-width: 50px;
+  max-width: 3.125rem;
   height: auto;
   transition: transform 0.3s ease;
-  margin-bottom: 10px; /* Espace entre l'image et le titre */
-  padding-top: 20px;
+  margin-bottom: 0.625rem; /* Espace entre l'image et le titre */
+  padding-top: 1.25rem;
 }
 
 .competence-card:hover img {
@@ -592,41 +592,41 @@ h4 i:hover {
 }
 #diplomes-certifications {
   background-color: #f7f7f7;
-  padding: 60px 0;
-  border-radius: 10px;
+  padding: 3.75rem 0;
+  border-radius: 0.625rem;
 }
 
 #diplomes-certifications h2 {
   font-weight: bold;
   color: #003b79;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 #diplomes-certifications p {
   font-size: 1.1rem;
   color: #555;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 #diplomes-certifications .btn {
-  font-size: 14px;
-  padding: 10px 20px;
+  font-size: 0.875rem;
+  padding: 0.625rem 1.25rem;
 }
 
 #diplomes-certifications .card {
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #diplomes-certifications .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.625rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 #diplomes-certifications .card-img-top {
-  border-radius: 10px;
-  height: 250px;
+  border-radius: 0.625rem;
+  height: 15.625rem;
   object-fit: cover; /* Assure que l'image couvre toute la carte */
 }
 .filter-btn {
@@ -640,43 +640,43 @@ h4 i:hover {
 /* Timeline Section */
 #stages {
   background-color: #f7f7f7;
-  padding: 60px 0;
-  border-radius: 10px;
+  padding: 3.75rem 0;
+  border-radius: 0.625rem;
 }
 
 #stages h2 {
   font-weight: bold;
   color: #003b79;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 #stages p.lead {
   font-size: 1.1rem;
   color: #555;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 /* Timeline */
 .timeline {
   position: relative;
-  padding-left: 40px;
-  margin-top: 20px;
+  padding-left: 2.5rem;
+  margin-top: 1.25rem;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 30px;
-  padding-left: 40px;
-  border-left: 2px solid #b22a2a;
+  margin-bottom: 1.875rem;
+  padding-left: 2.5rem;
+  border-left: 0.125rem solid #b22a2a;
 }
 
 .timeline-item:before {
   content: "";
   position: absolute;
-  left: -10px;
+  left: -0.625rem;
   top: 0;
-  width: 15px;
-  height: 15px;
+  width: 0.9375rem;
+  height: 0.9375rem;
   border-radius: 50%;
   background-color: #b22a2a;
 }
@@ -684,16 +684,16 @@ h4 i:hover {
 /* Box for each timeline item */
 .timeline-box {
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 0.0625rem solid #ddd;
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .timeline-box:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.3125rem);
 }
 
 /* Timeline Dates */
@@ -719,7 +719,7 @@ h4 i:hover {
 
 /* Button Styles */
 .btn-outline-primary {
-  border: 1px solid #007bff;
+  border: 0.0625rem solid #007bff;
   color: #007bff;
 }
 
@@ -730,33 +730,33 @@ h4 i:hover {
 
 #projets {
   background-color: #f7f7f7;
-  padding: 60px 0;
-  border-radius: 10px;
+  padding: 3.75rem 0;
+  border-radius: 0.625rem;
 }
 
 #projets h2 {
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 #projets p {
   font-size: 1.1rem;
   color: #555;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .project-card {
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .project-card img {
-  border-radius: 10px 10px 0 0;
+  border-radius: 0.625rem 0.625rem 0 0;
 }
 
 .project-card:hover {
-  transform: translateY(-10px); /* L'effet de survol qui soulève la carte */
+  transform: translateY(-0.625rem); /* L'effet de survol qui soulève la carte */
   background-color: #f15b2a; /* Change la couleur de fond */
 }
 
@@ -766,13 +766,13 @@ h4 i:hover {
 }
 
 .project-card .card-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   color: #333;
 }
 
 .project-card .card-text {
-  font-size: 16px;
+  font-size: 1rem;
   color: #555;
 }
 
@@ -787,50 +787,50 @@ h4 i:hover {
 }
 #bts {
   background-color: #f7f7f7;
-  padding: 60px 0;
-  border-radius: 10px;
+  padding: 3.75rem 0;
+  border-radius: 0.625rem;
 }
 
 #bts h2 {
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 #bts p {
   font-size: 1.1rem;
   color: #555;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 #bts .flip {
   color: black;
 }
 #epreuves {
   background-color: #f7f7f7;
-  padding: 60px 0;
-  border-radius: 10px;
+  padding: 3.75rem 0;
+  border-radius: 0.625rem;
 }
 
 #epreuves h2 {
   font-weight: bold;
   color: #003b79;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 #epreuves p {
   font-size: 1.1rem;
   color: #555;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 /* Styles pour la section Épreuves */
 #epreuves .card {
-  border-radius: 10px;
+  border-radius: 0.625rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #epreuves .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.625rem);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
 }
 
 #epreuves .card-title {
@@ -855,8 +855,8 @@ h4 i:hover {
 
 .list-group-item {
   background-color: #ffffff;
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
+  border: 0.0625rem solid #ddd;
+  margin-bottom: 0.625rem;
   transition: background-color 0.3s ease;
 }
 
@@ -877,7 +877,7 @@ h4 i:hover {
 }
 
 .bodymovinanim1 {
-  margin-left: 8px;
+  margin-left: 0.5rem;
 }
 .consult-btn {
   display: inline-flex;
@@ -885,26 +885,26 @@ h4 i:hover {
 }
 
 .bodymovinanim5 {
-  margin-left: 8px;
+  margin-left: 0.5rem;
 }
-@media (max-width: 1080px) {
+@media (max-width: 67.5rem) {
   html {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   html {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 36rem) {
   html {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }
-/* Pour les écrans de moins de 1200px de large */
-@media (max-width: 1200px) {
+/* Pour les écrans de moins de 75rem de large */
+@media (max-width: 75rem) {
   html,
   body {
     overflow-x: hidden; /* Désactive le défilement horizontal */
@@ -940,7 +940,7 @@ h4 i:hover {
     height: auto;
   }
 }
-@media (max-width: 1080px) {
+@media (max-width: 67.5rem) {
   #sidebar {
     width: 40%;
     transform: translateX(-100%); /* Par défaut cachée sur mobile */
@@ -955,52 +955,52 @@ h4 i:hover {
   }
 }
 /* For small screens, we can add responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .timeline-item {
-    padding-left: 20px;
+    padding-left: 1.25rem;
   }
 
   .timeline-item:before {
-    left: -5px;
+    left: -0.3125rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .profile {
     padding-top: 10%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .col-md-6:nth-child(2) {
     margin-top: 25%;
   }
 }
-@media (min-width: 728px) {
+@media (min-width: 45.5rem) {
   /* Espacement entre les lignes de compétences */
   .row.text-center {
-    margin-bottom: 60px; /* Augmente l'espace entre les lignes de compétences */
+    margin-bottom: 3.75rem; /* Augmente l'espace entre les lignes de compétences */
   }
 
   /* Espacement supplémentaire entre les cartes */
   .col-md-4.col-lg-2 {
-    padding-left: 160px; /* Ajoute de l'espace à gauche de chaque carte */
-    padding-right: 180px; /* Ajoute de l'espace à droite de chaque carte */
+    padding-left: 10rem; /* Ajoute de l'espace à gauche de chaque carte */
+    padding-right: 11.25rem; /* Ajoute de l'espace à droite de chaque carte */
   }
 }
-@media (min-width: 1080px) {
+@media (min-width: 67.5rem) {
   /* Espacement entre les lignes de compétences */
   .row.text-center {
-    margin-bottom: 60px; /* Augmente l'espace entre les lignes de compétences */
+    margin-bottom: 3.75rem; /* Augmente l'espace entre les lignes de compétences */
   }
 
   /* Espacement supplémentaire entre les cartes */
   .col-md-4.col-lg-2 {
-    padding-left: 80px; /* Ajoute de l'espace à gauche de chaque carte */
-    padding-right: 100px; /* Ajoute de l'espace à droite de chaque carte */
+    padding-left: 5rem; /* Ajoute de l'espace à gauche de chaque carte */
+    padding-right: 6.25rem; /* Ajoute de l'espace à droite de chaque carte */
   }
 }
 /* Ajuster le texte et les icônes sur les petits écrans */
-@media (max-width: 1080px) {
+@media (max-width: 67.5rem) {
   /* Profil */
   .profile h4 {
     font-size: 1.2rem; /* Réduire la taille du texte pour le nom */
@@ -1008,34 +1008,34 @@ h4 i:hover {
 
   /* Icônes sociales */
   .social-icons .icon-circle {
-    width: 40px;
-    height: 40px; /* Réduire la taille des icônes sociales */
+    width: 2.5rem;
+    height: 2.5rem; /* Réduire la taille des icônes sociales */
   }
 
   .icon-circle i {
-    font-size: 18px; /* Réduire la taille des icônes à l'intérieur */
+    font-size: 1.125rem; /* Réduire la taille des icônes à l'intérieur */
   }
 
   /* Navigation */
   .nav-link {
-    padding: 10px 10px; /* Réduire l'espacement entre les liens */
-    font-size: 14px; /* Réduire la taille du texte des liens */
+    padding: 0.625rem 0.625rem; /* Réduire l'espacement entre les liens */
+    font-size: 0.875rem; /* Réduire la taille du texte des liens */
   }
 
   .nav-link i {
     font-size: 1.2rem; /* Réduire la taille des icônes à côté des textes */
-    margin-right: 5px; /* Réduire l'espace entre les icônes et le texte */
+    margin-right: 0.3125rem; /* Réduire l'espace entre les icônes et le texte */
   }
 
   /* Footer */
   footer p {
     font-size: 0.9rem; /* Réduire la taille du texte dans le footer */
-    margin-bottom: 5px; /* Réduire l'espacement */
+    margin-bottom: 0.3125rem; /* Réduire l'espacement */
   }
 
   .blob {
-    width: 100px;
-    height: 100px; /* Réduire la taille de l'image de profil (blob) */
+    width: 6.25rem;
+    height: 6.25rem; /* Réduire la taille de l'image de profil (blob) */
   }
   .nav-link span {
     font-size: 0.85rem; /* Réduire la taille des <span> dans la navigation pour les écrans larges */
