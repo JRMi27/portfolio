@@ -42,7 +42,9 @@
     border-radius: 35% 65% 75% 25% / 45% 35% 65% 55%;
   }
 }
-
+.spacer {
+  height: 22rem;
+}
 body {
   font-family: "Arial", sans-serif;
   background-color: #f7f7f7;
