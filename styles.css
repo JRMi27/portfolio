@@ -887,7 +887,11 @@ h4 i:hover {
 .bodymovinanim5 {
   margin-left: 8px;
 }
-
+@media (max-width: 1080px) {
+  html {
+    font-size: 16px;
+  }
+}
 @media (max-width: 768px) {
   html {
     font-size: 14px;
@@ -936,7 +940,7 @@ h4 i:hover {
     height: auto;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1080px) {
   #sidebar {
     width: 40%;
     transform: translateX(-100%); /* Par défaut cachée sur mobile */
