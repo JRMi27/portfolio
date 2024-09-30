@@ -15,8 +15,8 @@ body {
   background-color: #007bff;
   border-color: #007bff;
   color: #fff;
-  border-radius: 30px;
-  padding: 8px 16px;
+  border-radius: 1.875rem;
+  padding: 0.5rem 1rem;
   transition: background-color 0.3s ease;
 }
 .btn-back:hover {
@@ -42,9 +42,9 @@ body {
 
 /* Card Styling */
 .card {
-  border-radius: 10px;
+  border-radius: 0.625rem;
   border: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
 }
 .card-title {
   color: #003b79;
@@ -56,30 +56,30 @@ body {
 }
 
 .card-animated:hover {
-  transform: translateY(-10px); /* Légère élévation de la carte */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+  transform: translateY(-0.625rem); /* Légère élévation de la carte */
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
 }
 
 .animated-card {
-  border-radius: 10px;
+  border-radius: 0.625rem;
   border: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: white; /* Fond de la carte */
 }
 
 .animated-card:hover {
-  transform: translateY(-10px) scale(1.05); /* Déplacement vertical et léger agrandissement */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Ombre plus forte au survol */
+  transform: translateY(-0.625rem) scale(1.05); /* Déplacement vertical et léger agrandissement */
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2); /* Ombre plus forte au survol */
 }
 
 /* Footer Section */
 footer {
   background-color: #003b79;
   color: white;
-  padding: 20px 0;
+  padding: 1.25rem 0;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 3.125rem;
 }
 
 footer p {
@@ -89,15 +89,15 @@ footer p {
 /* Button Custom */
 .btn-custom {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   background-color: #6ea7e7;
   color: white;
   text-decoration: none;
-  border-radius: 25px;
+  border-radius: 1.5625rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
   font-weight: bold;
   width: 100%;
-  max-width: 340px;
+  max-width: 21.25rem;
   margin: 0 auto;
 }
 
@@ -115,11 +115,11 @@ footer p {
 }
 
 .list-group-item:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 /* Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   h3,
   h4 {
     font-size: 1.25rem;
