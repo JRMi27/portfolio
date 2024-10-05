@@ -1224,13 +1224,14 @@
               <!-- Colonne de droite : Formulaire de contact -->
               <div class="col-md-6" data-aos="fade-left" data-aos-delay="500">
                 <h3>Formulaire de Contact</h3>
-                <form action="#" method="post" class="contact-form">
+                <form action="contact.php" method="post" class="contact-form">
                   <div class="mb-3">
                     <label for="name" class="form-label">Nom :</label>
                     <input
                       type="text"
                       class="form-control"
                       id="name"
+                      name="name"
                       placeholder="Votre Nom"
                       required
                     />
@@ -1242,6 +1243,7 @@
                       type="email"
                       class="form-control"
                       id="email"
+                      name="email"
                       placeholder="Votre adresse email"
                       required
                     />
@@ -1252,6 +1254,7 @@
                     <textarea
                       class="form-control"
                       id="message"
+                      name="message"
                       rows="5"
                       placeholder="Votre message"
                       required
