@@ -465,6 +465,7 @@ iframe {
   width: 100%;
   height: 18.75rem;
   object-fit: cover; /* S'assure que l'image garde ses proportions tout en remplissant l'espace */
+  z-index: 1;
 }
 
 .flip-card {
@@ -491,7 +492,8 @@ iframe {
   position: absolute;
   width: 100%;
   min-height: 21.875rem; /* Hauteur minimale plus grande */
-  backface-visibility: hidden; /* Cache l'arrière quand la face avant est visible */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: 0.625rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   padding: 1.25rem;
@@ -499,6 +501,7 @@ iframe {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .flip-card-front {
@@ -513,15 +516,65 @@ iframe {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  display: flex;
   align-items: center;
+  overflow: hidden;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
+.flip-card-front::before {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 10rem;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #f10909,
+    #f10909,
+    #f10909,
+    #f10909,
+    transparent
+  );
+  animation: rotation_481 5000ms infinite linear;
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  0% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.back-content {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  background: linear-gradient(to bottom right, #95bfe2, #497294);
+  border-radius: 0.625rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.125rem;
+}
+.SISR_texte {
+  z-index: 1;
+}
+.SLAM_texte {
+  z-index: 1;
+}
 .flip-card-back {
   background-color: #696fc9; /* Une couleur différente pour le verso */
-
   transform: rotateY(180deg); /* Le dos est déjà retourné */
 }
+
 /* Style pour les icônes à côté des options */
 h4 i {
   font-size: 1.5rem; /* Taille de l'icône */
