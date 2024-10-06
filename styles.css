@@ -718,24 +718,6 @@ h4 i:hover {
   margin-top: 1.25rem;
 }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 1.875rem;
-  padding-left: 2.5rem;
-  border-left: 0.125rem solid #b22a2a;
-}
-
-.timeline-item:before {
-  content: "";
-  position: absolute;
-  left: -0.625rem;
-  top: 0;
-  width: 0.9375rem;
-  height: 0.9375rem;
-  border-radius: 50%;
-  background-color: #b22a2a;
-}
-
 /* Box for each timeline item */
 .timeline-box {
   background-color: #fff;
