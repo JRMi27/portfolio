@@ -1000,6 +1000,9 @@ h4 i:hover {
   .timeline-item:before {
     left: -0.3125rem;
   }
+  .SLAM-card {
+    padding-top: 15rem;
+  }
 }
 
 @media (max-width: 48rem) {
@@ -1034,9 +1037,6 @@ h4 i:hover {
   .col-md-4.col-lg-2 {
     padding-left: 5rem; /* Ajoute de l'espace à gauche de chaque carte */
     padding-right: 6.25rem; /* Ajoute de l'espace à droite de chaque carte */
-  }
-  .SLAM-card {
-    padding-top: 15rem;
   }
 }
 /* Ajuster le texte et les icônes sur les petits écrans */
@@ -1079,8 +1079,5 @@ h4 i:hover {
   }
   .nav-link span {
     font-size: 0.85rem; /* Réduire la taille des <span> dans la navigation pour les écrans larges */
-  }
-  .SLAM-card {
-    padding-top: 15rem;
   }
 }
