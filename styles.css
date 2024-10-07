@@ -1000,9 +1000,6 @@ h4 i:hover {
   .timeline-item:before {
     left: -0.3125rem;
   }
-  .SLAM-card {
-    padding-top: 15rem;
-  }
 }
 
 @media (max-width: 48rem) {
