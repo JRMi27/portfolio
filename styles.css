@@ -1077,7 +1077,7 @@ h4 i:hover {
   .nav-link span {
     font-size: 0.85rem; /* Réduire la taille des <span> dans la navigation pour les écrans larges */
   }
-  .flip-card {
-    padding: 3rem;
+  .SLAM-card {
+    padding-top: 15rem;
   }
 }
