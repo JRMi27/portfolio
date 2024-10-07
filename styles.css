@@ -1035,6 +1035,9 @@ h4 i:hover {
     padding-left: 5rem; /* Ajoute de l'espace à gauche de chaque carte */
     padding-right: 6.25rem; /* Ajoute de l'espace à droite de chaque carte */
   }
+  .SLAM-card {
+    padding-top: 15rem;
+  }
 }
 /* Ajuster le texte et les icônes sur les petits écrans */
 @media (max-width: 67.5rem) {
