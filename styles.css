@@ -1006,6 +1006,9 @@ h4 i:hover {
   .profile {
     padding-top: 10%;
   }
+  .SLAM-card {
+    padding-left: 15rem;
+  }
 }
 @media (max-width: 48rem) {
   .col-md-6:nth-child(2) {
