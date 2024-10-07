@@ -2,7 +2,10 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>
       Épreuve E4 - Support et mise à disposition de services informatiques
     </title>
@@ -12,20 +15,45 @@
       rel="stylesheet"
     />
     <link href="styles2.css" rel="stylesheet" />
-    <!-- Custom CSS -->
+    <!-- Icônes Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
   </head>
 
   <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Portfolio - Jérémy Rouillard</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Épreuve E4</a>
+            </li>
+            <!-- Ajoutez d'autres liens si nécessaire -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Section principale -->
     <section id="epreuve" class="container py-5">
-      <!-- Bouton de retour -->
-      <div class="mb-4">
-        <a href="index.html" class="btn btn-back"> ⬅ Revenir à l'accueil </a>
-      </div>
-
       <!-- Titre de la page -->
       <div class="text-center mb-5">
-        <h2>
+        <h2 class="display-4">
           ÉPREUVE E4 - Support et mise à disposition de services informatiques
         </h2>
         <img
@@ -43,29 +71,28 @@
           <h3 class="mb-4">Présentation de l'Épreuve E4</h3>
 
           <h4 class="mt-4">Objectif :</h4>
-          <p class="lead">
+          <p>
             Cette épreuve vise à évaluer chez la personne candidate
             l’acquisition des compétences dans le cadre du « Support et mise à
             disposition de services informatiques ».
           </p>
 
-          <h4>Modalités d'évaluation :</h4>
-          <p><strong>Forme ponctuelle orale (durée 40 minutes).</strong></p>
-
-          <p class="lead">
-            L’épreuve L’épreuve comporte deux phases consécutives. Pendant 10
-            minutes (maximum) la personne candidate présente son parcours de
-            professionnalisation et justifie les modalités d’acquisition des
-            compétences du bloc « Support et mise à disposition de services
-            informatiques ». S’en suit 30 minutes d’échange avec le jury qui
-            permettent, d’une part, d’expliciter et d’apprécier le parcours de
-            professionnalisation et, d’autre part, d’approfondir une ou
-            plusieurs réalisations décrites dans le dossier numérique.
-            L’entretien permet d’apprécier la capacité de la personne candidate
-            à mobiliser les compétences visées, sa capacité à rendre compte d’un
-            travail réalisé au sein d’une équipe projet en mettant clairement en
-            évidence sa contribution personnelle.
+          <h4 class="mt-4">Modalités d'évaluation :</h4>
+          <p>
+            <strong>Forme ponctuelle orale (durée 40 minutes).</strong>
           </p>
+
+          <p>L’épreuve comporte deux phases consécutives :</p>
+          <ul>
+            <li>
+              Phase 1 – Présentation de 10 minutes maximum du parcours de
+              professionnalisation.
+            </li>
+            <li>
+              Phase 2 – Entretien de 30 minutes avec le jury pour approfondir
+              les réalisations.
+            </li>
+          </ul>
 
           <!-- Liste des documents annexes -->
           <h4 class="mt-4">Documents annexes :</h4>
@@ -74,24 +101,27 @@
               <a
                 href="documents/tableau-synthese-e4.pdf"
                 target="_blank"
-                class="btn-custom"
-                >📄 Tableau de Synthèse - Épreuve E4</a
+                class="btn btn-primary"
+                ><i class="bi bi-file-earmark-text"></i> Tableau de Synthèse -
+                Épreuve E4</a
               >
             </li>
             <li class="list-group-item">
               <a
                 href="pdf/Attestation_de_stage_1.pdf"
                 target="_blank"
-                class="btn-custom"
-                >📄 Attestation de stage n°1</a
+                class="btn btn-primary"
+                ><i class="bi bi-file-earmark-text"></i> Attestation de stage
+                n°1</a
               >
             </li>
             <li class="list-group-item">
               <a
                 href="documents/attestation-stage-2.pdf"
                 target="_blank"
-                class="btn-custom"
-                >📄 Attestation de stage n°2</a
+                class="btn btn-primary"
+                ><i class="bi bi-file-earmark-text"></i> Attestation de stage
+                n°2</a
               >
             </li>
           </ul>
@@ -114,7 +144,7 @@
                 <li><strong>Documents à fournir :</strong></li>
                 <ul>
                   <li>Tableau de Synthèse</li>
-                  <li>Attestation de stage</li>
+                  <li>Attestations de stage</li>
                 </ul>
               </ul>
             </div>
@@ -124,9 +154,24 @@
     </section>
 
     <!-- Footer Section -->
-    <footer id="epreuve">
-      <p>&copy; 2024 Portfolio - Jérémy Rouillard</p>
-      <p>Designed by Jérémy Rouillard | All rights reserved</p>
+    <footer class="bg-dark text-white text-center py-4">
+      <div class="container">
+        <p>&copy; 2024 Portfolio - Jérémy Rouillard</p>
+        <p>Designed by Jérémy Rouillard | Tous droits réservés</p>
+        <div>
+          <a href="mailto:jeremy.rouillard27@gmail.com" class="text-white me-3"
+            ><i class="bi bi-envelope-fill"></i
+          ></a>
+          <a href="https://github.com/JRMi27" class="text-white me-3"
+            ><i class="bi bi-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-rouillard-5734892a6/"
+            class="text-white"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+        </div>
+      </div>
     </footer>
 
     <!-- Script Bootstrap JS -->

@@ -100,7 +100,7 @@ section h2 {
 
 #sidebar .nav-link {
   font-size: 1.125rem;
-  padding: 0.9375rem 1.25rem; /* Plus d'espace pour rendre les liens cliquables */
+  padding: 0.7375rem 1.25rem; /* Plus d'espace pour rendre les liens cliquables */
   display: block;
   color: white;
   text-decoration: none;

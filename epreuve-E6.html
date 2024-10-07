@@ -2,7 +2,10 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>Épreuve E6 - Cybersécurité des services informatiques</title>
     <!-- Bootstrap CSS -->
     <link
@@ -10,24 +13,51 @@
       rel="stylesheet"
     />
     <link href="styles2.css" rel="stylesheet" />
-    <!-- Custom CSS -->
+    <!-- Icônes Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
   </head>
 
   <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Portfolio - Jérémy Rouillard</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Épreuve E6</a>
+            </li>
+            <!-- Ajoutez d'autres liens si nécessaire -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Section principale -->
     <section id="epreuve" class="container py-5">
-      <!-- Bouton de retour -->
-      <div class="mb-4">
-        <a href="index.html" class="btn btn-back"> ⬅ Revenir à l'accueil </a>
-      </div>
-
       <!-- Titre de la page -->
       <div class="text-center mb-5">
-        <h2>ÉPREUVE E6 - Cybersécurité des services informatiques</h2>
+        <h2 class="display-4">
+          ÉPREUVE E6 - Cybersécurité des services informatiques
+        </h2>
         <img
           src="images/Logo-bts-sio.png"
           class="img-fluid rounded mx-auto d-block"
-          alt="Épreuve E4"
+          alt="Épreuve E6"
           style="max-width: 300px"
         />
       </div>
@@ -37,13 +67,13 @@
         <!-- Colonne gauche - Description de l'épreuve -->
         <div class="col-md-8">
           <h3 class="mb-4">Présentation de l'Épreuve E6</h3>
-          <p class="lead">
+          <p>
             Cette épreuve vise à évaluer chez la personne candidate
             l’acquisition des compétences dans le cadre de la cybersécurité.
           </p>
 
           <h4 class="mt-4">Compétences communes :</h4>
-          <ul class="lead">
+          <ul>
             <li>B3.1 Protéger les données à caractère personnel</li>
             <li>B3.2 Préserver l'identité numérique de l'organisation</li>
             <li>
@@ -57,7 +87,7 @@
           </ul>
           <h4 class="mt-4">Compétence SLAM :</h4>
 
-          <ul class="lead">
+          <ul>
             <li>
               B3.5 Assurer la cybersécurité d'une solution applicative et de son
               développement
@@ -87,9 +117,24 @@
     </section>
 
     <!-- Footer Section -->
-    <footer id="epreuve">
-      <p>&copy; 2024 Portfolio - Jérémy Rouillard</p>
-      <p>Designed by Jérémy Rouillard | All rights reserved</p>
+    <footer class="bg-dark text-white text-center py-4">
+      <div class="container">
+        <p>&copy; 2024 Portfolio - Jérémy Rouillard</p>
+        <p>Designed by Jérémy Rouillard | Tous droits réservés</p>
+        <div>
+          <a href="mailto:jeremy.rouillard27@gmail.com" class="text-white me-3"
+            ><i class="bi bi-envelope-fill"></i
+          ></a>
+          <a href="https://github.com/JRMi27" class="text-white me-3"
+            ><i class="bi bi-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-rouillard-5734892a6/"
+            class="text-white"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+        </div>
+      </div>
     </footer>
 
     <!-- Script Bootstrap JS -->

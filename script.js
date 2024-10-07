@@ -1,11 +1,16 @@
 document.querySelectorAll("nav ul li a").forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+    // Vérifie si le lien est interne (commence par #)
+    if (this.getAttribute("href").startsWith("#")) {
+      e.preventDefault(); // Empêche la redirection par défaut uniquement pour les liens internes
 
-    const target = document.querySelector(this.getAttribute("href"));
-    target.scrollIntoView({
-      behavior: "smooth",
-    });
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
   });
 });
 
