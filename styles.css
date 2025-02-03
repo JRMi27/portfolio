@@ -521,11 +521,14 @@ iframe {
   overflow: hidden;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
+  z-index: 2;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .flip-card-front::before {
   position: absolute;
-  content: " ";
+  content: "";
   display: block;
   width: 10rem;
   height: 200%;
@@ -539,6 +542,7 @@ iframe {
     transparent
   );
   animation: rotation_481 5000ms infinite linear;
+  z-index: -1;
 }
 
 @keyframes rotation_481 {
@@ -572,7 +576,8 @@ iframe {
 }
 .flip-card-back {
   background-color: #696fc9; /* Une couleur différente pour le verso */
-  transform: rotateY(180deg); /* Le dos est déjà retourné */
+  transform: rotateY(180deg);
+  z-index: 3;
 }
 
 /* Style pour les icônes à côté des options */
