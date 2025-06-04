@@ -106,6 +106,13 @@ section h2 {
   text-decoration: none;
 }
 
+/* Réapplique le padding pour les navigateurs non-Chrome */
+@supports not (-webkit-appearance: none) {
+  #sidebar .nav-link {
+    padding: 0.7375rem 1.25rem;
+  }
+}
+
 .profile h4 {
   font-weight: bold;
   margin-top: 0.625rem;
