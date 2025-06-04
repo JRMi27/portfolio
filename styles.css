@@ -99,14 +99,19 @@ section h2 {
 }
 
 #sidebar .nav-link {
-  transform: scale(0.9);
   font-size: 1.125rem;
-  padding: 0.7375rem 1.25rem; /* Plus d'espace pour rendre les liens cliquables */
+  padding: 0; /* Par défaut, pas de padding */
   display: block;
   color: white;
   text-decoration: none;
 }
 
+/* Réapplique le padding pour les navigateurs non-Chrome */
+@supports not (-webkit-appearance: none) {
+  #sidebar .nav-link {
+    padding: 0.7375rem 1.25rem;
+  }
+}
 .profile h4 {
   font-weight: bold;
   margin-top: 0.625rem;
