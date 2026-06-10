@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
+import { asset } from '../../utils/asset'
 
 const EASE = [0.22, 1, 0.36, 1]
 
@@ -70,7 +71,7 @@ export default function About() {
             {/* Frame */}
             <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/8 bg-zinc-900">
               <img
-                src="/images/photo_pp.jpg"
+                src={asset('/images/photo_pp.jpg')}
                 alt="Jérémy Rouillard"
                 className="w-full h-full object-cover"
               />
