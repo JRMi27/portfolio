@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
@@ -27,28 +28,24 @@ const socials = [
 ]
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const formRef = useRef(null)
   const [status, setStatus] = useState(null)
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 })
-
-  const update = (field) => (e) => setForm((p) => ({ ...p, [field]: e.target.value }))
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('sending')
     try {
-      const res = await fetch('https://formspree.io/f/xleqkwkr', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
-      })
-      if (res.ok) {
-        setStatus('success')
-        setForm({ name: '', email: '', message: '' })
-      } else {
-        setStatus('error')
-      }
-    } catch {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY },
+      )
+      setStatus('success')
+      formRef.current.reset()
+    } catch (err) {
+      console.error('EmailJS error:', err)
       setStatus('error')
     }
   }
@@ -117,6 +114,7 @@ export default function Contact() {
 
           {/* Form */}
           <motion.form
+            ref={formRef}
             onSubmit={handleSubmit}
             className="space-y-4"
             initial={{ opacity: 0, x: 24 }}
@@ -124,8 +122,8 @@ export default function Contact() {
             transition={{ duration: 0.65, delay: 0.1, ease: EASE }}
           >
             {[
-              { name: 'name', label: 'Nom', type: 'text', placeholder: 'Votre nom' },
-              { name: 'email', label: 'Email', type: 'email', placeholder: 'votre@email.com' },
+              { name: 'from_name',  label: 'Nom',   type: 'text',  placeholder: 'Votre nom' },
+              { name: 'from_email', label: 'Email', type: 'email', placeholder: 'votre@email.com' },
             ].map((f) => (
               <div key={f.name}>
                 <label className="text-zinc-600 text-[10px] font-mono uppercase tracking-widest block mb-2">
@@ -133,8 +131,7 @@ export default function Contact() {
                 </label>
                 <input
                   type={f.type}
-                  value={form[f.name]}
-                  onChange={update(f.name)}
+                  name={f.name}
                   placeholder={f.placeholder}
                   required
                   className="w-full px-4 py-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-700 focus:border-indigo-500/60 focus:outline-none text-sm transition-colors duration-200"
@@ -147,9 +144,8 @@ export default function Contact() {
                 Message
               </label>
               <textarea
+                name="message"
                 rows={5}
-                value={form.message}
-                onChange={update('message')}
                 placeholder="Votre message..."
                 required
                 className="w-full px-4 py-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-700 focus:border-indigo-500/60 focus:outline-none text-sm transition-colors duration-200 resize-none"
@@ -172,7 +168,7 @@ export default function Contact() {
 
             {status === 'error' && (
               <p className="text-red-400 text-xs text-center">
-                Une erreur est survenue. Réessayez ou écrivez-moi directement par email.
+                Une erreur est survenue. Réessayez ou contacte-moi directement par email.
               </p>
             )}
           </motion.form>
