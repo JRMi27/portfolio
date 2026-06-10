@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
+import { asset } from '../../utils/asset'
 
 const projects = [
   {
@@ -65,7 +66,7 @@ function ProjectCard({ project, index }) {
           style={{ background: `linear-gradient(135deg, ${project.accent}55, transparent 60%)` }}
         />
         <img
-          src={project.image}
+          src={asset(project.image)}
           alt={project.title}
           className="w-full h-full object-cover opacity-50 group-hover:opacity-75 group-hover:scale-105 transition-all duration-700"
           onError={(e) => {

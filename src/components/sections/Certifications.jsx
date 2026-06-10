@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
+import { asset } from '../../utils/asset'
 
 const categories = ['Tous', 'MOOC ANSSI', 'MOOC RGPD CNIL']
 
@@ -68,7 +69,7 @@ function CertCard({ cert, index }) {
       >
         <div className="aspect-[4/3] bg-zinc-900 overflow-hidden">
           <img
-            src={cert.image}
+            src={asset(cert.image)}
             alt={cert.title}
             className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500"
           />
@@ -95,7 +96,7 @@ function CertCard({ cert, index }) {
             onClick={() => setZoomed(false)}
           >
             <motion.img
-              src={cert.image}
+              src={asset(cert.image)}
               alt={cert.title}
               className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
               initial={{ scale: 0.85, opacity: 0 }}

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
+import { asset } from '../../utils/asset'
 
 const categories = [
   {
@@ -45,7 +46,6 @@ const categories = [
       { name: 'VirtualBox', img: '/images/Virtualbox_logo.png' },
       { name: 'Canva', img: '/images/canva_logo.png' },
       { name: 'Notion', img: '/images/notion_logo.png' },
-      { name: 'Docker', img: '/images/docker_logo.png' },
     ],
   },
 ]
@@ -61,7 +61,7 @@ function SkillBadge({ skill, delay, inView }) {
       data-hover
     >
       <img
-        src={skill.img}
+        src={asset(skill.img)}
         alt={skill.name}
         className="w-4 h-4 object-contain opacity-70 group-hover:opacity-100 transition-opacity"
         onError={(e) => { e.target.style.display = 'none' }}
