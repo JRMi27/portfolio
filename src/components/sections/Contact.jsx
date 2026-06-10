@@ -1,10 +1,14 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
 
 const EASE = [0.22, 1, 0.36, 1]
+
+const SID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const socials = [
   {
@@ -28,25 +32,23 @@ const socials = [
 ]
 
 export default function Contact() {
-  const formRef = useRef(null)
+  const [form, setForm] = useState({ from_name: '', from_email: '', message: '' })
   const [status, setStatus] = useState(null)
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 })
+
+  const update = (field) => (e) => setForm((p) => ({ ...p, [field]: e.target.value }))
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('sending')
     try {
-      await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY },
-      )
+      await emailjs.send(SID, TID, form, { publicKey: KEY })
       setStatus('success')
-      formRef.current.reset()
+      setForm({ from_name: '', from_email: '', message: '' })
     } catch (err) {
-      console.error('EmailJS error:', err)
-      setStatus('error')
+      const msg = err?.text ?? err?.message ?? JSON.stringify(err)
+      console.error('[EmailJS]', msg)
+      setStatus(msg || 'error')
     }
   }
 
@@ -114,7 +116,6 @@ export default function Contact() {
 
           {/* Form */}
           <motion.form
-            ref={formRef}
             onSubmit={handleSubmit}
             className="space-y-4"
             initial={{ opacity: 0, x: 24 }}
@@ -122,16 +123,17 @@ export default function Contact() {
             transition={{ duration: 0.65, delay: 0.1, ease: EASE }}
           >
             {[
-              { name: 'from_name',  label: 'Nom',   type: 'text',  placeholder: 'Votre nom' },
-              { name: 'from_email', label: 'Email', type: 'email', placeholder: 'votre@email.com' },
+              { field: 'from_name',  label: 'Nom',   type: 'text',  placeholder: 'Votre nom' },
+              { field: 'from_email', label: 'Email', type: 'email', placeholder: 'votre@email.com' },
             ].map((f) => (
-              <div key={f.name}>
+              <div key={f.field}>
                 <label className="text-zinc-600 text-[10px] font-mono uppercase tracking-widest block mb-2">
                   {f.label}
                 </label>
                 <input
                   type={f.type}
-                  name={f.name}
+                  value={form[f.field]}
+                  onChange={update(f.field)}
                   placeholder={f.placeholder}
                   required
                   className="w-full px-4 py-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-700 focus:border-indigo-500/60 focus:outline-none text-sm transition-colors duration-200"
@@ -144,8 +146,9 @@ export default function Contact() {
                 Message
               </label>
               <textarea
-                name="message"
                 rows={5}
+                value={form.message}
+                onChange={update('message')}
                 placeholder="Votre message..."
                 required
                 className="w-full px-4 py-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-700 focus:border-indigo-500/60 focus:outline-none text-sm transition-colors duration-200 resize-none"
@@ -166,9 +169,9 @@ export default function Contact() {
                 : 'Envoyer le message'}
             </motion.button>
 
-            {status === 'error' && (
-              <p className="text-red-400 text-xs text-center">
-                Une erreur est survenue. Réessayez ou contacte-moi directement par email.
+            {status && status !== 'sending' && status !== 'success' && (
+              <p className="text-red-400 text-xs text-center font-mono break-all">
+                Erreur : {status}
               </p>
             )}
           </motion.form>
