@@ -48,7 +48,7 @@ const fr = {
       },
       {
         year: '2024',
-        period: 'Janvier — Mars 2024',
+        period: 'Mai — Juin 2024',
         company: 'OPMobility',
         role: 'Administrateur Réseau',
         description: "Administration et maintenance du réseau informatique de l'entreprise. Configuration des équipements réseau, supervision des systèmes et support technique aux utilisateurs.",

@@ -45,6 +45,8 @@ const skillData = [
       { name: 'Canva', img: '/images/canva_logo.png' },
       { name: 'Notion', img: '/images/notion_logo.png' },
       { name: 'Claude', img: '/images/claude.png' },
+      { name: 'IntelliJ', img: '/images/IntelliJ.png' },
+      { name: 'Vite', img: '/images/vite.png' },
     ],
   },
 ]
