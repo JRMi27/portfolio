@@ -48,7 +48,7 @@ const en = {
       },
       {
         year: '2024',
-        period: 'January — March 2024',
+        period: 'May — June 2024',
         company: 'OPMobility',
         role: 'Network Administrator',
         description: "Administration and maintenance of the company's IT network. Configuration of network equipment, system supervision and technical support to users.",
