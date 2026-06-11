@@ -106,7 +106,7 @@ const en = {
       },
       {
         num: '04',
-        title: 'Freeze Cramptélone',
+        title: 'Pixel Heist',
         description: "Arcade survival game built with Python and Pyxel for Nuit du Code. Play as Freeze Corleone and survive increasingly difficult enemy waves — three enemy types, power-up system and wave progression.",
         tags: ['Python', 'Pyxel'],
         image: '/images/ndc.png',
