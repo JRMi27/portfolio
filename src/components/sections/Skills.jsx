@@ -2,10 +2,10 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
 import { asset } from '../../utils/asset'
+import { useLang } from '../../contexts/LangContext'
 
-const categories = [
+const skillData = [
   {
-    name: 'Langages',
     icon: '{ }',
     skills: [
       { name: 'HTML', img: '/images/HTML5_logo.png' },
@@ -22,7 +22,6 @@ const categories = [
     ],
   },
   {
-    name: 'Frameworks & Libs',
     icon: '⚡',
     skills: [
       { name: 'React', img: '/images/React_logo.png' },
@@ -33,7 +32,6 @@ const categories = [
     ],
   },
   {
-    name: 'Outils',
     icon: '🔧',
     skills: [
       { name: 'Git', img: '/images/git-bash_logo.png' },
@@ -90,12 +88,7 @@ function CategoryBlock({ cat, baseDelay }) {
       </motion.div>
       <div className="flex flex-wrap gap-2.5">
         {cat.skills.map((s, i) => (
-          <SkillBadge
-            key={s.name + i}
-            skill={s}
-            delay={baseDelay + i * 0.035}
-            inView={inView}
-          />
+          <SkillBadge key={s.name + i} skill={s} delay={baseDelay + i * 0.035} inView={inView} />
         ))}
       </div>
     </div>
@@ -103,10 +96,13 @@ function CategoryBlock({ cat, baseDelay }) {
 }
 
 export default function Skills() {
+  const { t } = useLang()
+  const categories = skillData.map((d, i) => ({ ...d, name: t.skills.categories[i] }))
+
   return (
     <section id="skills" className="py-28 md:py-36 px-6 md:px-12 bg-zinc-950/40">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader number="02" title="Compétences" subtitle="Technologies maîtrisées" />
+        <SectionHeader number="02" title={t.skills.title} subtitle={t.skills.subtitle} />
         <div className="space-y-14">
           {categories.map((cat, i) => (
             <CategoryBlock key={cat.name} cat={cat} baseDelay={i * 0.05} />

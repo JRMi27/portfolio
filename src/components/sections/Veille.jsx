@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
+import { useLang } from '../../contexts/LangContext'
 
 const EASE = [0.22, 1, 0.36, 1]
 
@@ -362,54 +363,7 @@ function NetworkIllustration() {
 
 /* ─────────────── DATA ─────────────── */
 
-const topics = [
-  {
-    num: '01',
-    icon: '🔍',
-    title: "Qu'est-ce que la veille technologique ?",
-    Illustration: RadarIllustration,
-    content:
-      "La veille technologique est un processus de surveillance continue et systématique des avancées technologiques dans un domaine particulier. Elle vise à identifier les innovations, les tendances, les nouvelles technologies et les changements dans l'environnement technologique.",
-  },
-  {
-    num: '02',
-    icon: '🛡️',
-    title: "Méthodes d'attaque et de défense",
-    subtitle: 'Cybersécurité',
-    Illustration: ShieldIllustration,
-    content:
-      "Les cybermenaces évoluent constamment : ransomwares, phishing, malwares, DDoS. La veille en cybersécurité permet de rester informé des dernières vulnérabilités, des nouvelles menaces et des innovations en matière de protection.",
-  },
-  {
-    num: '03',
-    icon: '📊',
-    title: "Récolter et traiter l'information",
-    Illustration: DataIllustration,
-    items: [
-      {
-        name: 'Google Alerts',
-        href: 'https://www.google.com/alerts',
-        desc: 'Service gratuit pour recevoir des notifications par e-mail sur les nouveaux contenus concernant des sujets spécifiques.',
-      },
-      {
-        name: 'Google Sheets',
-        href: 'https://docs.google.com/spreadsheets/d/1utkg921GG8KVoSHLDvQPVoPjQPZkDQonyPR-4UuM_e4/edit?usp=sharing',
-        desc: "Feuille de calcul collaborative pour l'analyse et le suivi des données collectées lors de la veille.",
-        cta: 'Accéder à la feuille',
-      },
-    ],
-  },
-  {
-    num: '04',
-    icon: '🔗',
-    title: "Partager l'information",
-    Illustration: NetworkIllustration,
-    content:
-      "GitHub est la plateforme de collaboration incontournable pour les développeurs. Elle permet de partager du code, des projets et des documents, et d'archiver les résultats de veille sous forme de repositories publics.",
-    link: 'https://github.com/JRMi27',
-    linkLabel: 'Voir mon GitHub →',
-  },
-]
+const illustrations = [RadarIllustration, ShieldIllustration, DataIllustration, NetworkIllustration]
 
 /* ─────────────── CARD ─────────────── */
 
@@ -497,10 +451,13 @@ function TopicCard({ topic, index }) {
 /* ─────────────── SECTION ─────────────── */
 
 export default function Veille() {
+  const { t } = useLang()
+  const topics = t.veille.topics.map((topic, i) => ({ ...topic, Illustration: illustrations[i] }))
+
   return (
     <section id="veille" className="py-28 md:py-36 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader number="08" title="Veille" subtitle="Veille technologique" />
+        <SectionHeader number="08" title={t.veille.title} subtitle={t.veille.subtitle} />
         <div className="space-y-20 md:space-y-28">
           {topics.map((topic, i) => (
             <TopicCard key={topic.num} topic={topic} index={i} />

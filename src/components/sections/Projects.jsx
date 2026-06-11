@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
 import { asset } from '../../utils/asset'
+import { useLang } from '../../contexts/LangContext'
 
 const projects = [
   {
@@ -110,7 +111,7 @@ function ProjectCard({ project, index }) {
               className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-white transition-colors duration-200"
             >
               <GitHubIcon />
-              GitHub
+              {project._github}
             </a>
           )}
           {project.demo && (
@@ -120,7 +121,7 @@ function ProjectCard({ project, index }) {
               rel="noopener noreferrer"
               className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors duration-200"
             >
-              Voir le site →
+              {project._demo} →
             </a>
           )}
         </div>
@@ -130,10 +131,17 @@ function ProjectCard({ project, index }) {
 }
 
 export default function Projects() {
+  const { t } = useLang()
+  const projects = t.projects.items.map((p) => ({
+    ...p,
+    _github: t.projects.github,
+    _demo: t.projects.demo,
+  }))
+
   return (
     <section id="projects" className="py-28 md:py-36 px-6 md:px-12 bg-zinc-950/40">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader number="04" title="Projets" subtitle="Réalisations" />
+        <SectionHeader number="04" title={t.projects.title} subtitle={t.projects.subtitle} />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {projects.map((p, i) => (
             <ProjectCard key={p.title} project={p} index={i} />

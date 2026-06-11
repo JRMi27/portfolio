@@ -1,19 +1,40 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTheme } from '../contexts/ThemeContext'
+import { useLang } from '../contexts/LangContext'
 
-const links = [
-  { label: 'À propos', href: '#about' },
-  { label: 'Compétences', href: '#skills' },
-  { label: 'Expériences', href: '#experience' },
-  { label: 'Projets', href: '#projects' },
-  { label: 'Formation', href: '#education' },
-  { label: 'Veille', href: '#veille' },
-  { label: 'Contact', href: '#contact' },
-]
+function SunIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8}>
+      <circle cx="12" cy="12" r="4" />
+      <path strokeLinecap="round" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+    </svg>
+  )
+}
+
+function MoonIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  )
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const { theme, toggle: toggleTheme } = useTheme()
+  const { lang, toggle: toggleLang, t } = useLang()
+
+  const links = [
+    { label: t.nav.about,      href: '#about' },
+    { label: t.nav.skills,     href: '#skills' },
+    { label: t.nav.experience, href: '#experience' },
+    { label: t.nav.projects,   href: '#projects' },
+    { label: t.nav.education,  href: '#education' },
+    { label: t.nav.veille,     href: '#veille' },
+    { label: t.nav.contact,    href: '#contact' },
+  ]
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 60)
@@ -56,6 +77,28 @@ export default function Navbar() {
           ))}
         </nav>
 
+        <motion.div
+          className="hidden md:flex items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          <button
+            onClick={toggleLang}
+            className="px-3 py-1.5 rounded-lg border border-zinc-800 text-zinc-400 hover:border-indigo-500/50 hover:text-indigo-300 text-xs font-mono font-bold transition-all duration-200"
+            title={lang === 'fr' ? 'Switch to English' : 'Passer en français'}
+          >
+            {lang === 'fr' ? 'EN' : 'FR'}
+          </button>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg border border-zinc-800 text-zinc-400 hover:border-indigo-500/50 hover:text-indigo-300 transition-all duration-200"
+            title={theme === 'dark' ? 'Mode clair' : 'Mode sombre'}
+          >
+            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          </button>
+        </motion.div>
+
         <motion.button
           className="md:hidden relative flex flex-col gap-[6px] w-7 py-1"
           onClick={() => setOpen(!open)}
@@ -64,18 +107,15 @@ export default function Navbar() {
           transition={{ delay: 0.3 }}
           aria-label="Menu"
         >
-          <motion.span
-            className="block h-px bg-white w-full origin-center"
+          <motion.span className="block h-px bg-white w-full origin-center"
             animate={open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.25 }}
           />
-          <motion.span
-            className="block h-px bg-white w-full"
+          <motion.span className="block h-px bg-white w-full"
             animate={open ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.2 }}
           />
-          <motion.span
-            className="block h-px bg-white w-full origin-center"
+          <motion.span className="block h-px bg-white w-full origin-center"
             animate={open ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.25 }}
           />
@@ -104,6 +144,20 @@ export default function Navbar() {
                 {l.label}
               </motion.a>
             ))}
+            <div className="flex items-center gap-3 mt-4">
+              <button
+                onClick={toggleLang}
+                className="px-4 py-2 rounded-lg border border-zinc-800 text-zinc-400 text-sm font-mono font-bold"
+              >
+                {lang === 'fr' ? 'EN' : 'FR'}
+              </button>
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg border border-zinc-800 text-zinc-400"
+              >
+                {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
