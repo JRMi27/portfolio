@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
+import { asset } from '../../utils/asset'
 
 const experiences = [
   {
@@ -11,7 +12,7 @@ const experiences = [
     description:
       "Développement d'applications web en full stack. Conception et implémentation de nouvelles fonctionnalités, maintenance du code existant et participation aux revues de code.",
     tags: ['PHP', 'JavaScript', 'SQL', 'Full Stack'],
-    pdf: '/pdf/Wesur STAGE.pdf',
+    pdf: 'pdf/Wesur STAGE.pdf',
     color: '#6366f1',
   },
   {
@@ -22,7 +23,7 @@ const experiences = [
     description:
       "Administration et maintenance du réseau informatique de l'entreprise. Configuration des équipements réseau, supervision des systèmes et support technique aux utilisateurs.",
     tags: ['Réseau', 'Infrastructure', 'Administration', 'Linux'],
-    pdf: '/pdf/OPMobility STAGE.pdf',
+    pdf: 'pdf/OPMobility STAGE.pdf',
     color: '#8b5cf6',
   },
   {
@@ -73,7 +74,7 @@ function ExpCard({ exp, index }) {
           </div>
           {exp.pdf && (
             <a
-              href={exp.pdf}
+              href={asset(exp.pdf)}
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 text-xs text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 hover:border-indigo-500/60 px-3 py-1.5 rounded-lg transition-all duration-200 self-start"
