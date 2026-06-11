@@ -44,6 +44,7 @@ const skillData = [
       { name: 'VirtualBox', img: '/images/Virtualbox_logo.png' },
       { name: 'Canva', img: '/images/canva_logo.png' },
       { name: 'Notion', img: '/images/notion_logo.png' },
+      { name: 'Claude', img: '/images/claude.png' },
     ],
   },
 ]
