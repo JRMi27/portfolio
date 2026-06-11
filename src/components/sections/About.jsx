@@ -41,7 +41,7 @@ export default function About() {
             transition={{ duration: 0.55, delay: 0.45, ease: EASE }}
           >
             <a
-              href="/pdf/CV_Rouillard_Jérémy.pdf"
+              href={asset('pdf/CV_Rouillard_Jérémy.pdf')}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all duration-300"

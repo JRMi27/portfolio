@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { asset } from '../../utils/asset'
 
 const EASE = [0.22, 1, 0.36, 1]
 
@@ -133,7 +134,7 @@ export default function Hero() {
             </motion.span>
           </a>
           <a
-            href="/pdf/CV_Rouillard_Jérémy.pdf"
+            href={asset('pdf/CV_Rouillard_Jérémy.pdf')}
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3.5 rounded-full border border-zinc-700 hover:border-indigo-500/60 text-zinc-300 hover:text-white font-semibold text-sm tracking-wide transition-all duration-300"
