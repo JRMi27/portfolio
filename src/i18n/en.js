@@ -107,7 +107,7 @@ const en = {
       {
         num: '04',
         title: 'Pixel Heist',
-        description: "Arcade survival game built with Python and Pyxel for Nuit du Code. Play as Freeze Corleone and survive increasingly difficult enemy waves — three enemy types, power-up system and wave progression.",
+        description: "Arcade survival game built with Python and Pyxel for Nuit du Code. Play as a fugitive robber and survive increasingly difficult enemy waves — three enemy types, power-up system and wave progression.",
         tags: ['Python', 'Pyxel'],
         image: '/images/ndc.png',
         github: 'https://github.com/JRMi27/ndc',
