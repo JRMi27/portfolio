@@ -29,7 +29,7 @@ const fr = {
   skills: {
     title: 'Compétences',
     subtitle: 'Mon arsenal',
-    categories: ['Langages', 'Frameworks & Libs', 'Outils'],
+    categories: ['Langages', 'Frameworks & Libs', 'Outils', 'Bases de données'],
   },
   experience: {
     title: 'Expériences',
