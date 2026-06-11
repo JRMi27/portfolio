@@ -104,6 +104,16 @@ const en = {
         demo: null,
         accent: '#7c3aed',
       },
+      {
+        num: '04',
+        title: 'Freeze Cramptélone',
+        description: "Arcade survival game built with Python and Pyxel for Nuit du Code. Play as Freeze Corleone and survive increasingly difficult enemy waves — three enemy types, power-up system and wave progression.",
+        tags: ['Python', 'Pyxel'],
+        image: '/images/ndc.png',
+        github: 'https://github.com/JRMi27/ndc',
+        demo: null,
+        accent: '#10b981',
+      },
     ],
   },
   education: {
