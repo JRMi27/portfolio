@@ -3,8 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
 import { asset } from '../../utils/asset'
-
-const categories = ['Tous', 'MOOC ANSSI', 'MOOC RGPD CNIL']
+import { useLang } from '../../contexts/LangContext'
 
 const certs = [
   {
@@ -119,15 +118,16 @@ function CertCard({ cert, index }) {
 }
 
 export default function Certifications() {
-  const [active, setActive] = useState('Tous')
-  const filtered = active === 'Tous' ? certs : certs.filter((c) => c.category === active)
+  const { t } = useLang()
+  const categories = [t.certifications.all, 'MOOC ANSSI', 'MOOC RGPD CNIL']
+  const [active, setActive] = useState(categories[0])
+  const filtered = active === categories[0] ? certs : certs.filter((c) => c.category === active)
 
   return (
     <section id="certifications" className="py-28 md:py-36 px-6 md:px-12 bg-zinc-950/40">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader number="06" title="Certifications" subtitle="Diplômes & MOOC" />
+        <SectionHeader number="06" title={t.certifications.title} subtitle={t.certifications.subtitle} />
 
-        {/* Filter */}
         <div className="flex flex-wrap gap-2.5 mb-12">
           {categories.map((cat) => (
             <button

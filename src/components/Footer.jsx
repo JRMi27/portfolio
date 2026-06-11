@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useLang } from '../contexts/LangContext'
 
 export default function Footer() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 })
+  const { t } = useLang()
 
   return (
     <footer ref={ref} className="border-t border-zinc-900 py-10 px-6 md:px-12">
@@ -13,7 +15,7 @@ export default function Footer() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
         >
-          © 2025 Jérémy Rouillard — Développeur Full Stack
+          © 2025 Jérémy Rouillard — {t.footer.role}
         </motion.p>
         <motion.div
           className="flex items-center gap-6"
@@ -30,7 +32,7 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/jérémy-rouillard-5734892a6/"
+            href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-rouillard-5734892a6/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-600 hover:text-white text-sm transition-colors duration-200"
@@ -41,7 +43,7 @@ export default function Footer() {
             href="#home"
             className="text-zinc-600 hover:text-indigo-400 text-sm transition-colors duration-200"
           >
-            ↑ Haut
+            {t.footer.top}
           </a>
         </motion.div>
       </div>

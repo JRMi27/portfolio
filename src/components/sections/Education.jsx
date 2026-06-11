@@ -1,48 +1,8 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
+import { useLang } from '../../contexts/LangContext'
 
-const education = [
-  {
-    period: '2025 — 2026',
-    degree: 'Licence Informatique',
-    school: 'Campus La Chataigneraie',
-    location: 'Mesnil-Esnard (76)',
-    description: 'Licence informatique générale — algorithmique avancée, développement logiciel, gestion de projets et bases de données.',
-    icon: '🎓',
-  },
-  {
-    period: '2023 — 2025',
-    degree: 'BTS SIO — SLAM',
-    school: 'Lycée Gustave Flaubert',
-    location: 'Rouen (76)',
-    description: 'Services Informatiques aux Organisations, option Solutions Logicielles et Applications Métiers.',
-    icon: '💻',
-  },
-  {
-    period: '2020 — 2023',
-    degree: 'Baccalauréat Général',
-    school: 'Lycée Georges Dumezil',
-    location: 'Vernon (27)',
-    description: 'Options : Mathématiques, NSI (Numérique et Sciences Informatiques), Mathématiques Expertes. Mention Assez Bien.',
-    icon: '📚',
-  },
-  {
-    period: '2017 — 2020',
-    degree: 'Collège',
-    school: 'Collège Marc Chagall',
-    location: 'Gasny (27)',
-    description: 'Diplôme National du Brevet.',
-    icon: '🏫',
-  },
-]
-
-const interests = [
-  { icon: '✈️', title: 'Voyages', desc: 'Explorer de nouvelles cultures élargit mes horizons.' },
-  { icon: '🎵', title: 'Musique', desc: 'Écoute quotidienne — indie, électro, japonaise.' },
-  { icon: '🎬', title: 'Films & Séries', desc: 'En VO depuis 2015 pour perfectionner mes langues.' },
-  { icon: '🇯🇵', title: 'Japonais', desc: 'Apprentissage depuis 2022 — Hiragana, Katakana, Kanji.' },
-]
 
 function EduCard({ edu, index }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
@@ -94,14 +54,14 @@ function InterestCard({ item, index }) {
 
 export default function Education() {
   const { ref: titleRef, inView: titleIn } = useInView({ triggerOnce: true, threshold: 0.3 })
+  const { t } = useLang()
 
   return (
     <section id="education" className="py-28 md:py-36 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader number="05" title="Formation" subtitle="Parcours académique" />
+        <SectionHeader number="05" title={t.education.title} subtitle={t.education.subtitle} />
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Education timeline */}
           <div>
             <motion.p
               ref={titleRef}
@@ -110,16 +70,15 @@ export default function Education() {
               animate={titleIn ? { opacity: 1 } : {}}
               transition={{ duration: 0.4 }}
             >
-              Cursus scolaire
+              {t.education.subtitle}
             </motion.p>
             <div className="space-y-4">
-              {education.map((edu, i) => (
+              {t.education.items.map((edu, i) => (
                 <EduCard key={edu.degree} edu={edu} index={i} />
               ))}
             </div>
           </div>
 
-          {/* Interests */}
           <div>
             <motion.p
               className="text-zinc-600 text-xs font-mono uppercase tracking-widest mb-6"
@@ -127,10 +86,10 @@ export default function Education() {
               animate={titleIn ? { opacity: 1 } : {}}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              Centres d'intérêt
+              {t.education.interestsTitle}
             </motion.p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {interests.map((item, i) => (
+              {t.education.interests.map((item, i) => (
                 <InterestCard key={item.title} item={item} index={i} />
               ))}
             </div>

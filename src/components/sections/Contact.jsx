@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
+import { useLang } from '../../contexts/LangContext'
 
 const EASE = [0.22, 1, 0.36, 1]
 
 const contacts = [
   {
-    label: 'Email',
+    key: 'email',
     value: 'jeremy.rouillard27@gmail.com',
     href: 'mailto:jeremy.rouillard27@gmail.com',
     icon: (
@@ -16,7 +17,7 @@ const contacts = [
     ),
   },
   {
-    label: 'Téléphone',
+    key: 'phone',
     value: '06 15 65 18 65',
     href: 'tel:+33615651865',
     icon: (
@@ -50,11 +51,12 @@ const socials = [
 
 export default function Contact() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 })
+  const { t } = useLang()
 
   return (
     <section id="contact" className="py-28 md:py-36 px-6 md:px-12">
       <div className="max-w-3xl mx-auto">
-        <SectionHeader number="07" title="Contact" subtitle="Parlons-en" />
+        <SectionHeader number="07" title={t.contact.title} subtitle={t.contact.subtitle} />
 
         <div ref={ref} className="space-y-12">
           <div className="overflow-hidden">
@@ -64,8 +66,7 @@ export default function Contact() {
               animate={inView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.05, ease: EASE }}
             >
-              Tu as un projet en tête ou tu veux simplement discuter ?
-              N'hésite pas à me contacter directement.
+              {t.contact.intro}
             </motion.p>
           </div>
 
@@ -77,7 +78,7 @@ export default function Contact() {
           >
             {contacts.map((c) => (
               <a
-                key={c.label}
+                key={c.key}
                 href={c.href}
                 className="group flex items-center gap-4 p-5 rounded-2xl border border-zinc-800 hover:border-indigo-500/40 bg-zinc-900/40 hover:bg-zinc-900/80 transition-all duration-300"
               >
@@ -85,7 +86,7 @@ export default function Contact() {
                   {c.icon}
                 </span>
                 <div>
-                  <p className="text-zinc-600 text-[10px] font-mono uppercase tracking-widest mb-0.5">{c.label}</p>
+                  <p className="text-zinc-600 text-[10px] font-mono uppercase tracking-widest mb-0.5">{t.contact[c.key]}</p>
                   <p className="text-zinc-200 text-sm group-hover:text-indigo-300 transition-colors duration-300">{c.value}</p>
                 </div>
               </a>

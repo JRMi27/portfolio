@@ -2,24 +2,20 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
 import { asset } from '../../utils/asset'
+import { useLang } from '../../contexts/LangContext'
 
 const EASE = [0.22, 1, 0.36, 1]
 
-const paragraphs = [
-  "Passionné par le développement web et les nouvelles technologies, je suis actuellement en Licence Informatique après avoir obtenu mon BTS SIO option SLAM au Lycée Gustave Flaubert de Rouen.",
-  "Mon parcours m'a permis de développer des compétences solides en développement full stack, avec une appétence particulière pour la création d'interfaces modernes et performantes.",
-  "En dehors du code, je suis passionné par la musique, les voyages, les films en VO et l'apprentissage du japonais depuis 2022.",
-]
-
 export default function About() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 })
+  const { t } = useLang()
+  const paragraphs = [t.about.p1, t.about.p2, t.about.p3]
 
   return (
     <section id="about" className="py-28 md:py-36 px-6 md:px-12 max-w-7xl mx-auto">
-      <SectionHeader number="01" title="À Propos" subtitle="Qui suis-je" />
+      <SectionHeader number="01" title={t.about.title} subtitle={t.about.subtitle} />
 
       <div ref={ref} className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-        {/* Text */}
         <div className="space-y-6 order-2 md:order-1">
           {paragraphs.map((text, i) => (
             <div key={i} className="overflow-hidden">
@@ -46,19 +42,18 @@ export default function About() {
               rel="noopener noreferrer"
               className="group flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all duration-300"
             >
-              Télécharger CV
+              {t.about.download}
               <span className="group-hover:translate-y-0.5 transition-transform duration-200">↓</span>
             </a>
             <a
               href="mailto:jeremy.rouillard27@gmail.com"
               className="px-6 py-3 rounded-full border border-zinc-700 hover:border-indigo-500/50 text-zinc-300 hover:text-white text-sm font-semibold transition-all duration-300"
             >
-              Me contacter
+              {t.about.contact}
             </a>
           </motion.div>
         </div>
 
-        {/* Image */}
         <motion.div
           className="relative order-1 md:order-2"
           initial={{ opacity: 0, x: 30 }}
@@ -66,9 +61,7 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
         >
           <div className="relative w-72 md:w-80 mx-auto">
-            {/* Glow */}
             <div className="absolute inset-0 bg-indigo-600/20 rounded-2xl blur-3xl scale-90" />
-            {/* Frame */}
             <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/8 bg-zinc-900">
               <img
                 src={asset('/images/photo_pp.jpg')}
@@ -77,12 +70,10 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
-            {/* Corner decorations */}
             <div className="absolute -bottom-3 -right-3 w-20 h-20 border-r-2 border-b-2 border-indigo-500/60 rounded-br-xl pointer-events-none" />
             <div className="absolute -top-3 -left-3 w-20 h-20 border-l-2 border-t-2 border-indigo-500/60 rounded-tl-xl pointer-events-none" />
           </div>
 
-          {/* Floating info badge */}
           <motion.div
             className="absolute -bottom-5 right-0 md:-right-6 flex items-center gap-3 px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 shadow-xl"
             initial={{ opacity: 0, y: 10, scale: 0.9 }}
@@ -91,8 +82,8 @@ export default function About() {
           >
             <span className="text-2xl">🎓</span>
             <div>
-              <p className="text-white text-xs font-semibold leading-tight">Licence Informatique</p>
-              <p className="text-zinc-500 text-[11px]">2025 — Présent</p>
+              <p className="text-white text-xs font-semibold leading-tight">{t.about.badge}</p>
+              <p className="text-zinc-500 text-[11px]">{t.about.badgePeriod}</p>
             </div>
           </motion.div>
         </motion.div>

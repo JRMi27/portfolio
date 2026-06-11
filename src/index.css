@@ -19,24 +19,69 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar {
-  width: 2px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-::-webkit-scrollbar-thumb {
-  background: #6366f1;
-  border-radius: 2px;
-}
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 2px; }
 
-::selection {
-  background: #6366f1;
-  color: #fff;
+::selection { background: #6366f1; color: #fff; }
+
+/* ── Light mode ── */
+html.light body {
+  background-color: #f8f8f8;
+  color: #18181b;
 }
+html.light ::-webkit-scrollbar-track { background: #f8f8f8; }
+
+/* Text */
+html.light .text-white  { color: #18181b; }
+html.light .text-zinc-200 { color: #18181b; }
+html.light .text-zinc-300 { color: #3f3f46; }
+html.light .text-zinc-400 { color: #52525b; }
+html.light .text-zinc-500 { color: #71717a; }
+html.light .text-zinc-600 { color: #71717a; }
+html.light .text-zinc-700 { color: #a1a1aa; }
+/* Keep white text on indigo/colored buttons */
+html.light .bg-indigo-600 .text-white,
+html.light .bg-indigo-600.text-white,
+html.light .bg-indigo-500 .text-white,
+html.light .bg-indigo-500.text-white { color: #ffffff !important; }
+
+/* Backgrounds */
+html.light .bg-background { background-color: #f8f8f8; }
+html.light .bg-zinc-900   { background-color: #ffffff; }
+html.light .bg-zinc-950   { background-color: #f4f4f5; }
+html.light .bg-black\/40  { background-color: rgba(255,255,255,0.85) !important; }
+
+/* Opacity bg variants */
+html.light .bg-zinc-900\/30 { background-color: rgba(244,244,245,0.9); }
+html.light .bg-zinc-900\/40 { background-color: rgba(244,244,245,1); }
+html.light .bg-zinc-900\/60 { background-color: rgba(228,228,231,1); }
+html.light .bg-zinc-900\/70 { background-color: rgba(228,228,231,1); }
+html.light .bg-zinc-900\/80 { background-color: rgba(212,212,216,1); }
+html.light .bg-zinc-950\/40 { background-color: rgba(244,244,245,0.8); }
+html.light .bg-zinc-800\/80 { background-color: rgba(228,228,231,1); }
+
+/* Borders */
+html.light .border-zinc-900 { border-color: #e4e4e7; }
+html.light .border-zinc-800 { border-color: #e4e4e7; }
+html.light .border-white\/8 { border-color: rgba(0,0,0,0.08); }
+html.light .border-zinc-700 { border-color: #d4d4d8; }
+html.light .border-t { border-color: #e4e4e7; }
+
+/* Mobile menu */
+html.light .bg-background { background-color: #f8f8f8; }
+
+/* Hover states */
+html.light .hover\:text-white:hover { color: #18181b !important; }
+html.light .hover\:border-indigo-500\/50:hover { border-color: rgba(99,102,241,0.5); }
+
+/* Hero grid lines */
+html.light .opacity-\[0\.03\] { opacity: 0.06; }
+html.light .opacity-\[0\.03\] { --grid-color: #000; }
 
 /* Mobile: restore cursor */
 @media (hover: none) {
