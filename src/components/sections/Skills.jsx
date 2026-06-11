@@ -29,6 +29,7 @@ const skillData = [
       { name: 'Node.js', img: '/images/Node.js_logo.png' },
       { name: 'Tailwind CSS', img: '/images/tailwind_logo.png' },
       { name: 'Symfony', img: '/images/symfony_logo.png' },
+      { name: 'Vite', img: '/images/vite.png' },
     ],
   },
   {
@@ -46,7 +47,6 @@ const skillData = [
       { name: 'Notion', img: '/images/notion_logo.png' },
       { name: 'Claude', img: '/images/claude.png' },
       { name: 'IntelliJ', img: '/images/IntelliJ.png' },
-      { name: 'Vite', img: '/images/vite.png' },
     ],
   },
 ]
