@@ -1,14 +1,31 @@
-import { useState } from 'react'
-import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
 
 const EASE = [0.22, 1, 0.36, 1]
 
-const SID = import.meta.env.VITE_EMAILJS_SERVICE_ID
-const TID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-const KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+const contacts = [
+  {
+    label: 'Email',
+    value: 'jeremy.rouillard27@gmail.com',
+    href: 'mailto:jeremy.rouillard27@gmail.com',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Téléphone',
+    value: '+33 6 00 00 00 00',
+    href: 'tel:+33600000000',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+      </svg>
+    ),
+  },
+]
 
 const socials = [
   {
@@ -32,149 +49,68 @@ const socials = [
 ]
 
 export default function Contact() {
-  const [form, setForm] = useState({ from_name: '', from_email: '', message: '' })
-  const [status, setStatus] = useState(null)
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 })
-
-  const update = (field) => (e) => setForm((p) => ({ ...p, [field]: e.target.value }))
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus('sending')
-    try {
-      await emailjs.send(SID, TID, form, { publicKey: KEY })
-      setStatus('success')
-      setForm({ from_name: '', from_email: '', message: '' })
-    } catch (err) {
-      const msg = err?.text ?? err?.message ?? JSON.stringify(err)
-      console.error('[EmailJS]', msg)
-      setStatus(msg || 'error')
-    }
-  }
 
   return (
     <section id="contact" className="py-28 md:py-36 px-6 md:px-12">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <SectionHeader number="07" title="Contact" subtitle="Parlons-en" />
 
-        <div ref={ref} className="grid md:grid-cols-2 gap-12 lg:gap-20">
-          {/* Info */}
-          <div className="space-y-8">
-            <div className="overflow-hidden">
-              <motion.p
-                className="text-zinc-400 text-base md:text-lg leading-relaxed"
-                initial={{ y: 30, opacity: 0 }}
-                animate={inView ? { y: 0, opacity: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.05, ease: EASE }}
-              >
-                Tu as un projet en tête ou tu veux simplement discuter ?
-                N'hésite pas, je serai ravi d'échanger.
-              </motion.p>
-            </div>
-
-            <motion.div
-              className="space-y-5"
-              initial={{ opacity: 0, y: 16 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.55, delay: 0.15, ease: EASE }}
+        <div ref={ref} className="space-y-12">
+          <div className="overflow-hidden">
+            <motion.p
+              className="text-zinc-400 text-base md:text-lg leading-relaxed"
+              initial={{ y: 30, opacity: 0 }}
+              animate={inView ? { y: 0, opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.05, ease: EASE }}
             >
-              <div>
-                <p className="text-zinc-700 text-[10px] font-mono uppercase tracking-widest mb-1.5">Email</p>
-                <a
-                  href="mailto:jeremy.rouillard27@gmail.com"
-                  className="text-zinc-200 hover:text-indigo-400 transition-colors duration-200 text-sm"
-                >
-                  jeremy.rouillard27@gmail.com
-                </a>
-              </div>
-              <div>
-                <p className="text-zinc-700 text-[10px] font-mono uppercase tracking-widest mb-1.5">Localisation</p>
-                <p className="text-zinc-200 text-sm">Rouen, France</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex gap-3"
-              initial={{ opacity: 0, y: 16 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.55, delay: 0.25, ease: EASE }}
-            >
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-zinc-800 text-zinc-400 hover:border-indigo-500/50 hover:text-indigo-300 text-sm transition-all duration-300"
-                >
-                  {s.icon}
-                  {s.label}
-                </a>
-              ))}
-            </motion.div>
+              Tu as un projet en tête ou tu veux simplement discuter ?
+              N'hésite pas à me contacter directement.
+            </motion.p>
           </div>
 
-          {/* Form */}
-          <motion.form
-            onSubmit={handleSubmit}
-            className="space-y-4"
-            initial={{ opacity: 0, x: 24 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.65, delay: 0.1, ease: EASE }}
+          <motion.div
+            className="grid sm:grid-cols-2 gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.55, delay: 0.15, ease: EASE }}
           >
-            {[
-              { field: 'from_name',  label: 'Nom',   type: 'text',  placeholder: 'Votre nom' },
-              { field: 'from_email', label: 'Email', type: 'email', placeholder: 'votre@email.com' },
-            ].map((f) => (
-              <div key={f.field}>
-                <label className="text-zinc-600 text-[10px] font-mono uppercase tracking-widest block mb-2">
-                  {f.label}
-                </label>
-                <input
-                  type={f.type}
-                  value={form[f.field]}
-                  onChange={update(f.field)}
-                  placeholder={f.placeholder}
-                  required
-                  className="w-full px-4 py-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-700 focus:border-indigo-500/60 focus:outline-none text-sm transition-colors duration-200"
-                />
-              </div>
+            {contacts.map((c) => (
+              <a
+                key={c.label}
+                href={c.href}
+                className="group flex items-center gap-4 p-5 rounded-2xl border border-zinc-800 hover:border-indigo-500/40 bg-zinc-900/40 hover:bg-zinc-900/80 transition-all duration-300"
+              >
+                <span className="text-zinc-500 group-hover:text-indigo-400 transition-colors duration-300">
+                  {c.icon}
+                </span>
+                <div>
+                  <p className="text-zinc-600 text-[10px] font-mono uppercase tracking-widest mb-0.5">{c.label}</p>
+                  <p className="text-zinc-200 text-sm group-hover:text-indigo-300 transition-colors duration-300">{c.value}</p>
+                </div>
+              </a>
             ))}
+          </motion.div>
 
-            <div>
-              <label className="text-zinc-600 text-[10px] font-mono uppercase tracking-widest block mb-2">
-                Message
-              </label>
-              <textarea
-                rows={5}
-                value={form.message}
-                onChange={update('message')}
-                placeholder="Votre message..."
-                required
-                className="w-full px-4 py-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-700 focus:border-indigo-500/60 focus:outline-none text-sm transition-colors duration-200 resize-none"
-              />
-            </div>
-
-            <motion.button
-              type="submit"
-              disabled={status === 'sending' || status === 'success'}
-              className="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold text-sm tracking-wide transition-all duration-300"
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.99 }}
-            >
-              {status === 'sending'
-                ? 'Envoi en cours...'
-                : status === 'success'
-                ? '✓ Message envoyé !'
-                : 'Envoyer le message'}
-            </motion.button>
-
-            {status && status !== 'sending' && status !== 'success' && (
-              <p className="text-red-400 text-xs text-center font-mono break-all">
-                Erreur : {status}
-              </p>
-            )}
-          </motion.form>
+          <motion.div
+            className="flex gap-3"
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.55, delay: 0.25, ease: EASE }}
+          >
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-zinc-800 text-zinc-400 hover:border-indigo-500/50 hover:text-indigo-300 text-sm transition-all duration-300"
+              >
+                {s.icon}
+                {s.label}
+              </a>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
