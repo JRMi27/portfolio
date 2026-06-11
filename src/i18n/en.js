@@ -29,7 +29,7 @@ const en = {
   skills: {
     title: 'Skills',
     subtitle: 'My toolkit',
-    categories: ['Languages', 'Frameworks & Libs', 'Tools'],
+    categories: ['Languages', 'Frameworks & Libs', 'Tools', 'Databases'],
   },
   experience: {
     title: 'Experience',

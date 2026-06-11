@@ -16,9 +16,6 @@ const skillData = [
       { name: 'Java', img: '/images/java_logo.png' },
       { name: 'Python', img: '/images/Python_logo.png' },
       { name: 'SQL', img: '/images/SQL_logo.png' },
-      { name: 'MySQL', img: '/images/MySQL.png' },
-      { name: 'Oracle', img: '/images/oracle.png' },
-      { name: 'MongoDB', img: '/images/mongodb.png' },
       { name: 'Bash', img: '/images/bash_logo.png' },
       { name: 'PowerShell', img: '/images/PowerShell_logo.png' },
       { name: 'Lua', img: '/images/Lua_Logo.png' },
@@ -50,6 +47,14 @@ const skillData = [
       { name: 'Notion', img: '/images/notion_logo.png' },
       { name: 'Claude', img: '/images/claude.png' },
       { name: 'IntelliJ', img: '/images/IntelliJ.png' },
+    ],
+  },
+  {
+    icon: '🗄️',
+    skills: [
+      { name: 'MySQL', img: '/images/MySQL.png' },
+      { name: 'Oracle Database', img: '/images/oracle.png' },
+      { name: 'MongoDB', img: '/images/mongodb.png' },
     ],
   },
 ]
