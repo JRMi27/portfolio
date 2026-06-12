@@ -457,7 +457,7 @@ export default function Veille() {
   return (
     <section id="veille" className="py-28 md:py-36 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader number="08" title={t.veille.title} subtitle={t.veille.subtitle} />
+        <SectionHeader number="06" title={t.veille.title} subtitle={t.veille.subtitle} />
         <div className="space-y-20 md:space-y-28">
           {topics.map((topic, i) => (
             <TopicCard key={topic.num} topic={topic} index={i} />

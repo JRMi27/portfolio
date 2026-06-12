@@ -73,6 +73,8 @@ const en = {
     subtitle: 'My work',
     github: 'Code',
     demo: 'Demo',
+    status_done: 'Done',
+    status_wip: 'In progress',
     items: [
       {
         num: '01',
@@ -135,6 +137,12 @@ const en = {
         accent: '#3b82f6',
       },
     ],
+  },
+  parcours: {
+    title: 'Background',
+    subtitle: 'Education & Certifications',
+    tabFormation: 'Education',
+    tabCertifications: 'Certifications',
   },
   education: {
     title: 'Education',

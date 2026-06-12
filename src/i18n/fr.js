@@ -73,6 +73,8 @@ const fr = {
     subtitle: 'Mes réalisations',
     github: 'Code',
     demo: 'Demo',
+    status_done: 'Terminé',
+    status_wip: 'En cours',
     items: [
       {
         num: '01',
@@ -135,6 +137,12 @@ const fr = {
         accent: '#3b82f6',
       },
     ],
+  },
+  parcours: {
+    title: 'Parcours',
+    subtitle: 'Formation & Certifications',
+    tabFormation: 'Formation',
+    tabCertifications: 'Certifications',
   },
   education: {
     title: 'Formation',

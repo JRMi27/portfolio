@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes terminal-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink {
+  animation: terminal-blink 1s step-end infinite;
+}
+
+.font-mono, code, pre {
+  font-family: 'Space Mono', ui-monospace, monospace;
+}
+
 * {
   cursor: none;
   box-sizing: border-box;
