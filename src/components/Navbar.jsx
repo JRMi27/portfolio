@@ -58,8 +58,15 @@ export default function Navbar() {
         transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="flex items-center gap-3">
-          <a href="#home" className="text-white font-black text-xl tracking-tight select-none">
-            JR<span className="text-indigo-400">.</span>
+          <a href="#home" className="relative inline-flex items-center justify-center w-10 h-10 rounded-xl select-none group" aria-label="Accueil">
+            {/* Animated gradient border */}
+            <span className="absolute inset-0 rounded-xl logo-gradient-border" />
+            {/* Inner fill */}
+            <span className="logo-inner absolute inset-[1.5px] rounded-[9px] transition-colors duration-300" />
+            {/* Letters */}
+            <span className="relative z-10 text-white font-black text-sm tracking-tight leading-none">
+              JR
+            </span>
           </a>
           <span className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
