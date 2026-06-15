@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
-export default function SectionHeader({ number, title, subtitle }) {
+export default function SectionHeader({ number, title, titleAccent, subtitle }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.4 })
 
   return (
@@ -21,7 +21,9 @@ export default function SectionHeader({ number, title, subtitle }) {
           animate={inView ? { y: '0%' } : {}}
           transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
         >
-          {title}
+          {title}{titleAccent && (
+            <> <span className="text-indigo-400">{titleAccent}</span></>
+          )}
         </motion.h2>
       </div>
     </div>

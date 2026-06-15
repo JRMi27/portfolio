@@ -42,7 +42,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-28 md:py-36 px-6 md:px-12">
       <div className="max-w-3xl mx-auto">
-        <SectionHeader number="07" title={t.contact.title} subtitle={t.contact.subtitle} />
+        <SectionHeader number="07" title={t.contact.title} titleAccent={t.contact.titleAccent} subtitle={t.contact.subtitle} />
 
         <motion.div
           ref={ref}

@@ -13,7 +13,7 @@ export default function About() {
 
   return (
     <section id="about" className="py-28 md:py-36 px-6 md:px-12 max-w-7xl mx-auto">
-      <SectionHeader number="01" title={t.about.title} subtitle={t.about.subtitle} />
+      <SectionHeader number="01" title={t.about.title} titleAccent={t.about.titleAccent} subtitle={t.about.subtitle} />
 
       <div ref={ref} className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div className="space-y-6 order-2 md:order-1">
