@@ -95,6 +95,27 @@ html.light .hover\:border-indigo-500\/50:hover { border-color: rgba(99,102,241,0
 html.light .opacity-\[0\.03\] { opacity: 0.06; }
 html.light .opacity-\[0\.03\] { --grid-color: #000; }
 
+/* ── Navbar logo ── */
+@keyframes logo-gradient {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+.logo-gradient-border {
+  background: linear-gradient(135deg, #6366f1 0%, #7c3aed 30%, #06b6d4 60%, #a78bfa 80%, #6366f1 100%);
+  background-size: 300% 300%;
+  animation: logo-gradient 5s ease infinite;
+  border-radius: inherit;
+}
+
+.logo-inner {
+  background: #0a0a0a;
+}
+html.light .logo-inner {
+  background: #f8f8f8;
+}
+
 /* ── Orb float animations ── */
 @keyframes float-orb-a {
   0%, 100% { transform: translate(0, 0)      scale(1); }
