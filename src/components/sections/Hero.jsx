@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
 import { asset } from '../../utils/asset'
 import { useLang } from '../../contexts/LangContext'
 
@@ -12,30 +12,67 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
 
+  /* Mouse tracking */
+  const rawX = useMotionValue(0)
+  const rawY = useMotionValue(0)
+  const springCfg = { damping: 28, stiffness: 70, mass: 0.8 }
+  const mx = useSpring(rawX, springCfg)
+  const my = useSpring(rawY, springCfg)
+
+  /* Each orb moves at a different speed → depth illusion */
+  const o1x = useTransform(mx, v => v * 70)
+  const o1y = useTransform(my, v => v * 50)
+  const o2x = useTransform(mx, v => v * -45)
+  const o2y = useTransform(my, v => v * -35)
+  const o3x = useTransform(mx, v => v * 30)
+  const o3y = useTransform(my, v => v * -25)
+
+  const handleMouseMove = (e) => {
+    const rect = ref.current.getBoundingClientRect()
+    rawX.set((e.clientX - rect.left - rect.width  / 2) / rect.width)
+    rawY.set((e.clientY - rect.top  - rect.height / 2) / rect.height)
+  }
+
+  const handleMouseLeave = () => {
+    rawX.set(0)
+    rawY.set(0)
+  }
+
   return (
     <section
       id="home"
       ref={ref}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
         <motion.div
           className="absolute rounded-full"
-          style={{ width: 700, height: 700, background: 'radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%)', top: -200, left: -200 }}
-          animate={{ x: [0, 40, 0], y: [0, -30, 0] }}
-          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+          style={{
+            width: 700, height: 700,
+            background: 'radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%)',
+            top: -200, left: -200,
+            x: o1x, y: o1y,
+          }}
         />
         <motion.div
           className="absolute rounded-full"
-          style={{ width: 500, height: 500, background: 'radial-gradient(circle, rgba(129,140,248,0.12) 0%, transparent 70%)', bottom: -100, right: '5%' }}
-          animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+          style={{
+            width: 500, height: 500,
+            background: 'radial-gradient(circle, rgba(129,140,248,0.12) 0%, transparent 70%)',
+            bottom: -100, right: '5%',
+            x: o2x, y: o2y,
+          }}
         />
         <motion.div
           className="absolute rounded-full"
-          style={{ width: 300, height: 300, background: 'radial-gradient(circle, rgba(79,70,229,0.15) 0%, transparent 70%)', top: '40%', right: '25%' }}
-          animate={{ x: [0, 20, 0], y: [0, -20, 0] }}
-          transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
+          style={{
+            width: 300, height: 300,
+            background: 'radial-gradient(circle, rgba(79,70,229,0.15) 0%, transparent 70%)',
+            top: '40%', right: '25%',
+            x: o3x, y: o3y,
+          }}
         />
         <div
           className="absolute inset-0 opacity-[0.03]"
