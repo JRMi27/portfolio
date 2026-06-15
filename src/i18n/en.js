@@ -7,6 +7,7 @@ const en = {
     education: 'Education',
     veille: 'Tech Watch',
     contact: 'Contact',
+    status: 'In training',
   },
   hero: {
     badge: 'Available for new opportunities',
@@ -14,9 +15,16 @@ const en = {
     roleEm: 'Developer',
     cta: 'View my projects',
     cv: 'My Resume',
+    stats: [
+      { value: '3', label: 'study_years' },
+      { value: '6', label: 'projects' },
+      { value: '2', label: 'internships' },
+      { value: '6', label: 'certifs' },
+    ],
   },
   about: {
     title: 'About',
+    titleAccent: 'Me',
     subtitle: 'Who am I',
     p1: "Passionate about web development and new technologies, I am currently studying for a Computer Science degree after obtaining my BTS SIO (SLAM track) at Lycée Gustave Flaubert in Rouen.",
     p2: "My journey has allowed me to develop solid skills in full stack development, with a particular interest in building modern, high-performance interfaces.",
@@ -27,12 +35,14 @@ const en = {
     badgePeriod: '2025 — Present',
   },
   skills: {
-    title: 'Skills',
+    title: 'My',
+    titleAccent: 'Skills',
     subtitle: 'My toolkit',
     categories: ['Languages', 'Frameworks & Libs', 'Tools', 'Databases'],
   },
   experience: {
-    title: 'Experience',
+    title: 'My',
+    titleAccent: 'Experience',
     subtitle: 'Professional journey',
     viewReport: 'View report →',
     items: [
@@ -69,7 +79,8 @@ const en = {
     ],
   },
   projects: {
-    title: 'Projects',
+    title: 'My',
+    titleAccent: 'Projects',
     subtitle: 'My work',
     github: 'Code',
     demo: 'Demo',
@@ -139,7 +150,8 @@ const en = {
     ],
   },
   parcours: {
-    title: 'Background',
+    title: 'My',
+    titleAccent: 'Background',
     subtitle: 'Education & Certifications',
     tabFormation: 'Education',
     tabCertifications: 'Certifications',
@@ -195,7 +207,8 @@ const en = {
     all: 'All',
   },
   veille: {
-    title: 'Tech Watch',
+    title: 'Tech',
+    titleAccent: 'Watch',
     subtitle: 'Staying current',
     topics: [
       {
@@ -240,7 +253,8 @@ const en = {
     ],
   },
   contact: {
-    title: 'Contact',
+    title: 'Get In',
+    titleAccent: 'Touch',
     subtitle: "Let's talk",
     intro: "Have a project in mind or just want to chat? Feel free to reach out directly.",
     email: 'Email',

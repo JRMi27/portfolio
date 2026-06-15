@@ -7,6 +7,7 @@ const fr = {
     education: 'Formation',
     veille: 'Veille',
     contact: 'Contact',
+    status: 'En formation',
   },
   hero: {
     badge: 'Disponible pour de nouvelles opportunités',
@@ -14,9 +15,16 @@ const fr = {
     roleEm: 'Full Stack',
     cta: 'Voir mes projets',
     cv: 'Mon CV',
+    stats: [
+      { value: '3', label: 'ans_formation' },
+      { value: '6', label: 'projets' },
+      { value: '2', label: 'stages' },
+      { value: '6', label: 'certifs' },
+    ],
   },
   about: {
-    title: 'À Propos',
+    title: 'À',
+    titleAccent: 'Propos',
     subtitle: 'Qui suis-je',
     p1: "Passionné par le développement web et les nouvelles technologies, je suis actuellement en Licence Informatique après avoir obtenu mon BTS SIO option SLAM au Lycée Gustave Flaubert de Rouen.",
     p2: "Mon parcours m'a permis de développer des compétences solides en développement full stack, avec une appétence particulière pour la création d'interfaces modernes et performantes.",
@@ -27,12 +35,14 @@ const fr = {
     badgePeriod: '2025 — Présent',
   },
   skills: {
-    title: 'Compétences',
+    title: 'Mes',
+    titleAccent: 'Compétences',
     subtitle: 'Mon arsenal',
     categories: ['Langages', 'Frameworks & Libs', 'Outils', 'Bases de données'],
   },
   experience: {
-    title: 'Expériences',
+    title: 'Mes',
+    titleAccent: 'Expériences',
     subtitle: 'Parcours professionnel',
     viewReport: 'Voir rapport →',
     items: [
@@ -69,7 +79,8 @@ const fr = {
     ],
   },
   projects: {
-    title: 'Projets',
+    title: 'Mes',
+    titleAccent: 'Projets',
     subtitle: 'Mes réalisations',
     github: 'Code',
     demo: 'Demo',
@@ -139,7 +150,8 @@ const fr = {
     ],
   },
   parcours: {
-    title: 'Parcours',
+    title: 'Mon',
+    titleAccent: 'Parcours',
     subtitle: 'Formation & Certifications',
     tabFormation: 'Formation',
     tabCertifications: 'Certifications',
@@ -195,7 +207,8 @@ const fr = {
     all: 'Tous',
   },
   veille: {
-    title: 'Veille Techno.',
+    title: 'Ma',
+    titleAccent: 'Veille',
     subtitle: 'Rester à jour',
     topics: [
       {
@@ -240,7 +253,8 @@ const fr = {
     ],
   },
   contact: {
-    title: 'Contact',
+    title: 'En',
+    titleAccent: 'Contact',
     subtitle: 'Parlons-en',
     intro: "Tu as un projet en tête ou tu veux simplement discuter ? N'hésite pas à me contacter directement.",
     email: 'Email',

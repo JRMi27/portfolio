@@ -8,76 +8,89 @@ const skillData = [
   {
     icon: '{ }',
     skills: [
-      { name: 'HTML', img: '/images/HTML5_logo.png' },
-      { name: 'CSS', img: '/images/CSS3_logo.png' },
-      { name: 'JavaScript', img: '/images/JS_logo.png' },
-      { name: 'TypeScript', img: '/images/Typescript_logo.png' },
-      { name: 'PHP', img: '/images/PHP_logo.png' },
-      { name: 'Java', img: '/images/java_logo.png' },
-      { name: 'Python', img: '/images/Python_logo.png' },
-      { name: 'SQL', img: '/images/SQL_logo.png' },
-      { name: 'Bash', img: '/images/bash_logo.png' },
-      { name: 'PowerShell', img: '/images/PowerShell_logo.png' },
-      { name: 'Lua', img: '/images/Lua_Logo.png' },
+      { name: 'HTML',        img: '/images/HTML5_logo.png',             level: 90 },
+      { name: 'CSS',         img: '/images/CSS3_logo.png',              level: 85 },
+      { name: 'JavaScript',  img: '/images/JS_logo.png',                level: 80 },
+      { name: 'TypeScript',  img: '/images/Typescript_logo.png',        level: 60 },
+      { name: 'PHP',         img: '/images/PHP_logo.png',               level: 75 },
+      { name: 'Java',        img: '/images/java_logo.png',              level: 70 },
+      { name: 'Python',      img: '/images/Python_logo.png',            level: 75 },
+      { name: 'SQL',         img: '/images/SQL_logo.png',               level: 80 },
+      { name: 'Bash',        img: '/images/bash_logo.png',              level: 60 },
+      { name: 'PowerShell',  img: '/images/PowerShell_logo.png',        level: 55 },
+      { name: 'Lua',         img: '/images/Lua_Logo.png',               level: 40 },
     ],
   },
   {
     icon: '⚡',
     skills: [
-      { name: 'React', img: '/images/React_logo.png' },
-      { name: 'Next.js', img: '/images/nextjs_logo.png' },
-      { name: 'Node.js', img: '/images/Node.js_logo.png' },
-      { name: 'Tailwind CSS', img: '/images/tailwind_logo.png' },
-      { name: 'Symfony', img: '/images/symfony_logo.png' },
-      { name: 'Vite', img: '/images/vite.png' },
+      { name: 'React',       img: '/images/React_logo.png',             level: 80 },
+      { name: 'Next.js',     img: '/images/nextjs_logo.png',            level: 60 },
+      { name: 'Node.js',     img: '/images/Node.js_logo.png',           level: 70 },
+      { name: 'Tailwind CSS',img: '/images/tailwind_logo.png',          level: 85 },
+      { name: 'Symfony',     img: '/images/symfony_logo.png',           level: 65 },
+      { name: 'Vite',        img: '/images/vite.png',                   level: 70 },
     ],
   },
   {
     icon: '🔧',
     skills: [
-      { name: 'Git', img: '/images/git-bash_logo.png' },
-      { name: 'GitHub', img: '/images/Github_logo.png' },
-      { name: 'Docker', img: '/images/docker_logo.png' },
-      { name: 'VS Code', img: '/images/visual-studio-code_logo.png' },
-      { name: 'Figma', img: '/images/Figma_logo.png' },
-      { name: 'Linux', img: '/images/Linux_logo.png' },
-      { name: 'Firebase', img: '/images/FIrebase_logo.png' },
-      { name: 'VirtualBox', img: '/images/Virtualbox_logo.png' },
-      { name: 'Canva', img: '/images/canva_logo.png' },
-      { name: 'Notion', img: '/images/notion_logo.png' },
-      { name: 'Claude', img: '/images/claude.png' },
-      { name: 'IntelliJ', img: '/images/IntelliJ.png' },
+      { name: 'Git',         img: '/images/git-bash_logo.png',          level: 85 },
+      { name: 'GitHub',      img: '/images/Github_logo.png',            level: 90 },
+      { name: 'Docker',      img: '/images/docker_logo.png',            level: 55 },
+      { name: 'VS Code',     img: '/images/visual-studio-code_logo.png',level: 90 },
+      { name: 'Figma',       img: '/images/Figma_logo.png',             level: 65 },
+      { name: 'Linux',       img: '/images/Linux_logo.png',             level: 70 },
+      { name: 'Firebase',    img: '/images/FIrebase_logo.png',          level: 55 },
+      { name: 'VirtualBox',  img: '/images/Virtualbox_logo.png',        level: 65 },
+      { name: 'Canva',       img: '/images/canva_logo.png',             level: 75 },
+      { name: 'Notion',      img: '/images/notion_logo.png',            level: 80 },
+      { name: 'Claude',      img: '/images/claude.png',                 level: 90 },
+      { name: 'IntelliJ',    img: '/images/IntelliJ.png',               level: 70 },
     ],
   },
   {
     icon: '🗄️',
     skills: [
-      { name: 'MySQL', img: '/images/MySQL.png' },
-      { name: 'Oracle Database', img: '/images/oracle.png' },
-      { name: 'MongoDB', img: '/images/mongodb.png' },
+      { name: 'MySQL',           img: '/images/MySQL.png',   level: 75 },
+      { name: 'Oracle Database', img: '/images/oracle.png',  level: 60 },
+      { name: 'MongoDB',         img: '/images/mongodb.png', level: 55 },
     ],
   },
 ]
 
+const levelColor = (l) =>
+  l >= 85 ? 'bg-emerald-500' : l >= 70 ? 'bg-indigo-500' : 'bg-zinc-600'
+
 function SkillBadge({ skill, delay, inView }) {
   return (
     <motion.div
-      className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-zinc-800 bg-zinc-900/60 hover:border-indigo-500/40 hover:bg-indigo-500/8 group transition-all duration-300"
+      className="flex flex-col gap-1.5 px-4 pt-2.5 pb-2 rounded-xl border border-zinc-800 bg-zinc-900/60 hover:border-indigo-500/40 hover:bg-indigo-500/8 group transition-all duration-300 min-w-[96px]"
       initial={{ opacity: 0, y: 16, scale: 0.95 }}
       animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.4, delay, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -2 }}
       data-hover
     >
-      <img
-        src={asset(skill.img)}
-        alt={skill.name}
-        className="w-4 h-4 object-contain opacity-70 group-hover:opacity-100 transition-opacity"
-        onError={(e) => { e.target.style.display = 'none' }}
-      />
-      <span className="text-zinc-400 group-hover:text-zinc-200 text-sm font-medium transition-colors">
-        {skill.name}
-      </span>
+      <div className="flex items-center gap-2">
+        <img
+          src={asset(skill.img)}
+          alt={skill.name}
+          className="w-4 h-4 object-contain opacity-70 group-hover:opacity-100 transition-opacity shrink-0"
+          onError={(e) => { e.target.style.display = 'none' }}
+        />
+        <span className="text-zinc-400 group-hover:text-zinc-200 text-sm font-medium transition-colors whitespace-nowrap">
+          {skill.name}
+        </span>
+      </div>
+      <div className="h-[2px] rounded-full bg-zinc-800 overflow-hidden">
+        <motion.div
+          className={`h-full rounded-full ${levelColor(skill.level)}`}
+          initial={{ width: 0 }}
+          animate={inView ? { width: `${skill.level}%` } : {}}
+          transition={{ duration: 0.7, delay: delay + 0.15, ease: [0.22, 1, 0.36, 1] }}
+        />
+      </div>
     </motion.div>
   )
 }
@@ -113,7 +126,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-28 md:py-36 px-6 md:px-12 bg-zinc-950/40">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader number="02" title={t.skills.title} subtitle={t.skills.subtitle} />
+        <SectionHeader number="02" title={t.skills.title} titleAccent={t.skills.titleAccent} subtitle={t.skills.subtitle} />
         <div className="space-y-14">
           {categories.map((cat, i) => (
             <CategoryBlock key={cat.name} cat={cat} baseDelay={i * 0.05} />
