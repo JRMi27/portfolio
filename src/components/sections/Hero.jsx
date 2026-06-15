@@ -128,6 +128,21 @@ export default function Hero() {
           </motion.p>
         </div>
 
+        {/* Stats row */}
+        <motion.div
+          className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-12"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.62, ease: EASE }}
+        >
+          {t.hero.stats.map((stat) => (
+            <div key={stat.label} className="flex flex-col items-center">
+              <span className="text-3xl md:text-4xl font-black text-white tabular-nums">{stat.value}<span className="text-indigo-400">+</span></span>
+              <span className="text-zinc-600 text-xs uppercase tracking-widest mt-0.5">{stat.label}</span>
+            </div>
+          ))}
+        </motion.div>
+
         <motion.div
           className="flex flex-wrap items-center justify-center gap-4"
           initial={{ opacity: 0, y: 20 }}
