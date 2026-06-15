@@ -95,27 +95,53 @@ html.light .hover\:border-indigo-500\/50:hover { border-color: rgba(99,102,241,0
 html.light .opacity-\[0\.03\] { opacity: 0.06; }
 html.light .opacity-\[0\.03\] { --grid-color: #000; }
 
+/* ── Orb float animations ── */
+@keyframes float-orb-a {
+  0%, 100% { transform: translate(0, 0)      scale(1); }
+  25%       { transform: translate(-32px, 26px) scale(1.03); }
+  50%       { transform: translate(22px, -32px) scale(0.97); }
+  75%       { transform: translate(28px, 20px)  scale(1.02); }
+}
+@keyframes float-orb-b {
+  0%, 100% { transform: translate(0, 0)       scale(1); }
+  33%       { transform: translate(36px, -28px) scale(1.04); }
+  66%       { transform: translate(-26px, 24px) scale(0.96); }
+}
+@keyframes float-orb-c {
+  0%, 100% { transform: translate(0, 0)       scale(1); }
+  40%       { transform: translate(-24px, -38px) scale(1.03); }
+  75%       { transform: translate(30px, 28px)   scale(0.97); }
+}
+
+.orb-a { animation: float-orb-a 32s ease-in-out infinite; }
+.orb-b { animation: float-orb-b 42s ease-in-out infinite; }
+.orb-c { animation: float-orb-c 26s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-a, .orb-b, .orb-c { animation: none; }
+}
+
 /* ── Section background wrapper ── */
 .section-bg-wrapper {
   background: linear-gradient(180deg,
-    #0a0a0a      0%,
-    #0a0a13      8%,
-    #08080f     55%,
-    #070710    100%
+    #0a0a0a  0%,
+    #0a0a14  6%,
+    #08080f 50%,
+    #06060d 100%
   );
 }
 
 html.light .section-bg-wrapper {
   background: linear-gradient(180deg,
     #f8f8f8  0%,
-    #f4f4fc  8%,
-    #f2f2fa 55%,
-    #f0f0f8 100%
+    #f4f4fc  6%,
+    #f1f1f9 50%,
+    #eeeef7 100%
   );
 }
 
 html.light .section-bg-deco {
-  opacity: 0.25;
+  opacity: 0.2;
 }
 
 /* Mobile: restore cursor */

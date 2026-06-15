@@ -22,30 +22,54 @@ export default function App() {
         <div className="section-bg-wrapper relative overflow-hidden">
           {/* Background decoration */}
           <div className="section-bg-deco absolute inset-0 pointer-events-none" aria-hidden="true">
-            {/* Top separator */}
-            <div
-              className="absolute top-0 inset-x-0 h-px"
-              style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.6) 30%, rgba(148,163,184,0.4) 50%, rgba(99,102,241,0.6) 70%, transparent 100%)' }}
-            />
-            {/* Glow orbs */}
-            <div className="absolute rounded-full" style={{ top: '2%',  right: '-12%', width: 900, height: 900, background: 'radial-gradient(circle, rgba(99,102,241,0.10) 0%, transparent 62%)' }} />
-            <div className="absolute rounded-full" style={{ top: '34%', left: '-14%', width: 780, height: 780, background: 'radial-gradient(circle, rgba(79,70,229,0.09) 0%, transparent 62%)' }} />
-            <div className="absolute rounded-full" style={{ bottom: '14%', right: '4%',  width: 680, height: 680, background: 'radial-gradient(circle, rgba(129,140,248,0.08) 0%, transparent 62%)' }} />
-            <div className="absolute rounded-full" style={{ top: '60%', left: '8%',   width: 560, height: 560, background: 'radial-gradient(circle, rgba(99,102,241,0.07) 0%, transparent 62%)' }} />
-            {/* Dot grid */}
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: 'radial-gradient(circle, rgba(99,102,241,0.3) 1px, transparent 1px)',
-                backgroundSize: '44px 44px',
-                opacity: 0.18,
-              }}
-            />
-            {/* Left accent rail */}
-            <div
-              className="absolute left-5 md:left-12 top-0 bottom-0 w-px"
-              style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(99,102,241,0.18) 6%, rgba(99,102,241,0.12) 86%, transparent 100%)' }}
-            />
+
+            {/* ── Line grid ── */}
+            <div className="absolute inset-0" style={{
+              backgroundImage:
+                'linear-gradient(rgba(99,102,241,0.07) 1px, transparent 1px),' +
+                'linear-gradient(to right, rgba(99,102,241,0.07) 1px, transparent 1px)',
+              backgroundSize: '64px 64px',
+            }} />
+
+            {/* ── Top separator with glow ── */}
+            <div className="absolute top-0 inset-x-0 h-px" style={{
+              background: 'linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.9) 25%, rgba(192,132,252,0.7) 50%, rgba(99,102,241,0.9) 75%, transparent 100%)',
+              boxShadow: '0 0 32px 6px rgba(99,102,241,0.3)',
+            }} />
+
+            {/* ── Animated orbs ── */}
+            {/* Indigo — top right */}
+            <div className="absolute rounded-full orb-a" style={{
+              top: '1%', right: '-12%', width: 1000, height: 1000,
+              background: 'radial-gradient(circle, rgba(99,102,241,0.13) 0%, transparent 60%)',
+            }} />
+            {/* Violet — mid left */}
+            <div className="absolute rounded-full orb-b" style={{
+              top: '28%', left: '-16%', width: 850, height: 850,
+              background: 'radial-gradient(circle, rgba(124,58,237,0.11) 0%, transparent 60%)',
+            }} />
+            {/* Purple — center */}
+            <div className="absolute rounded-full orb-c" style={{
+              top: '55%', left: '10%', width: 650, height: 650,
+              background: 'radial-gradient(circle, rgba(168,85,247,0.09) 0%, transparent 60%)',
+            }} />
+            {/* Indigo lighter — bottom right */}
+            <div className="absolute rounded-full orb-b" style={{
+              bottom: '10%', right: '2%', width: 720, height: 720,
+              background: 'radial-gradient(circle, rgba(129,140,248,0.10) 0%, transparent 60%)',
+            }} />
+            {/* Cyan accent — bottom left corner */}
+            <div className="absolute rounded-full orb-a" style={{
+              bottom: '5%', left: '-8%', width: 500, height: 500,
+              background: 'radial-gradient(circle, rgba(6,182,212,0.06) 0%, transparent 60%)',
+            }} />
+
+            {/* ── Vignette (edges dark) ── */}
+            <div className="absolute inset-0" style={{
+              background:
+                'radial-gradient(ellipse 80% 60% at 50% 50%, transparent 55%, rgba(4,4,10,0.55) 100%)',
+            }} />
+
           </div>
 
           <About />
