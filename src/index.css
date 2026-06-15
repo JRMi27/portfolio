@@ -95,6 +95,29 @@ html.light .hover\:border-indigo-500\/50:hover { border-color: rgba(99,102,241,0
 html.light .opacity-\[0\.03\] { opacity: 0.06; }
 html.light .opacity-\[0\.03\] { --grid-color: #000; }
 
+/* ── Section background wrapper ── */
+.section-bg-wrapper {
+  background: linear-gradient(180deg,
+    #0a0a0a      0%,
+    #0a0a13      8%,
+    #08080f     55%,
+    #070710    100%
+  );
+}
+
+html.light .section-bg-wrapper {
+  background: linear-gradient(180deg,
+    #f8f8f8  0%,
+    #f4f4fc  8%,
+    #f2f2fa 55%,
+    #f0f0f8 100%
+  );
+}
+
+html.light .section-bg-deco {
+  opacity: 0.25;
+}
+
 /* Mobile: restore cursor */
 @media (hover: none) {
   * {
