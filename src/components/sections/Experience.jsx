@@ -66,7 +66,7 @@ export default function Experience() {
   return (
     <section id="experience" className="py-28 md:py-36 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader number="03" title={t.experience.title} subtitle={t.experience.subtitle} />
+        <SectionHeader number="03" title={t.experience.title} titleAccent={t.experience.titleAccent} subtitle={t.experience.subtitle} />
         <div className="max-w-2xl">
           {t.experience.items.map((exp, i) => (
             <ExpCard key={exp.company} exp={exp} viewReport={t.experience.viewReport} index={i} />

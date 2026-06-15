@@ -115,7 +115,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-28 md:py-36 px-6 md:px-12 bg-zinc-950/40">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader number="04" title={t.projects.title} subtitle={t.projects.subtitle} />
+        <SectionHeader number="04" title={t.projects.title} titleAccent={t.projects.titleAccent} subtitle={t.projects.subtitle} />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {projects.map((p, i) => (
             <ProjectCard key={p.title} project={p} index={i} />

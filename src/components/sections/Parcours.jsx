@@ -127,7 +127,7 @@ export default function Parcours() {
   return (
     <section id="parcours" className="py-28 md:py-36 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader number="05" title={t.parcours.title} subtitle={t.parcours.subtitle} />
+        <SectionHeader number="05" title={t.parcours.title} titleAccent={t.parcours.titleAccent} subtitle={t.parcours.subtitle} />
 
         {/* Main tabs */}
         <div className="flex gap-2.5 mb-12">
