@@ -8,12 +8,16 @@ import { useLang } from '../../contexts/LangContext'
 const EASE = [0.22, 1, 0.36, 1]
 
 const certs = [
-  { title: 'MOOC SecNumAcadémie', category: 'MOOC ANSSI',      image: '/images/certification-anssi.png', year: '2024', org: 'ANSSI' },
-  { title: 'RGPD — Module 1',    category: 'MOOC RGPD CNIL',   image: '/images/RGPD_MOD1.png',           year: '2024', org: 'CNIL'  },
-  { title: 'RGPD — Module 2',    category: 'MOOC RGPD CNIL',   image: '/images/RGPD_MOD2.png',           year: '2024', org: 'CNIL'  },
-  { title: 'RGPD — Module 3',    category: 'MOOC RGPD CNIL',   image: '/images/RGPD_MOD3.png',           year: '2024', org: 'CNIL'  },
-  { title: 'RGPD — Module 4',    category: 'MOOC RGPD CNIL',   image: '/images/RGPD_MOD4.png',           year: '2024', org: 'CNIL'  },
-  { title: 'RGPD — Module 5',    category: 'MOOC RGPD CNIL',   image: '/images/RGPD_MOD5.png',           year: '2024', org: 'CNIL'  },
+  { title: 'MOOC SecNumAcadémie', category: 'MOOC ANSSI',    image: '/images/certification-anssi.png', year: '2024', org: 'ANSSI' },
+  {
+    title: 'MOOC RGPD — CNIL',
+    category: 'MOOC RGPD CNIL',
+    image: '/images/RGPD_MOD1.png',
+    images: ['/images/RGPD_MOD1.png', '/images/RGPD_MOD2.png', '/images/RGPD_MOD3.png', '/images/RGPD_MOD4.png', '/images/RGPD_MOD5.png'],
+    year: '2024',
+    org: 'CNIL',
+    badge: '5 modules',
+  },
 ]
 
 /* ── Formation ── */
@@ -88,7 +92,14 @@ function CertCard({ cert, index }) {
             <span className="text-indigo-400 text-[10px] font-mono uppercase tracking-widest">{cert.org}</span>
             <span className="text-zinc-600 text-[10px] font-mono">{cert.year}</span>
           </div>
-          <p className="text-zinc-300 text-sm font-medium">{cert.title}</p>
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-zinc-300 text-sm font-medium">{cert.title}</p>
+            {cert.badge && (
+              <span className="shrink-0 px-2 py-0.5 text-[10px] rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+                {cert.badge}
+              </span>
+            )}
+          </div>
         </div>
       </motion.div>
 
@@ -99,11 +110,24 @@ function CertCard({ cert, index }) {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={() => setZoomed(false)}
           >
-            <motion.img src={asset(cert.image)} alt={cert.title}
-              className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
-              initial={{ scale: 0.85, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.85, opacity: 0 }} transition={{ ease: EASE }}
-              onClick={(e) => e.stopPropagation()} />
+            {cert.images ? (
+              <motion.div
+                className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-4xl max-h-[90vh] overflow-y-auto"
+                initial={{ scale: 0.92, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.92, opacity: 0 }} transition={{ ease: EASE }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {cert.images.map((img) => (
+                  <img key={img} src={asset(img)} alt={cert.title} className="rounded-lg shadow-xl object-contain w-full" />
+                ))}
+              </motion.div>
+            ) : (
+              <motion.img src={asset(cert.image)} alt={cert.title}
+                className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
+                initial={{ scale: 0.85, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.85, opacity: 0 }} transition={{ ease: EASE }}
+                onClick={(e) => e.stopPropagation()} />
+            )}
             <button
               className="absolute top-5 right-5 w-9 h-9 rounded-full bg-zinc-800 hover:bg-zinc-700 text-white flex items-center justify-center text-lg transition-colors"
               onClick={() => setZoomed(false)}

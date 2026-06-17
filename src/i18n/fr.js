@@ -16,10 +16,10 @@ const fr = {
     cta: 'Voir mes projets',
     cv: 'Mon CV',
     stats: [
-      { value: '3', label: 'ans_formation' },
-      { value: '6', label: 'projets' },
-      { value: '2', label: 'stages' },
-      { value: '6', label: 'certifs' },
+      { value: '3', label: 'ans de formation' },
+      { value: '6', label: 'projets réalisés' },
+      { value: '2', label: 'stages effectués' },
+      { value: '6', label: 'certifications' },
     ],
   },
   about: {
@@ -37,13 +37,13 @@ const fr = {
   skills: {
     title: 'Mes',
     titleAccent: 'Compétences',
-    subtitle: 'Mon arsenal',
+    subtitle: '',
     categories: ['Langages', 'Frameworks & Libs', 'Outils', 'Bases de données'],
   },
   experience: {
     title: 'Mes',
     titleAccent: 'Expériences',
-    subtitle: 'Parcours professionnel',
+    subtitle: '',
     viewReport: 'Voir rapport →',
     items: [
       {
@@ -66,22 +66,12 @@ const fr = {
         pdf: 'pdf/OPMobility STAGE.pdf',
         color: '#8b5cf6',
       },
-      {
-        year: '2019',
-        period: '2019',
-        company: 'Holophane',
-        role: "Électricien — Stage d'observation",
-        description: "Stage d'observation dans le domaine de l'électricité industrielle. Découverte des métiers de l'industrie et des installations électriques en milieu professionnel.",
-        tags: ['Électricité', 'Industrie', 'Observation'],
-        pdf: null,
-        color: '#7c3aed',
-      },
     ],
   },
   projects: {
     title: 'Mes',
     titleAccent: 'Projets',
-    subtitle: 'Mes réalisations',
+    subtitle: '',
     github: 'Code',
     demo: 'Demo',
     status_done: 'Terminé',
@@ -213,9 +203,9 @@ const fr = {
     topics: [
       {
         num: '01',
-        icon: '🔍',
-        title: "Qu'est-ce que la veille technologique ?",
-        content: "La veille technologique est un processus de surveillance continue et systématique des avancées technologiques dans un domaine particulier. Elle vise à identifier les innovations, les tendances, les nouvelles technologies et les changements dans l'environnement technologique.",
+        icon: '📡',
+        title: 'Ma veille au quotidien',
+        content: "Le web évolue vite — nouveaux frameworks, patterns d'architecture, outils IA. Je consacre du temps chaque semaine à explorer ces nouveautés, en filtrant l'essentiel via quelques sources fiables plutôt que de tout suivre.",
       },
       {
         num: '02',
@@ -226,27 +216,31 @@ const fr = {
       },
       {
         num: '03',
-        icon: '📊',
-        title: "Récolter et traiter l'information",
+        icon: '📚',
+        title: 'Mes sources favorites',
         items: [
           {
-            name: 'Google Alerts',
-            href: 'https://www.google.com/alerts',
-            desc: "Service gratuit pour recevoir des notifications par e-mail sur les nouveaux contenus concernant des sujets spécifiques.",
+            name: 'Hacker News',
+            href: 'https://news.ycombinator.com',
+            desc: "Actualité tech quotidienne et discussions de la communauté dev.",
           },
           {
-            name: 'Google Sheets',
-            href: 'https://docs.google.com/spreadsheets/d/1utkg921GG8KVoSHLDvQPVoPjQPZkDQonyPR-4UuM_e4/edit?usp=sharing',
-            desc: "Feuille de calcul collaborative pour l'analyse et le suivi des données collectées lors de la veille.",
-            cta: 'Accéder à la feuille',
+            name: 'Fireship',
+            href: 'https://www.youtube.com/@Fireship',
+            desc: "Vidéos courtes et denses sur les nouveautés du web et du dev.",
+          },
+          {
+            name: 'JavaScript Weekly',
+            href: 'https://javascriptweekly.com',
+            desc: "Newsletter hebdomadaire sur l'écosystème JavaScript.",
           },
         ],
       },
       {
         num: '04',
         icon: '🌐',
-        title: "Partager l'information",
-        content: "GitHub est la plateforme de collaboration incontournable pour les développeurs. Elle permet de partager du code, des projets et des documents, et d'archiver les résultats de veille sous forme de repositories publics.",
+        title: 'Partager mes découvertes',
+        content: "GitHub est la plateforme de collaboration incontournable pour les développeurs. Elle me permet de partager mon code, mes projets, et de suivre le travail d'autres développeurs dont je m'inspire.",
         link: 'https://github.com/JRMi27',
         linkLabel: 'Voir mon GitHub →',
       },
@@ -258,7 +252,6 @@ const fr = {
     subtitle: 'Parlons-en',
     intro: "Tu as un projet en tête ou tu veux simplement discuter ? N'hésite pas à me contacter directement.",
     email: 'Email',
-    phone: 'Téléphone',
     location: 'Localisation',
     locationVal: 'Rouen, France',
   },

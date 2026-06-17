@@ -17,7 +17,6 @@ export default function Contact() {
     { type: 'blank' },
     { type: 'cmd',    text: 'cat contact.txt' },
     { type: 'kv',     key: 'email',             value: 'jeremy.rouillard27@gmail.com', href: 'mailto:jeremy.rouillard27@gmail.com' },
-    { type: 'kv',     key: t.contact.phone,      value: '06 15 65 18 65',              href: 'tel:+33615651865' },
     { type: 'kv',     key: t.contact.location,   value: t.contact.locationVal },
     { type: 'blank' },
     { type: 'cmd',    text: 'open ./links' },

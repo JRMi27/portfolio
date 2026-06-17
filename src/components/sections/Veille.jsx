@@ -402,7 +402,7 @@ function TopicCard({ topic, index }) {
         </div>
 
         {topic.content && (
-          <p className="text-zinc-500 text-sm leading-relaxed">{topic.content}</p>
+          <p className="text-zinc-400 text-sm leading-relaxed">{topic.content}</p>
         )}
 
         {topic.items && (

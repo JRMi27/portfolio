@@ -11,24 +11,22 @@ const skillData = [
       { name: 'HTML',        img: '/images/HTML5_logo.png',             level: 90 },
       { name: 'CSS',         img: '/images/CSS3_logo.png',              level: 85 },
       { name: 'JavaScript',  img: '/images/JS_logo.png',                level: 80 },
-      { name: 'TypeScript',  img: '/images/Typescript_logo.png',        level: 60 },
+      { name: 'TypeScript',  img: '/images/Typescript_logo.png',        level: 65 },
       { name: 'PHP',         img: '/images/PHP_logo.png',               level: 75 },
-      { name: 'Java',        img: '/images/java_logo.png',              level: 70 },
+      { name: 'Java',        img: '/images/java_logo.png',              level: 75 },
       { name: 'Python',      img: '/images/Python_logo.png',            level: 75 },
       { name: 'SQL',         img: '/images/SQL_logo.png',               level: 80 },
-      { name: 'Bash',        img: '/images/bash_logo.png',              level: 60 },
-      { name: 'PowerShell',  img: '/images/PowerShell_logo.png',        level: 55 },
-      { name: 'Lua',         img: '/images/Lua_Logo.png',               level: 40 },
+      { name: 'Bash',        img: '/images/bash_logo.png',              level: 65 },
     ],
   },
   {
     icon: '⚡',
     skills: [
       { name: 'React',       img: '/images/React_logo.png',             level: 80 },
-      { name: 'Next.js',     img: '/images/nextjs_logo.png',            level: 60 },
+      { name: 'Next.js',     img: '/images/nextjs_logo.png',            level: 65 },
       { name: 'Node.js',     img: '/images/Node.js_logo.png',           level: 70 },
       { name: 'Tailwind CSS',img: '/images/tailwind_logo.png',          level: 85 },
-      { name: 'Symfony',     img: '/images/symfony_logo.png',           level: 65 },
+      { name: 'Symfony',     img: '/images/symfony_logo.png',           level: 70 },
       { name: 'Vite',        img: '/images/vite.png',                   level: 70 },
     ],
   },
@@ -37,15 +35,13 @@ const skillData = [
     skills: [
       { name: 'Git',         img: '/images/git-bash_logo.png',          level: 85 },
       { name: 'GitHub',      img: '/images/Github_logo.png',            level: 90 },
-      { name: 'Docker',      img: '/images/docker_logo.png',            level: 55 },
+      { name: 'Docker',      img: '/images/docker_logo.png',            level: 65 },
       { name: 'VS Code',     img: '/images/visual-studio-code_logo.png',level: 90 },
-      { name: 'Figma',       img: '/images/Figma_logo.png',             level: 65 },
-      { name: 'Linux',       img: '/images/Linux_logo.png',             level: 70 },
-      { name: 'Firebase',    img: '/images/FIrebase_logo.png',          level: 55 },
-      { name: 'VirtualBox',  img: '/images/Virtualbox_logo.png',        level: 65 },
+      { name: 'Figma',       img: '/images/Figma_logo.png',             level: 70 },
+      { name: 'Linux',       img: '/images/Linux_logo.png',             level: 75 },
+      { name: 'Firebase',    img: '/images/FIrebase_logo.png',          level: 65 },
       { name: 'Canva',       img: '/images/canva_logo.png',             level: 75 },
       { name: 'Notion',      img: '/images/notion_logo.png',            level: 80 },
-      { name: 'Claude',      img: '/images/claude.png',                 level: 90 },
       { name: 'IntelliJ',    img: '/images/IntelliJ.png',               level: 70 },
     ],
   },
@@ -53,8 +49,8 @@ const skillData = [
     icon: '🗄️',
     skills: [
       { name: 'MySQL',           img: '/images/MySQL.png',   level: 75 },
-      { name: 'Oracle Database', img: '/images/oracle.png',  level: 60 },
-      { name: 'MongoDB',         img: '/images/mongodb.png', level: 55 },
+      { name: 'Oracle Database', img: '/images/oracle.png',  level: 65 },
+      { name: 'MongoDB',         img: '/images/mongodb.png', level: 65 },
     ],
   },
 ]
@@ -83,7 +79,7 @@ function SkillBadge({ skill, delay, inView }) {
           {skill.name}
         </span>
       </div>
-      <div className="h-[2px] rounded-full bg-zinc-800 overflow-hidden">
+      <div className="h-1.5 rounded-full bg-zinc-800 overflow-hidden">
         <motion.div
           className={`h-full rounded-full ${levelColor(skill.level)}`}
           initial={{ width: 0 }}
