@@ -47,7 +47,7 @@ function ExpCard({ exp, viewReport, index }) {
             </a>
           )}
         </div>
-        <p className="text-zinc-500 text-sm leading-relaxed mb-4">{exp.description}</p>
+        <p className="text-zinc-400 text-sm leading-relaxed mb-4">{exp.description}</p>
         <div className="flex flex-wrap gap-1.5">
           {exp.tags.map((tag) => (
             <span key={tag} className="px-2 py-0.5 text-xs rounded-md bg-zinc-800/80 text-zinc-400 border border-zinc-700/50">

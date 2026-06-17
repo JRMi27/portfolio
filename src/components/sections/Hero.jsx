@@ -51,7 +51,7 @@ export default function Hero() {
           className="absolute rounded-full"
           style={{
             width: 700, height: 700,
-            background: 'radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(99,102,241,0.30) 0%, transparent 70%)',
             top: -200, left: -200,
             x: o1x, y: o1y,
           }}
@@ -60,7 +60,7 @@ export default function Hero() {
           className="absolute rounded-full"
           style={{
             width: 500, height: 500,
-            background: 'radial-gradient(circle, rgba(129,140,248,0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(129,140,248,0.24) 0%, transparent 70%)',
             bottom: -100, right: '5%',
             x: o2x, y: o2y,
           }}
@@ -69,7 +69,7 @@ export default function Hero() {
           className="absolute rounded-full"
           style={{
             width: 300, height: 300,
-            background: 'radial-gradient(circle, rgba(79,70,229,0.15) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(79,70,229,0.28) 0%, transparent 70%)',
             top: '40%', right: '25%',
             x: o3x, y: o3y,
           }}

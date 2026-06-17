@@ -41,27 +41,27 @@ export default function App() {
             {/* Indigo — top right */}
             <div className="absolute rounded-full orb-a" style={{
               top: '1%', right: '-12%', width: 1000, height: 1000,
-              background: 'radial-gradient(circle, rgba(99,102,241,0.13) 0%, transparent 60%)',
+              background: 'radial-gradient(circle, rgba(99,102,241,0.26) 0%, transparent 60%)',
             }} />
             {/* Violet — mid left */}
             <div className="absolute rounded-full orb-b" style={{
               top: '28%', left: '-16%', width: 850, height: 850,
-              background: 'radial-gradient(circle, rgba(124,58,237,0.11) 0%, transparent 60%)',
+              background: 'radial-gradient(circle, rgba(124,58,237,0.22) 0%, transparent 60%)',
             }} />
             {/* Purple — center */}
             <div className="absolute rounded-full orb-c" style={{
               top: '55%', left: '10%', width: 650, height: 650,
-              background: 'radial-gradient(circle, rgba(168,85,247,0.09) 0%, transparent 60%)',
+              background: 'radial-gradient(circle, rgba(168,85,247,0.20) 0%, transparent 60%)',
             }} />
             {/* Indigo lighter — bottom right */}
             <div className="absolute rounded-full orb-b" style={{
               bottom: '10%', right: '2%', width: 720, height: 720,
-              background: 'radial-gradient(circle, rgba(129,140,248,0.10) 0%, transparent 60%)',
+              background: 'radial-gradient(circle, rgba(129,140,248,0.22) 0%, transparent 60%)',
             }} />
             {/* Cyan accent — bottom left corner */}
             <div className="absolute rounded-full orb-a" style={{
               bottom: '5%', left: '-8%', width: 500, height: 500,
-              background: 'radial-gradient(circle, rgba(6,182,212,0.06) 0%, transparent 60%)',
+              background: 'radial-gradient(circle, rgba(6,182,212,0.16) 0%, transparent 60%)',
             }} />
 
             {/* ── Vignette (edges dark) ── */}

@@ -40,7 +40,7 @@ function ProjectCard({ project, index }) {
         <img
           src={asset(project.image)}
           alt={project.title}
-          className="w-full h-full object-cover opacity-50 group-hover:opacity-75 group-hover:scale-105 transition-all duration-700"
+          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
           onError={(e) => {
             e.target.parentElement.style.background = `linear-gradient(135deg, ${project.accent}18, #141414)`
             e.target.remove()
@@ -64,7 +64,7 @@ function ProjectCard({ project, index }) {
         <h3 className="text-white font-bold text-xl mb-2 group-hover:text-indigo-300 transition-colors duration-200">
           {project.title}
         </h3>
-        <p className="text-zinc-500 text-sm leading-relaxed mb-4">{project.description}</p>
+        <p className="text-zinc-400 text-sm leading-relaxed mb-4">{project.description}</p>
 
         <div className="flex flex-wrap gap-1.5 mb-6">
           {project.tags.map((t) => (
