@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from '../contexts/ThemeContext'
 import { useLang } from '../contexts/LangContext'
@@ -35,6 +35,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const { theme, toggle: toggleTheme } = useTheme()
   const { lang, toggle: toggleLang, t } = useLang()
+  const menuRef = useRef(null)
+  const toggleBtnRef = useRef(null)
 
   const links = [
     { label: t.nav.about,      href: '#about' },
@@ -55,6 +57,37 @@ export default function Navbar() {
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
+  }, [open])
+
+  /* Mobile menu: Escape to close, focus trap, restore focus */
+  useEffect(() => {
+    if (!open) return
+
+    const first = menuRef.current?.querySelector('a, button')
+    first?.focus()
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setOpen(false)
+        toggleBtnRef.current?.focus()
+        return
+      }
+      if (e.key !== 'Tab') return
+      const focusable = menuRef.current?.querySelectorAll('a[href], button:not([disabled])')
+      if (!focusable || focusable.length === 0) return
+      const firstEl = focusable[0]
+      const lastEl = focusable[focusable.length - 1]
+      if (e.shiftKey && document.activeElement === firstEl) {
+        e.preventDefault()
+        lastEl.focus()
+      } else if (!e.shiftKey && document.activeElement === lastEl) {
+        e.preventDefault()
+        firstEl.focus()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
   }, [open])
 
   return (
@@ -110,35 +143,43 @@ export default function Navbar() {
             href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-lg border border-zinc-800 text-zinc-400 hover:border-indigo-500/50 hover:text-indigo-300 transition-all duration-200"
+            className="p-2 rounded-lg border border-zinc-800 text-zinc-400 hover:border-indigo-500/50 hover:text-indigo-300 transition-colors duration-200"
             title="LinkedIn"
             aria-label="LinkedIn"
           >
             <LinkedInIcon />
           </a>
           <button
+            type="button"
             onClick={toggleLang}
-            className="px-3 py-1.5 rounded-lg border border-zinc-800 text-zinc-400 hover:border-indigo-500/50 hover:text-indigo-300 text-xs font-mono font-bold transition-all duration-200"
+            className="px-3 py-1.5 rounded-lg border border-zinc-800 text-zinc-400 hover:border-indigo-500/50 hover:text-indigo-300 text-xs font-mono font-bold transition-colors duration-200"
             title={lang === 'fr' ? 'Switch to English' : 'Passer en français'}
+            aria-label={lang === 'fr' ? 'Switch to English' : 'Passer en français'}
           >
             {lang === 'fr' ? 'EN' : 'FR'}
           </button>
           <button
+            type="button"
             onClick={toggleTheme}
-            className="p-2 rounded-lg border border-zinc-800 text-zinc-400 hover:border-indigo-500/50 hover:text-indigo-300 transition-all duration-200"
+            className="p-2 rounded-lg border border-zinc-800 text-zinc-400 hover:border-indigo-500/50 hover:text-indigo-300 transition-colors duration-200"
             title={theme === 'dark' ? 'Mode clair' : 'Mode sombre'}
+            aria-label={theme === 'dark' ? 'Activer le mode clair' : 'Activer le mode sombre'}
           >
             {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
           </button>
         </motion.div>
 
         <motion.button
+          type="button"
+          ref={toggleBtnRef}
           className="md:hidden relative flex flex-col gap-[6px] w-7 py-1"
           onClick={() => setOpen(!open)}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          aria-label="Menu"
+          aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           <motion.span className="block h-px bg-white w-full origin-center"
             animate={open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
@@ -158,6 +199,11 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-menu"
+            ref={menuRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={lang === 'fr' ? 'Menu de navigation' : 'Navigation menu'}
             className="fixed inset-0 z-40 bg-background flex flex-col items-center justify-center gap-8"
             initial={{ clipPath: 'inset(0 0 100% 0)' }}
             animate={{ clipPath: 'inset(0 0 0% 0)' }}
@@ -188,14 +234,18 @@ export default function Navbar() {
                 <LinkedInIcon />
               </a>
               <button
+                type="button"
                 onClick={toggleLang}
                 className="px-4 py-2 rounded-lg border border-zinc-800 text-zinc-400 text-sm font-mono font-bold"
+                aria-label={lang === 'fr' ? 'Switch to English' : 'Passer en français'}
               >
                 {lang === 'fr' ? 'EN' : 'FR'}
               </button>
               <button
+                type="button"
                 onClick={toggleTheme}
                 className="p-2 rounded-lg border border-zinc-800 text-zinc-400"
+                aria-label={theme === 'dark' ? 'Activer le mode clair' : 'Activer le mode sombre'}
               >
                 {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
               </button>

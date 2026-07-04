@@ -40,14 +40,14 @@ export default function About() {
               href={asset('pdf/CV_Rouillard_Jérémy.pdf')}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all duration-300"
+              className="group flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-colors duration-300"
             >
               {t.about.download}
               <span className="group-hover:translate-y-0.5 transition-transform duration-200">↓</span>
             </a>
             <a
               href="mailto:jeremy.rouillard27@gmail.com"
-              className="px-6 py-3 rounded-full border border-zinc-700 hover:border-indigo-500/50 text-zinc-300 hover:text-white text-sm font-semibold transition-all duration-300"
+              className="px-6 py-3 rounded-full border border-zinc-700 hover:border-indigo-500/50 text-zinc-300 hover:text-white text-sm font-semibold transition-colors duration-300"
             >
               {t.about.contact}
             </a>

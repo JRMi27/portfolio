@@ -10,7 +10,7 @@ export default function Footer() {
     <footer ref={ref} className="border-t border-zinc-900 py-10 px-6 md:px-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <motion.p
-          className="text-zinc-600 text-sm"
+          className="text-zinc-500 text-sm"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
@@ -27,7 +27,7 @@ export default function Footer() {
             href="https://github.com/JRMi27"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-600 hover:text-white text-sm transition-colors duration-200"
+            className="text-zinc-500 hover:text-white text-sm transition-colors duration-200"
           >
             GitHub
           </a>
@@ -35,13 +35,13 @@ export default function Footer() {
             href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-rouillard-5734892a6/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-600 hover:text-white text-sm transition-colors duration-200"
+            className="text-zinc-500 hover:text-white text-sm transition-colors duration-200"
           >
             LinkedIn
           </a>
           <a
             href="#home"
-            className="text-zinc-600 hover:text-indigo-400 text-sm transition-colors duration-200"
+            className="text-zinc-500 hover:text-indigo-400 text-sm transition-colors duration-200"
           >
             {t.footer.top}
           </a>

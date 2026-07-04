@@ -28,7 +28,7 @@ function ExpCard({ exp, viewReport, index }) {
 
       <p className="text-indigo-400 text-xs font-mono mb-1">{exp.period}</p>
 
-      <div className="mt-3 p-5 md:p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/40 hover:border-zinc-700 hover:bg-zinc-900/70 transition-all duration-400 group">
+      <div className="mt-3 p-5 md:p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/40 hover:border-zinc-700 hover:bg-zinc-900/70 transition-colors duration-400 group">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
           <div>
             <h3 className="text-white font-bold text-lg group-hover:text-indigo-300 transition-colors duration-200">
@@ -41,7 +41,7 @@ function ExpCard({ exp, viewReport, index }) {
               href={asset(exp.pdf)}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 text-xs text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 hover:border-indigo-500/60 px-3 py-1.5 rounded-lg transition-all duration-200 self-start"
+              className="shrink-0 text-xs text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 hover:border-indigo-500/60 px-3 py-1.5 rounded-lg transition-colors duration-200 self-start"
             >
               {viewReport}
             </a>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionHeader from '../ui/SectionHeader'
@@ -27,7 +27,7 @@ function EduCard({ edu, index }) {
   return (
     <motion.div
       ref={ref}
-      className="relative p-5 md:p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 hover:border-indigo-500/25 hover:bg-zinc-900/60 transition-all duration-400 group"
+      className="relative p-5 md:p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 hover:border-indigo-500/25 hover:bg-zinc-900/60 transition-colors duration-400 group"
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1, ease: EASE }}
@@ -38,9 +38,9 @@ function EduCard({ edu, index }) {
         <div className="min-w-0">
           <p className="text-indigo-400/80 text-xs font-mono mb-1">{edu.period}</p>
           <h3 className="text-white font-bold text-base group-hover:text-indigo-300 transition-colors duration-200 leading-tight">{edu.degree}</h3>
-          <p className="text-zinc-500 text-sm mt-0.5">{edu.school}</p>
-          <p className="text-zinc-600 text-xs mt-0.5">{edu.location}</p>
-          <p className="text-zinc-600 text-sm leading-relaxed mt-3">{edu.description}</p>
+          <p className="text-zinc-400 text-sm mt-0.5">{edu.school}</p>
+          <p className="text-zinc-500 text-xs mt-0.5">{edu.location}</p>
+          <p className="text-zinc-400 text-sm leading-relaxed mt-3">{edu.description}</p>
         </div>
       </div>
     </motion.div>
@@ -52,7 +52,7 @@ function InterestCard({ item, index }) {
   return (
     <motion.div
       ref={ref}
-      className="flex items-start gap-3 p-4 rounded-xl border border-zinc-800/60 bg-zinc-900/20 hover:border-zinc-700 transition-all duration-300"
+      className="flex items-start gap-3 p-4 rounded-xl border border-zinc-800/60 bg-zinc-900/20 hover:border-zinc-700 transition-colors duration-300"
       initial={{ opacity: 0, y: 16 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.08, ease: EASE }}
@@ -60,7 +60,7 @@ function InterestCard({ item, index }) {
       <span className="text-xl shrink-0">{item.icon}</span>
       <div>
         <p className="text-zinc-300 text-sm font-semibold">{item.title}</p>
-        <p className="text-zinc-600 text-xs mt-0.5 leading-relaxed">{item.desc}</p>
+        <p className="text-zinc-400 text-xs mt-0.5 leading-relaxed">{item.desc}</p>
       </div>
     </motion.div>
   )
@@ -71,16 +71,32 @@ function InterestCard({ item, index }) {
 function CertCard({ cert, index }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
   const [zoomed, setZoomed] = useState(false)
+
+  useEffect(() => {
+    if (!zoomed) return
+    const onKeyDown = (e) => { if (e.key === 'Escape') setZoomed(false) }
+    document.addEventListener('keydown', onKeyDown)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.body.style.overflow = ''
+    }
+  }, [zoomed])
+
   return (
     <>
       <motion.div
         ref={ref}
-        className="group rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-600 transition-all duration-300 cursor-zoom-in"
+        role="button"
+        tabIndex={0}
+        aria-label={`${cert.title} — ${cert.org}`}
+        className="group rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-600 transition-colors duration-300 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
         initial={{ opacity: 0, scale: 0.96 }}
         animate={inView ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 0.45, delay: index * 0.06 }}
         whileHover={{ y: -3 }}
         onClick={() => setZoomed(true)}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setZoomed(true) } }}
         data-hover
       >
         <div className="aspect-[4/3] bg-zinc-900 overflow-hidden">
@@ -90,7 +106,7 @@ function CertCard({ cert, index }) {
         <div className="p-4">
           <div className="flex items-center justify-between mb-1">
             <span className="text-indigo-400 text-[10px] font-mono uppercase tracking-widest">{cert.org}</span>
-            <span className="text-zinc-600 text-[10px] font-mono">{cert.year}</span>
+            <span className="text-zinc-500 text-[10px] font-mono">{cert.year}</span>
           </div>
           <div className="flex items-center justify-between gap-2">
             <p className="text-zinc-300 text-sm font-medium">{cert.title}</p>
@@ -106,6 +122,9 @@ function CertCard({ cert, index }) {
       <AnimatePresence>
         {zoomed && (
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label={cert.title}
             className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={() => setZoomed(false)}
@@ -129,6 +148,8 @@ function CertCard({ cert, index }) {
                 onClick={(e) => e.stopPropagation()} />
             )}
             <button
+              type="button"
+              aria-label="Fermer"
               className="absolute top-5 right-5 w-9 h-9 rounded-full bg-zinc-800 hover:bg-zinc-700 text-white flex items-center justify-center text-lg transition-colors"
               onClick={() => setZoomed(false)}
             >×</button>
@@ -160,9 +181,10 @@ export default function Parcours() {
             { key: 'certifications',  label: t.parcours.tabCertifications },
           ].map(({ key, label }) => (
             <button
+              type="button"
               key={key}
               onClick={() => setTab(key)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
                 tab === key
                   ? 'bg-indigo-600 text-white'
                   : 'border border-zinc-700 text-zinc-500 hover:border-indigo-500/50 hover:text-zinc-200'
@@ -182,13 +204,13 @@ export default function Parcours() {
             >
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                 <div>
-                  <p className="text-zinc-600 text-xs font-mono uppercase tracking-widest mb-6">{t.education.subtitle}</p>
+                  <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-6">{t.education.subtitle}</p>
                   <div className="space-y-4">
                     {t.education.items.map((edu, i) => <EduCard key={edu.degree} edu={edu} index={i} />)}
                   </div>
                 </div>
                 <div>
-                  <p className="text-zinc-600 text-xs font-mono uppercase tracking-widest mb-6">{t.education.interestsTitle}</p>
+                  <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-6">{t.education.interestsTitle}</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {t.education.interests.map((item, i) => <InterestCard key={item.title} item={item} index={i} />)}
                   </div>
@@ -205,8 +227,8 @@ export default function Parcours() {
             >
               <div className="flex flex-wrap gap-2.5 mb-10">
                 {certCategories.map((cat) => (
-                  <button key={cat} onClick={() => setActiveCert(cat)}
-                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  <button type="button" key={cat} onClick={() => setActiveCert(cat)}
+                    className={`px-5 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
                       activeCert === cat
                         ? 'bg-indigo-600 text-white'
                         : 'border border-zinc-700 text-zinc-500 hover:border-indigo-500/50 hover:text-zinc-200'
@@ -217,7 +239,7 @@ export default function Parcours() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeCert}
-                  className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+                  className="grid sm:grid-cols-2 gap-5 max-w-2xl"
                   initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }}
                 >

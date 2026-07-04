@@ -94,25 +94,26 @@ export default function Hero() {
           {t.hero.badge}
         </motion.div>
 
-        <div className="overflow-hidden mb-3">
-          <motion.h1
-            className="text-[clamp(3.5rem,12vw,9rem)] font-black text-white leading-none tracking-tight"
+        <h1 className="sr-only">Jérémy Rouillard — {t.hero.role} {t.hero.roleEm}</h1>
+        <div className="overflow-hidden mb-3" aria-hidden="true">
+          <motion.span
+            className="block text-[clamp(3.5rem,12vw,9rem)] font-black text-white leading-none tracking-tight"
             initial={{ y: '105%' }}
             animate={{ y: '0%' }}
             transition={{ duration: 0.85, delay: 0.25, ease: EASE }}
           >
             Jérémy
-          </motion.h1>
+          </motion.span>
         </div>
-        <div className="overflow-hidden mb-2">
-          <motion.h1
-            className="text-[clamp(3.5rem,12vw,9rem)] font-black leading-none tracking-tight text-zinc-500"
+        <div className="overflow-hidden mb-2" aria-hidden="true">
+          <motion.span
+            className="block text-[clamp(3.5rem,12vw,9rem)] font-black leading-none tracking-tight text-zinc-500"
             initial={{ y: '105%' }}
             animate={{ y: '0%' }}
             transition={{ duration: 0.85, delay: 0.35, ease: EASE }}
           >
             Rouillard
-          </motion.h1>
+          </motion.span>
         </div>
 
         <div className="overflow-hidden mt-6 mb-12">
@@ -138,7 +139,7 @@ export default function Hero() {
           {t.hero.stats.map((stat) => (
             <div key={stat.label} className="flex flex-col items-center">
               <span className="text-3xl md:text-4xl font-black text-white tabular-nums">{stat.value}<span className="text-indigo-400">+</span></span>
-              <span className="text-zinc-600 text-xs uppercase tracking-widest mt-0.5">{stat.label}</span>
+              <span className="text-zinc-400 text-xs uppercase tracking-widest mt-0.5">{stat.label}</span>
             </div>
           ))}
         </motion.div>
@@ -151,7 +152,7 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="group relative overflow-hidden px-7 py-3.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all duration-300"
+            className="group relative overflow-hidden px-7 py-3.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-colors duration-300"
           >
             <motion.span className="relative z-10 flex items-center gap-2">
               {t.hero.cta}
@@ -168,7 +169,7 @@ export default function Hero() {
             href={asset('pdf/CV_Rouillard_Jérémy.pdf')}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-7 py-3.5 rounded-full border border-zinc-700 hover:border-indigo-500/50 text-zinc-300 hover:text-white font-semibold text-sm transition-all duration-300"
+            className="px-7 py-3.5 rounded-full border border-zinc-700 hover:border-indigo-500/50 text-zinc-300 hover:text-white font-semibold text-sm transition-colors duration-300"
           >
             {t.hero.cv}
           </a>
@@ -177,6 +178,7 @@ export default function Hero() {
 
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        aria-hidden="true"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >

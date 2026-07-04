@@ -1,3 +1,4 @@
+import { MotionConfig } from 'framer-motion'
 import Head from './components/Head'
 import Cursor from './components/Cursor'
 import Navbar from './components/Navbar'
@@ -13,6 +14,7 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
+    <MotionConfig reducedMotion="user">
     <div className="bg-background min-h-screen">
       <Head />
       <Cursor />
@@ -83,5 +85,6 @@ export default function App() {
         </div>
       </main>
     </div>
+    </MotionConfig>
   )
 }

@@ -417,17 +417,7 @@ function TopicCard({ topic, index }) {
                 >
                   {item.name} ↗
                 </a>
-                <p className="text-zinc-600 text-sm mt-1 leading-relaxed">{item.desc}</p>
-                {item.cta && (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-3 px-4 py-1.5 rounded-lg bg-indigo-600/15 border border-indigo-500/30 text-indigo-300 text-xs font-medium hover:bg-indigo-600/25 transition-colors"
-                  >
-                    {item.cta}
-                  </a>
-                )}
+                <p className="text-zinc-400 text-sm mt-1 leading-relaxed">{item.desc}</p>
               </li>
             ))}
           </ul>

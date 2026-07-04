@@ -61,7 +61,7 @@ const levelColor = (l) =>
 function SkillBadge({ skill, delay, inView }) {
   return (
     <motion.div
-      className="flex flex-col gap-1.5 px-4 pt-2.5 pb-2 rounded-xl border border-zinc-800 bg-zinc-900/60 hover:border-indigo-500/40 hover:bg-indigo-500/8 group transition-all duration-300 min-w-[96px]"
+      className="flex flex-col gap-1.5 px-4 pt-2.5 pb-2 rounded-xl border border-zinc-800 bg-zinc-900/60 hover:border-indigo-500/40 hover:bg-indigo-500/8 group transition-colors duration-300 min-w-[96px]"
       initial={{ opacity: 0, y: 16, scale: 0.95 }}
       animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.4, delay, ease: [0.22, 1, 0.36, 1] }}
@@ -79,7 +79,14 @@ function SkillBadge({ skill, delay, inView }) {
           {skill.name}
         </span>
       </div>
-      <div className="h-1.5 rounded-full bg-zinc-800 overflow-hidden">
+      <div
+        className="h-1.5 rounded-full bg-zinc-800 overflow-hidden"
+        role="progressbar"
+        aria-label={`Niveau ${skill.name}`}
+        aria-valuenow={skill.level}
+        aria-valuemin={0}
+        aria-valuemax={100}
+      >
         <motion.div
           className={`h-full rounded-full ${levelColor(skill.level)}`}
           initial={{ width: 0 }}

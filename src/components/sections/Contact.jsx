@@ -93,14 +93,14 @@ export default function Contact() {
                   <a
                     href="https://github.com/JRMi27"
                     target="_blank" rel="noopener noreferrer"
-                    className="px-3 py-1 rounded border border-zinc-700 text-zinc-400 hover:border-indigo-500/60 hover:text-indigo-300 transition-all duration-200 text-xs"
+                    className="px-3 py-1 rounded border border-zinc-700 text-zinc-400 hover:border-indigo-500/60 hover:text-indigo-300 transition-colors duration-200 text-xs"
                   >
                     github.com/JRMi27
                   </a>
                   <a
                     href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-rouillard-5734892a6/"
                     target="_blank" rel="noopener noreferrer"
-                    className="px-3 py-1 rounded border border-zinc-700 text-zinc-400 hover:border-indigo-500/60 hover:text-indigo-300 transition-all duration-200 text-xs"
+                    className="px-3 py-1 rounded border border-zinc-700 text-zinc-400 hover:border-indigo-500/60 hover:text-indigo-300 transition-colors duration-200 text-xs"
                   >
                     linkedin/jérémy-rouillard
                   </a>
