@@ -42,7 +42,7 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
+  background-color: #0b0710;
   color: #ffffff;
   font-family: 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
@@ -52,7 +52,7 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 2px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-track { background: #0b0710; }
 ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 2px; }
 
 ::selection { background: #6366f1; color: #fff; }
@@ -107,10 +107,6 @@ html.light .bg-background { background-color: #f8f8f8; }
 html.light .hover\:text-white:hover { color: #18181b !important; }
 html.light .hover\:border-indigo-500\/50:hover { border-color: rgba(99,102,241,0.5); }
 
-/* Hero grid lines */
-html.light .opacity-\[0\.03\] { opacity: 0.06; }
-html.light .opacity-\[0\.03\] { --grid-color: #000; }
-
 /* ── Navbar logo ── */
 @keyframes logo-gradient {
   0%   { background-position: 0%   50%; }
@@ -132,53 +128,94 @@ html.light .logo-inner {
   background: #f8f8f8;
 }
 
-/* ── Orb float animations ── */
-@keyframes float-orb-a {
-  0%, 100% { transform: translate(0, 0)      scale(1); }
-  25%       { transform: translate(-32px, 26px) scale(1.03); }
-  50%       { transform: translate(22px, -32px) scale(0.97); }
-  75%       { transform: translate(28px, 20px)  scale(1.02); }
+/* ── Aurora background ── */
+/* Une seule couche fixe derrière tout le contenu (voir Aurora.jsx). */
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #0b0710;
 }
-@keyframes float-orb-b {
-  0%, 100% { transform: translate(0, 0)       scale(1); }
-  33%       { transform: translate(36px, -28px) scale(1.04); }
-  66%       { transform: translate(-26px, 24px) scale(0.96); }
+html.light .aurora { background: #f7f4f6; }
+
+.aurora__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  mix-blend-mode: screen;
+  will-change: transform;
 }
-@keyframes float-orb-c {
-  0%, 100% { transform: translate(0, 0)       scale(1); }
-  40%       { transform: translate(-24px, -38px) scale(1.03); }
-  75%       { transform: translate(30px, 28px)   scale(0.97); }
+html.light .aurora__blob {
+  mix-blend-mode: multiply;
+  filter: blur(80px);
 }
 
-.orb-a { animation: float-orb-a 32s ease-in-out infinite; }
-.orb-b { animation: float-orb-b 42s ease-in-out infinite; }
-.orb-c { animation: float-orb-c 26s ease-in-out infinite; }
+/* Nappe froide (violet) — fait le pont avec les accents indigo */
+.aurora__blob--violet {
+  top: -18%; left: -12%;
+  width: 62vw; height: 62vw;
+  background: radial-gradient(circle at 50% 50%, rgba(124,58,237,0.50), transparent 60%);
+  animation: aurora-a 34s ease-in-out infinite;
+}
+.aurora__blob--magenta {
+  top: -12%; right: -14%;
+  width: 58vw; height: 58vw;
+  background: radial-gradient(circle at 50% 50%, rgba(214,64,159,0.44), transparent 60%);
+  animation: aurora-b 42s ease-in-out infinite;
+}
+.aurora__blob--rose {
+  top: 26%; left: 16%;
+  width: 54vw; height: 54vw;
+  background: radial-gradient(circle at 50% 50%, rgba(244,63,94,0.34), transparent 62%);
+  animation: aurora-c 30s ease-in-out infinite;
+}
+.aurora__blob--amber {
+  bottom: -22%; right: 4%;
+  width: 56vw; height: 56vw;
+  background: radial-gradient(circle at 50% 50%, rgba(245,158,11,0.26), transparent 62%);
+  animation: aurora-a 46s ease-in-out infinite reverse;
+}
+
+/* Voile + vignette : garde la lisibilité du texte par-dessus l'aurora */
+.aurora__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 85% 65% at 50% 38%, transparent 42%, rgba(7,4,14,0.60) 100%),
+    linear-gradient(180deg, rgba(7,4,14,0.18) 0%, rgba(7,4,14,0.42) 100%);
+}
+html.light .aurora__veil {
+  background:
+    radial-gradient(ellipse 85% 65% at 50% 38%, transparent 45%, rgba(255,255,255,0.55) 100%),
+    linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.45) 100%);
+}
+
+@keyframes aurora-a {
+  0%, 100% { transform: translate(0, 0)     scale(1); }
+  33%      { transform: translate(5vw, 4vh)  scale(1.08); }
+  66%      { transform: translate(-4vw, 5vh) scale(0.96); }
+}
+@keyframes aurora-b {
+  0%, 100% { transform: translate(0, 0)      scale(1); }
+  33%      { transform: translate(-5vw, 4vh)  scale(1.06); }
+  66%      { transform: translate(4vw, -4vh)  scale(0.95); }
+}
+@keyframes aurora-c {
+  0%, 100% { transform: translate(0, 0)      scale(1); }
+  40%      { transform: translate(4vw, -5vh)  scale(1.10); }
+  75%      { transform: translate(-5vw, 3vh)  scale(0.94); }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .orb-a, .orb-b, .orb-c { animation: none; }
+  .aurora__blob { animation: none !important; }
 }
 
 /* ── Section background wrapper ── */
+/* Transparent : l'aurora fixe reste visible derrière les sections. */
 .section-bg-wrapper {
-  background: linear-gradient(180deg,
-    #0a0a0a  0%,
-    #0a0a14  6%,
-    #08080f 50%,
-    #06060d 100%
-  );
-}
-
-html.light .section-bg-wrapper {
-  background: linear-gradient(180deg,
-    #f8f8f8  0%,
-    #f4f4fc  6%,
-    #f1f1f9 50%,
-    #eeeef7 100%
-  );
-}
-
-html.light .section-bg-deco {
-  opacity: 0.2;
+  background: transparent;
 }
 
 /* Mobile: restore cursor */
