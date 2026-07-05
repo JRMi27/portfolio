@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immovanta — Agence immobilière</title>
+  <meta name="description" content="Texte de description à remplacer — agence immobilière, prise de rendez-vous.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <header class="site-header">
+    <div class="container nav-row">
+      <a href="#" class="brand">Immovanta<span class="brand-dot">.</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+        <a href="#biens">Biens</a>
+        <a href="#services">Services</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#conseils">Conseils</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#rendez-vous" class="btn btn-dark btn-sm">Prendre rendez-vous</a>
+        <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-media">
+        <div class="ph hero-img" data-label="Image — Visuel principal"></div>
+        <h1 class="wordmark" aria-label="Immovanta">IMMOVANTA</h1>
+      </div>
+
+      <div class="hero-bar">
+        <div class="hero-thumbs" aria-hidden="true">
+          <div class="ph thumb" data-label="Img 01"></div>
+          <div class="ph thumb" data-label="Img 02"></div>
+          <div class="ph thumb" data-label="Img 03"></div>
+        </div>
+        <div class="hero-right">
+          <ul class="hero-tags">
+            <li>Estimation offerte</li>
+            <li>Accompagnement complet</li>
+            <li>Visites sur mesure</li>
+          </ul>
+          <p class="hero-note">Texte d'accroche à remplacer : une phrase courte qui résume la promesse de l'agence et donne envie de réserver un rendez-vous.</p>
+          <div class="hero-actions">
+            <a href="#rendez-vous" class="btn btn-accent">Prendre rendez-vous</a>
+            <a href="#biens" class="btn btn-ghost">Découvrir nos biens</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== À propos / stats ===== -->
+  <section class="section" id="apropos">
+    <div class="container">
+      <p class="eyebrow reveal">À propos</p>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2>Un titre à remplacer qui présente l'expertise de votre agence</h2>
+          <p class="lead">Paragraphe de présentation à remplacer. Deux ou trois phrases qui expliquent qui vous êtes, votre approche et ce qui vous distingue des autres agences du secteur.</p>
+          <ul class="stats">
+            <li><strong>450+</strong><span>Biens vendus<br>(chiffre à remplacer)</span></li>
+            <li><strong>15&nbsp;ans</strong><span>D'expérience<br>(chiffre à remplacer)</span></li>
+            <li><strong>98%</strong><span>Clients satisfaits<br>(chiffre à remplacer)</span></li>
+          </ul>
+        </div>
+        <div class="about-media reveal">
+          <div class="ph r34" data-label="Image — Agence / équipe"></div>
+        </div>
+        <div class="about-wide reveal">
+          <div class="ph r169" data-label="Image — Bien d'exception"></div>
+        </div>
+        <div class="about-caption reveal">
+          <p>Second paragraphe à remplacer. Quelques lignes sur votre manière d'accompagner chaque client, de la première visite jusqu'à la signature, et sur l'importance que vous accordez au rendez-vous conseil.</p>
+          <a href="#rendez-vous" class="link-arrow">Réserver un premier échange</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Sélection de biens ===== -->
+  <section class="section section-alt" id="biens">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Notre sélection</p>
+        <h2>Une sélection d'exception</h2>
+        <p class="sub">Sous-titre à remplacer : une phrase qui présente les biens mis en avant ce mois-ci.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-card reveal">
+          <div class="ph r43" data-label="Image — Bien 01"></div>
+          <figcaption><span>Nom du bien 01</span><a href="#rendez-vous" class="link-arrow">Visiter ce bien</a></figcaption>
+        </figure>
+        <figure class="gallery-card reveal">
+          <div class="ph r43" data-label="Image — Bien 02"></div>
+          <figcaption><span>Nom du bien 02</span><a href="#rendez-vous" class="link-arrow">Visiter ce bien</a></figcaption>
+        </figure>
+        <figure class="gallery-card reveal">
+          <div class="ph r43" data-label="Image — Bien 03"></div>
+          <figcaption><span>Nom du bien 03</span><a href="#rendez-vous" class="link-arrow">Visiter ce bien</a></figcaption>
+        </figure>
+        <figure class="gallery-card reveal">
+          <div class="ph r43" data-label="Image — Bien 04"></div>
+          <figcaption><span>Nom du bien 04</span><a href="#rendez-vous" class="link-arrow">Visiter ce bien</a></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Nos services</p>
+        <h2>Des services pensés pour votre projet</h2>
+        <p class="sub">Sous-titre à remplacer : une phrase qui résume l'étendue de votre accompagnement.</p>
+      </div>
+      <div class="services-grid">
+        <div class="services-media reveal">
+          <div class="ph r34" data-label="Image — Services"></div>
+        </div>
+        <article class="service-item reveal">
+          <span class="service-ico" aria-hidden="true">◇</span>
+          <h3>Achat &amp; recherche</h3>
+          <p>Description à remplacer : deux phrases sur la recherche de biens et l'accompagnement des acquéreurs.</p>
+        </article>
+        <article class="service-item reveal">
+          <span class="service-ico" aria-hidden="true">◈</span>
+          <h3>Vente de biens</h3>
+          <p>Description à remplacer : deux phrases sur la mise en vente, la valorisation et la diffusion des biens.</p>
+        </article>
+        <article class="service-item reveal">
+          <span class="service-ico" aria-hidden="true">◆</span>
+          <h3>Estimation</h3>
+          <p>Description à remplacer : deux phrases sur l'estimation offerte et la connaissance du marché local.</p>
+        </article>
+        <article class="service-item reveal">
+          <span class="service-ico" aria-hidden="true">◉</span>
+          <h3>Gestion locative</h3>
+          <p>Description à remplacer : deux phrases sur la gestion locative et la tranquillité des propriétaires.</p>
+        </article>
+        <article class="service-item reveal">
+          <span class="service-ico" aria-hidden="true">◎</span>
+          <h3>Conseil en investissement</h3>
+          <p>Description à remplacer : deux phrases sur le conseil patrimonial et l'investissement locatif.</p>
+        </article>
+      </div>
+      <div class="center reveal">
+        <a href="#rendez-vous" class="btn btn-dark">Discuter de votre projet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Réalisations (slider) ===== -->
+  <section class="section section-alt" id="realisations">
+    <div class="container">
+      <div class="slider-head reveal">
+        <div>
+          <p class="eyebrow">Nos réalisations</p>
+          <h2>Nos ventes marquantes</h2>
+        </div>
+        <div class="slider-controls">
+          <button class="ctrl" id="slidePrev" aria-label="Diapositive précédente">←</button>
+          <span class="slide-count"><span id="slideIndex">01</span> / 03</span>
+          <button class="ctrl" id="slideNext" aria-label="Diapositive suivante">→</button>
+        </div>
+      </div>
+      <div class="slider reveal" id="slider">
+        <div class="slide is-active">
+          <div class="ph r219" data-label="Image — Réalisation 01"></div>
+          <div class="slide-card">
+            <div class="ph slide-mini" data-label="Détail"></div>
+            <p>Légende à remplacer — réalisation 01</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="ph r219" data-label="Image — Réalisation 02"></div>
+          <div class="slide-card">
+            <div class="ph slide-mini" data-label="Détail"></div>
+            <p>Légende à remplacer — réalisation 02</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="ph r219" data-label="Image — Réalisation 03"></div>
+          <div class="slide-card">
+            <div class="ph slide-mini" data-label="Détail"></div>
+            <p>Légende à remplacer — réalisation 03</p>
+          </div>
+        </div>
+      </div>
+      <p class="slider-caption reveal">Petite légende à remplacer : contexte de la vente, quartier, délai de vente.</p>
+    </div>
+  </section>
+
+  <!-- ===== Parcours ===== -->
+  <section class="section" id="parcours">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Comment ça se passe</p>
+        <h2>Un parcours simple, étape par étape</h2>
+        <p class="sub">Sous-titre à remplacer : une phrase qui rassure sur la simplicité du processus.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step reveal">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <h3>Premier rendez-vous</h3>
+            <p>Texte à remplacer : ce qui se passe lors du premier échange.</p>
+          </div>
+          <div class="ph r34" data-label="Image — Étape 01"></div>
+        </div>
+        <div class="step step-offset reveal">
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <h3>Définition du projet</h3>
+            <p>Texte à remplacer : cahier des charges, budget, secteur recherché.</p>
+          </div>
+          <div class="ph r34" data-label="Image — Étape 02"></div>
+        </div>
+        <div class="step reveal">
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <h3>Visites &amp; sélection</h3>
+            <p>Texte à remplacer : organisation des visites et sélection des biens.</p>
+          </div>
+          <div class="ph r34" data-label="Image — Étape 03"></div>
+        </div>
+        <div class="step step-offset reveal">
+          <div class="step-card">
+            <span class="step-num">04</span>
+            <h3>Signature &amp; suivi</h3>
+            <p>Texte à remplacer : négociation, signature et accompagnement après-vente.</p>
+          </div>
+          <div class="ph r34" data-label="Image — Étape 04"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Preuve sociale (section sombre) ===== -->
+  <section class="section section-dark" id="confiance">
+    <div class="container proof-grid">
+      <div class="proof-text reveal">
+        <p class="eyebrow">Ils nous font confiance</p>
+        <h2>Un titre à remplacer sur la confiance de vos clients</h2>
+        <p>Paragraphe à remplacer : deux phrases sur la satisfaction client et la raison de prendre rendez-vous dès maintenant.</p>
+        <a href="#rendez-vous" class="btn btn-accent">Réserver un rendez-vous</a>
+      </div>
+      <div class="proof-bento">
+        <blockquote class="proof-card proof-review reveal">
+          <div class="starline" aria-label="5 étoiles sur 5">★★★★★</div>
+          <p>« Témoignage à remplacer : deux ou trois phrases d'un client satisfait qui recommande l'agence. »</p>
+          <footer>
+            <span class="ph avatar" data-label=""></span>
+            <span><strong>Prénom N.</strong><br>Vendeur — Ville</span>
+          </footer>
+        </blockquote>
+        <div class="proof-card proof-stat reveal">
+          <strong>4,9/5</strong>
+          <span>Note moyenne (à remplacer)</span>
+        </div>
+        <div class="proof-card proof-stat reveal">
+          <strong>400+</strong>
+          <span>Rendez-vous réalisés cette année (à remplacer)</span>
+        </div>
+        <div class="proof-card proof-media reveal">
+          <div class="ph r43" data-label="Image — Client / bien"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Conseils / blog ===== -->
+  <section class="section" id="conseils">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Nos conseils</p>
+        <h2>Nos derniers conseils immobiliers</h2>
+        <p class="sub">Sous-titre à remplacer : une phrase qui invite à parcourir vos articles.</p>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card reveal">
+          <div class="ph r32" data-label="Image — Article 01"></div>
+          <p class="blog-meta">Date · Catégorie</p>
+          <h3>Titre d'article à remplacer numéro un</h3>
+          <p>Extrait à remplacer : deux lignes qui résument l'article et donnent envie de cliquer.</p>
+          <a href="#" class="link-arrow">Lire l'article</a>
+        </article>
+        <article class="blog-card reveal">
+          <div class="ph r32" data-label="Image — Article 02"></div>
+          <p class="blog-meta">Date · Catégorie</p>
+          <h3>Titre d'article à remplacer numéro deux</h3>
+          <p>Extrait à remplacer : deux lignes qui résument l'article et donnent envie de cliquer.</p>
+          <a href="#" class="link-arrow">Lire l'article</a>
+        </article>
+        <article class="blog-card reveal">
+          <div class="ph r32" data-label="Image — Article 03"></div>
+          <p class="blog-meta">Date · Catégorie</p>
+          <h3>Titre d'article à remplacer numéro trois</h3>
+          <p>Extrait à remplacer : deux lignes qui résument l'article et donnent envie de cliquer.</p>
+          <a href="#" class="link-arrow">Lire l'article</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-alt" id="faq">
+    <div class="container faq-grid">
+      <div class="faq-intro reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions fréquentes</h2>
+        <p>Texte à remplacer : une phrase qui invite à poser d'autres questions lors d'un rendez-vous.</p>
+        <a href="#rendez-vous" class="btn btn-dark">Poser ma question en rendez-vous</a>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item" open>
+          <summary>Question fréquente à remplacer numéro un ?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <p>Réponse à remplacer : deux ou trois phrases claires qui répondent à la question et rassurent le visiteur.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Question fréquente à remplacer numéro deux ?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <p>Réponse à remplacer : deux ou trois phrases claires qui répondent à la question et rassurent le visiteur.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Question fréquente à remplacer numéro trois ?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <p>Réponse à remplacer : deux ou trois phrases claires qui répondent à la question et rassurent le visiteur.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Question fréquente à remplacer numéro quatre ?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <p>Réponse à remplacer : deux ou trois phrases claires qui répondent à la question et rassurent le visiteur.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Question fréquente à remplacer numéro cinq ?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <p>Réponse à remplacer : deux ou trois phrases claires qui répondent à la question et rassurent le visiteur.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Prise de rendez-vous ===== -->
+  <section class="section" id="rendez-vous">
+    <div class="container">
+      <div class="cta-head reveal">
+        <p class="eyebrow">Prendre rendez-vous</p>
+        <h2 class="cta-line">Parlons de votre <span class="ph chip" data-label=""></span> projet immobilier <span class="ph chip" data-label=""></span> autour d'un rendez-vous</h2>
+        <p class="sub">Sous-titre à remplacer : une phrase qui précise que le rendez-vous est gratuit et sans engagement.</p>
+      </div>
+      <form class="booking-card reveal" id="bookingForm" novalidate>
+        <div class="form-grid">
+          <label>Nom complet
+            <input type="text" name="nom" placeholder="Votre nom" required>
+          </label>
+          <label>Adresse e-mail
+            <input type="email" name="email" placeholder="vous@exemple.fr" required>
+          </label>
+          <label>Téléphone
+            <input type="tel" name="tel" placeholder="06 00 00 00 00">
+          </label>
+          <label>Date souhaitée
+            <input type="date" name="date">
+          </label>
+        </div>
+        <label>Votre projet
+          <textarea name="message" rows="4" placeholder="Décrivez votre projet en quelques mots…"></textarea>
+        </label>
+        <button type="submit" class="btn btn-accent btn-wide">Réserver mon rendez-vous</button>
+        <p class="form-note">Réponse sous 24&nbsp;h — sans engagement. (Formulaire de démonstration, à connecter plus tard.)</p>
+        <p class="form-success" id="formSuccess" hidden>Merci ! Votre demande a bien été envoyée. (Message de confirmation à remplacer.)</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="brand">Immovanta<span class="brand-dot">.</span></a>
+        <p>Texte de pied de page à remplacer : une ou deux phrases sur l'agence et sa zone d'intervention.</p>
+        <div class="socials" aria-label="Réseaux sociaux">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">IN</a>
+        </div>
+      </div>
+      <nav class="footer-col" aria-label="Navigation pied de page">
+        <h4>Navigation</h4>
+        <a href="#biens">Biens</a>
+        <a href="#services">Services</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#conseils">Conseils</a>
+      </nav>
+      <nav class="footer-col" aria-label="Services pied de page">
+        <h4>Services</h4>
+        <a href="#services">Achat</a>
+        <a href="#services">Vente</a>
+        <a href="#services">Estimation</a>
+        <a href="#services">Gestion locative</a>
+      </nav>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+33000000000">00 00 00 00 00 (à remplacer)</a>
+        <a href="mailto:contact@exemple.fr">contact@exemple.fr (à remplacer)</a>
+        <p>Adresse de l'agence<br>à remplacer</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Immovanta — Mentions légales · Politique de confidentialité (liens à remplacer)</p>
+    </div>
+    <p class="footer-wordmark" aria-hidden="true">IMMOVANTA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

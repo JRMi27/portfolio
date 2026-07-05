@@ -4,7 +4,11 @@ import SectionHeader from '../ui/SectionHeader'
 import { asset } from '../../utils/asset'
 import { useLang } from '../../contexts/LangContext'
 
-const statuses = ['done', 'done', 'done', 'done', 'done', 'done']
+const statuses = ['done', 'done', 'done', 'done', 'done', 'done', 'done', 'done', 'done']
+
+// Les démos internes (dossier public/projects/) commencent par « / » et doivent
+// être préfixées par la base Vite ; les démos externes (http…) restent intactes.
+const demoHref = (demo) => (/^https?:\/\//.test(demo) ? demo : asset(demo))
 
 function GitHubIcon() {
   return (
@@ -88,7 +92,7 @@ function ProjectCard({ project, index }) {
           )}
           {project.demo && (
             <a
-              href={project.demo}
+              href={demoHref(project.demo)}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors duration-200"
