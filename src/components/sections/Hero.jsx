@@ -110,15 +110,6 @@ export default function Hero() {
           </a>
         </motion.div>
       </motion.div>
-
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        aria-hidden="true"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <div className="w-px h-12 bg-gradient-to-b from-transparent via-zinc-600 to-transparent mx-auto" />
-      </motion.div>
     </section>
   )
 }
