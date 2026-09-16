@@ -7,7 +7,7 @@ const en = {
     education: 'Education',
     veille: 'Tech Watch',
     contact: 'Contact',
-    status: 'In training',
+    status: 'Available',
   },
   hero: {
     badge: 'Available for new opportunities',

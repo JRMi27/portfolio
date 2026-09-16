@@ -7,7 +7,7 @@ const fr = {
     education: 'Formation',
     veille: 'Veille',
     contact: 'Contact',
-    status: 'En formation',
+    status: 'Disponible',
   },
   hero: {
     badge: 'Disponible pour de nouvelles opportunités',
