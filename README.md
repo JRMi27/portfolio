@@ -67,3 +67,7 @@ git add docs && git commit -m "build: update site" && git push
 ## Internationalization
 
 The site supports French and English. Strings live in `src/i18n/fr.js` and `src/i18n/en.js`, and the active language is managed by `LangContext`. To edit content, update the matching keys in both files.
+
+## License
+
+Personal project — © Jérémy Rouillard.

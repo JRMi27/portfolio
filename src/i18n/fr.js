@@ -180,14 +180,6 @@ const fr = {
     interestsTitle: 'Centres d\'intérêt',
     items: [
       {
-        period: '2025 — 2026',
-        degree: 'Licence Informatique',
-        school: 'Campus La Chataigneraie',
-        location: 'Mesnil-Esnard (76)',
-        description: "Licence informatique générale — algorithmique avancée, développement logiciel, gestion de projets et bases de données.",
-        icon: '🎓',
-      },
-      {
         period: '2023 — 2025',
         degree: 'BTS SIO — SLAM',
         school: 'Lycée Gustave Flaubert',

@@ -180,14 +180,6 @@ const en = {
     interestsTitle: 'Interests',
     items: [
       {
-        period: '2025 — 2026',
-        degree: 'Computer Science Degree',
-        school: 'Campus La Chataigneraie',
-        location: 'Mesnil-Esnard (76)',
-        description: "General computer science degree — advanced algorithms, software development, project management and databases.",
-        icon: '🎓',
-      },
-      {
         period: '2023 — 2025',
         degree: 'BTS SIO — SLAM',
         school: 'Lycée Gustave Flaubert',
