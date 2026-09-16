@@ -40,55 +40,86 @@ body {
 
 ::selection { background: #6366f1; color: #fff; }
 
-/* ── Light mode ── */
+/* ── Light mode ──
+   Not a grey inversion of the dark palette: a warm, lavender-tinted daylight
+   read on the same indigo/aurora identity. Cards get real elevation (white +
+   hairline border + soft shadow) instead of flat grey fills, and every washed
+   -out light-indigo text tint is remapped to one accessible accent so nothing
+   disappears against white. */
 html.light body {
-  background-color: #f8f8f8;
-  color: #18181b;
+  background-color: #f6f4fa;
+  color: #1b1626;
 }
-html.light ::-webkit-scrollbar-track { background: #f8f8f8; }
+html.light ::-webkit-scrollbar-track { background: #f6f4fa; }
+html.light ::selection { background: #4f46e5; color: #fff; }
 
-/* Text */
-html.light .text-white  { color: #18181b; }
-html.light .text-zinc-200 { color: #18181b; }
-html.light .text-zinc-300 { color: #3f3f46; }
-html.light .text-zinc-400 { color: #52525b; }
-html.light .text-zinc-500 { color: #71717a; }
-html.light .text-zinc-600 { color: #71717a; }
-html.light .text-zinc-700 { color: #a1a1aa; }
+/* Text hierarchy */
+html.light .text-white  { color: #1b1626; }
+html.light .text-zinc-200 { color: #1b1626; }
+html.light .text-zinc-300 { color: #362f45; }
+html.light .text-zinc-400 { color: #5a5268; }
+html.light .text-zinc-500 { color: #6f6680; }
+html.light .text-zinc-600 { color: #857c92; }
+html.light .text-zinc-700 { color: #a49bb0; }
 /* Keep white text on indigo/colored buttons */
 html.light .bg-indigo-600 .text-white,
 html.light .bg-indigo-600.text-white,
 html.light .bg-indigo-500 .text-white,
 html.light .bg-indigo-500.text-white { color: #ffffff !important; }
 
-/* Backgrounds */
-html.light .bg-background { background-color: #f8f8f8; }
-html.light .bg-zinc-900   { background-color: #ffffff; }
-html.light .bg-zinc-950   { background-color: #f4f4f5; }
-html.light .bg-black\/40  { background-color: rgba(255,255,255,0.85) !important; }
+/* Light-indigo accents read fine on near-black but wash out on white —
+   remap them all to one darkened, accessible accent. */
+html.light .text-indigo-200,
+html.light .text-indigo-300,
+html.light .text-indigo-400 { color: #4f46e5; }
+html.light .hover\:text-indigo-300:hover { color: #4338ca; }
 
-/* Opacity bg variants */
-html.light .bg-zinc-900\/30 { background-color: rgba(244,244,245,0.9); }
-html.light .bg-zinc-900\/40 { background-color: rgba(244,244,245,1); }
-html.light .bg-zinc-900\/60 { background-color: rgba(228,228,231,1); }
-html.light .bg-zinc-900\/70 { background-color: rgba(228,228,231,1); }
-html.light .bg-zinc-900\/80 { background-color: rgba(212,212,216,1); }
-html.light .bg-zinc-950\/40 { background-color: rgba(244,244,245,0.8); }
-html.light .bg-zinc-800\/80 { background-color: rgba(228,228,231,1); }
+/* Card surfaces: white + shadow instead of a flat grey fill */
+html.light .bg-background { background-color: #f6f4fa; }
+html.light .bg-zinc-900,
+html.light .bg-zinc-900\/30,
+html.light .bg-zinc-900\/40,
+html.light .bg-zinc-900\/60,
+html.light .bg-zinc-900\/70,
+html.light .bg-zinc-900\/80,
+html.light .bg-zinc-950,
+html.light .bg-zinc-950\/40,
+html.light .bg-zinc-800,
+html.light .bg-zinc-800\/80,
+html.light .bg-zinc-700 {
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(76, 29, 149, 0.04), 0 8px 24px -12px rgba(76, 29, 149, 0.14);
+}
+/* Quiet rows (interests list) stay a soft tint rather than a full elevated card */
+html.light .bg-zinc-900\/20 { background-color: rgba(76, 29, 149, 0.04); }
 
-/* Borders */
-html.light .border-zinc-900 { border-color: #e4e4e7; }
-html.light .border-zinc-800 { border-color: #e4e4e7; }
-html.light .border-white\/8 { border-color: rgba(0,0,0,0.08); }
-html.light .border-zinc-700 { border-color: #d4d4d8; }
-html.light .border-t { border-color: #e4e4e7; }
+html.light .bg-black\/40  { background-color: rgba(255,255,255,0.75) !important; }
+html.light .bg-black\/90  { background-color: rgba(255,255,255,0.96) !important; }
 
-/* Mobile menu */
-html.light .bg-background { background-color: #f8f8f8; }
+/* Existing shadow utilities: swap the near-black glow for a soft indigo one */
+html.light .shadow-black\/50 { --tw-shadow-color: rgba(76, 29, 149, 0.16); }
+
+/* Borders: one consistent violet-tinted hairline instead of per-shade greys */
+html.light .border-zinc-900,
+html.light .border-zinc-800,
+html.light .border-zinc-800\/60,
+html.light .border-zinc-800\/80,
+html.light .border-zinc-700,
+html.light .border-zinc-700\/50,
+html.light .border-t {
+  border-color: #e6e0ee;
+}
+html.light .border-zinc-600 { border-color: #cfc6dd; }
+html.light .border-white\/8,
+html.light .border-white\/\[0\.04\] { border-color: rgba(76, 29, 149, 0.08); }
 
 /* Hover states */
-html.light .hover\:text-white:hover { color: #18181b !important; }
-html.light .hover\:border-indigo-500\/50:hover { border-color: rgba(99,102,241,0.5); }
+html.light .hover\:text-white:hover { color: #1b1626 !important; }
+html.light .hover\:border-zinc-600:hover { border-color: #cfc6dd; }
+html.light .hover\:border-indigo-500\/50:hover { border-color: rgba(79,70,229,0.5); }
+
+/* Navbar: mobile hamburger bars are hard-coded white — flip for a light header */
+html.light .bg-white { background-color: #1b1626; }
 
 /* ── Navbar logo ── */
 @keyframes logo-gradient {
@@ -108,7 +139,7 @@ html.light .hover\:border-indigo-500\/50:hover { border-color: rgba(99,102,241,0
   background: #0a0a0a;
 }
 html.light .logo-inner {
-  background: #f8f8f8;
+  background: #f6f4fa;
 }
 
 /* ── Aurora background ── */
@@ -121,7 +152,7 @@ html.light .logo-inner {
   pointer-events: none;
   background: #0b0710;
 }
-html.light .aurora { background: #f7f4f6; }
+html.light .aurora { background: #f6f4fa; }
 
 .aurora__blob {
   position: absolute;
@@ -130,9 +161,25 @@ html.light .aurora { background: #f7f4f6; }
   mix-blend-mode: screen;
   will-change: transform;
 }
-html.light .aurora__blob {
-  mix-blend-mode: multiply;
-  filter: blur(80px);
+/* Screen-blended saturated blobs read as a muddy wash once flipped onto a
+   light ground with multiply — so light mode gets its own quieter set of
+   blobs (softer alpha, same hues) instead of just swapping blend modes. */
+html.light .aurora__blob { opacity: 0; }
+html.light .aurora__blob--violet {
+  opacity: 1;
+  background: radial-gradient(circle at 50% 50%, rgba(124,58,237,0.16), transparent 60%);
+}
+html.light .aurora__blob--magenta {
+  opacity: 1;
+  background: radial-gradient(circle at 50% 50%, rgba(214,64,159,0.13), transparent 60%);
+}
+html.light .aurora__blob--rose {
+  opacity: 1;
+  background: radial-gradient(circle at 50% 50%, rgba(244,63,94,0.10), transparent 62%);
+}
+html.light .aurora__blob--amber {
+  opacity: 1;
+  background: radial-gradient(circle at 50% 50%, rgba(245,158,11,0.09), transparent 62%);
 }
 
 /* Nappe froide (violet) — fait le pont avec les accents indigo */
