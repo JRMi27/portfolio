@@ -20,23 +20,6 @@
   padding: 0;
 }
 
-/* Curseur natif masqué uniquement quand le curseur custom (halo) est actif —
-   sinon (mobile, prefers-reduced-motion) l'utilisateur garde son curseur natif. */
-html.custom-cursor * {
-  cursor: none;
-}
-
-/* Champs de saisie : on rend la main au curseur natif (I-beam) pour ne pas
-   gêner la frappe / sélection de texte, même avec le curseur custom actif. */
-html.custom-cursor input,
-html.custom-cursor textarea,
-html.custom-cursor [contenteditable="true"] {
-  cursor: text;
-}
-html.custom-cursor select {
-  cursor: auto;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -216,11 +199,4 @@ html.light .aurora__veil {
 /* Transparent : l'aurora fixe reste visible derrière les sections. */
 .section-bg-wrapper {
   background: transparent;
-}
-
-/* Mobile: restore cursor */
-@media (hover: none) {
-  * {
-    cursor: auto;
-  }
 }

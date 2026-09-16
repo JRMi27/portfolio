@@ -1,7 +1,6 @@
 import { MotionConfig } from 'framer-motion'
 import Head from './components/Head'
 import Aurora from './components/Aurora'
-import Cursor from './components/Cursor'
 import Navbar from './components/Navbar'
 import Hero from './components/sections/Hero'
 import About from './components/sections/About'
@@ -19,7 +18,6 @@ export default function App() {
     <div className="relative min-h-screen">
       <Aurora />
       <Head />
-      <Cursor />
       <Navbar />
       <main>
         <Hero />

@@ -66,7 +66,6 @@ function SkillBadge({ skill, delay, inView }) {
       animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.4, delay, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -2 }}
-      data-hover
     >
       <div className="flex items-center gap-2">
         <img

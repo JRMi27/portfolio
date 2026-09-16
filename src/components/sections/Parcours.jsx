@@ -97,7 +97,6 @@ function CertCard({ cert, index }) {
         whileHover={{ y: -3 }}
         onClick={() => setZoomed(true)}
         onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setZoomed(true) } }}
-        data-hover
       >
         <div className="aspect-[4/3] bg-zinc-900 overflow-hidden">
           <img src={asset(cert.image)} alt={cert.title}
